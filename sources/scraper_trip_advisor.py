@@ -542,18 +542,21 @@ def write_to_csv(data, data2):
     try:
 
         for index, row in df_merged.iterrows():
-            adr = (row['city'],)
-            cursor.execute(sql2, adr)
-            print('Done2')
-            city = cursor.fetchall()
-            print(type(city), city)
-            city_id = city[0]
-            print(city_id[0])
-            geocodes = row['geocodes'].split(',')
-            cursor.execute(sql, (
-                city_id[0], row['hotel'], row['price'], row['review_count'], row['address'], row['contact'],
-                row['description'], row['website'], row['class'], geocodes[0], geocodes[1]))
-            con.commit()
+            try:
+                adr = (row['city'],)
+                cursor.execute(sql2, adr)
+                print('Done2')
+                city = cursor.fetchall()
+                print(type(city), city)
+                city_id = city[0]
+                print(city_id[0])
+                geocodes = row['geocodes'].split(',')
+                cursor.execute(sql, (
+                    city_id[0], row['hotel'], row['price'], row['review_count'], row['address'], row['contact'],
+                    row['description'], row['website'], row['class'], geocodes[0], geocodes[1]))
+                con.commit()
+            except Exception as e:
+                print(e)
         print("done")
     except Error as e:
         print('Error', e)

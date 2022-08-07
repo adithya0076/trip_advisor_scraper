@@ -4,10 +4,7 @@ import pandas as pd
 
 
 class BaseDB:
-
     def con(self):
-
-        cursor = None
 
         try:
             connection_config_dict = {
@@ -26,21 +23,7 @@ class BaseDB:
                 record = cursor.fetchone()
                 print("Your connected to database: ", record)
 
-
-
-
         except Error as e:
             print("Error while connecting to MySQL", e)
 
         return self.connection
-
-
-# obj = BaseDB()
-# con = obj.con()
-# cursor = con.cursor()
-# df = pd.read_csv("cities.csv")
-# sql = "INSERT INTO `city` (`id`, `city_name`) VALUES (%s,%s)"
-# for index, row in df.iterrows():
-#     cursor.execute(sql, (row['id'], row['name_en']))
-#     con.commit()
-#     print(row['name_en'])
