@@ -1,0 +1,1456 @@
+1659608352605	geckodriver	INFO	Listening on 127.0.0.1:65235
+1659608357028	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "65236" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile0DDrjV"
+1659608365605	Marionette	INFO	Marionette enabled
+1659608365663	Marionette	INFO	Listening on port 65251
+WebDriver BiDi listening on ws://localhost:65236
+Read port: 65251
+1659608367190	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1659608392187	geckodriver	INFO	Listening on 127.0.0.1:65267
+1659608395236	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "65268" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileeHJ6d9"
+1659608396155	Marionette	INFO	Marionette enabled
+1659608396162	Marionette	INFO	Listening on port 65279
+WebDriver BiDi listening on ws://localhost:65268
+Read port: 65279
+1659608396887	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 769))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 421))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileeHJ6d9\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:65268/devtools/browser/bd5363a8-d3f0-4c2d-97c4-32029912b800
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://d79992b9819fa25d0dab24ddbcf46dd2.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 58: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 58: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3698 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4333 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659608492935	Marionette	INFO	Stopped listening on port 65279
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659608498910	geckodriver	INFO	Listening on 127.0.0.1:56793
+1659608501960	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "56794" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofiled0DCAi"
+1659608502895	Marionette	INFO	Marionette enabled
+1659608502900	Marionette	INFO	Listening on port 56804
+WebDriver BiDi listening on ws://localhost:56794
+Read port: 56804
+1659608504042	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofiled0DCAi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56794/devtools/browser/15077ec3-bc78-4a51-8faf-a55bc4b05af2
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+1659608524013	Marionette	INFO	Stopped listening on port 56804
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1659608555453	geckodriver	INFO	Listening on 127.0.0.1:56927
+1659608558472	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "56928" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileJjtlkX"
+1659608559050	Marionette	INFO	Marionette enabled
+1659608559059	Marionette	INFO	Listening on port 56938
+WebDriver BiDi listening on ws://localhost:56928
+Read port: 56938
+1659608559834	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileJjtlkX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56928/devtools/browser/6ba6128b-908c-4559-b8f0-3280cba169d1
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://62dd565c79844be87453e453def737c3.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659608579922	Marionette	INFO	Stopped listening on port 56938
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1659608617155	geckodriver	INFO	Listening on 127.0.0.1:57087
+1659608620391	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "57088" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileZvVYRN"
+1659608621117	Marionette	INFO	Marionette enabled
+1659608621127	Marionette	INFO	Listening on port 57099
+WebDriver BiDi listening on ws://localhost:57088
+Read port: 57099
+1659608621820	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileZvVYRN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57088/devtools/browser/1009c191-d14c-42c6-8694-35b60f0f39d1
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://847b2bb0f2c1ed2418e15fc7bdd2bf69.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6604 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659608744886	Marionette	INFO	Stopped listening on port 57099
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource:///modules/WindowsJumpLists.jsm, line 277: TypeError: this._builder is undefined
+JavaScript error: resource:///modules/WindowsJumpLists.jsm, line 277: TypeError: this._builder is undefined
+1659608750201	geckodriver	INFO	Listening on 127.0.0.1:57432
+1659608753229	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "57433" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileVWOHju"
+1659608754161	Marionette	INFO	Marionette enabled
+1659608754171	Marionette	INFO	Listening on port 57444
+WebDriver BiDi listening on ws://localhost:57433
+Read port: 57444
+1659608754796	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileVWOHju\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 767))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 421))
+DevTools listening on ws://localhost:57433/devtools/browser/039f98ef-8dc4-47ce-9066-951e6d706694
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://412581cab48b653ce138dc07abd65d23.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 483 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6205 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3151 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4142 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://402435974f27077ce667cfff6218e6ff.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109385&moatClientLevel4=172525244&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2365 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 7442 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1887 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6223 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://f1b8dceb2cd3b916aced98162bcd56c8.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 344 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1170 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5933 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://253fd1242155fa0ddd2edab1a5a2cdfc.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6035 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3122 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 747 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2942 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://7d45219badd2646e9dafc740e7974985.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 817 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6307 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4554 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1008 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://4cc423c264513b271750a0a0dd75fc73.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 757 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1835 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1831 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2746 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3077 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 484 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659609135737	Marionette	INFO	Stopped listening on port 57444
+1659609372613	geckodriver	INFO	Listening on 127.0.0.1:55801
+1659609375623	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "55802" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile2XAqSQ"
+1659609376510	Marionette	INFO	Marionette enabled
+1659609376517	Marionette	INFO	Listening on port 55813
+WebDriver BiDi listening on ws://localhost:55802
+Read port: 55813
+1659609377210	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile2XAqSQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55802/devtools/browser/fab72bd3-0535-495d-acba-20327a3376c3
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://2a5e30feae648cdb05cc6612d348c05b.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4269 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2053 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659609445437	Marionette	INFO	Stopped listening on port 55813
+!!! error running onStopped callback: TypeError: callback is not a function
+1659609557496	geckodriver	INFO	Listening on 127.0.0.1:59986
+1659609560510	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "59987" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile5wfosg"
+1659609561508	Marionette	INFO	Marionette enabled
+1659609561513	Marionette	INFO	Listening on port 59997
+WebDriver BiDi listening on ws://localhost:59987
+Read port: 59997
+1659609562107	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile5wfosg\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59987/devtools/browser/1a008aa7-e6b3-4282-81f5-e482963031db
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://ab481d42eb42ede99a0e87fd317b1dc3.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2562 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5531 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659609626213	Marionette	INFO	Stopped listening on port 59997
+1659610669129	geckodriver	INFO	Listening on 127.0.0.1:63551
+1659610672150	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "63552" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilefc4cfE"
+1659610672911	Marionette	INFO	Marionette enabled
+1659610672920	Marionette	INFO	Listening on port 63562
+WebDriver BiDi listening on ws://localhost:63552
+Read port: 63562
+1659610673607	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilefc4cfE\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63552/devtools/browser/ac29fe23-f3ac-4122-af7a-e9859b7dac95
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 638 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3246 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659610744731	Marionette	INFO	Stopped listening on port 63562
+1659611032272	geckodriver	INFO	Listening on 127.0.0.1:60798
+1659611035301	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "60799" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile2aB6zB"
+1659611037269	Marionette	INFO	Marionette enabled
+1659611037277	Marionette	INFO	Listening on port 60811
+WebDriver BiDi listening on ws://localhost:60799
+Read port: 60811
+1659611038249	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile2aB6zB\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60799/devtools/browser/47241304-e949-4ff8-81c2-9e7dc700cda1
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2783 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2899 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659611126789	geckodriver	INFO	Listening on 127.0.0.1:50292
+1659611129807	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "50293" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilefymozB"
+1659611130848	Marionette	INFO	Marionette enabled
+1659611130854	Marionette	INFO	Listening on port 50304
+WebDriver BiDi listening on ws://localhost:50293
+Read port: 50304
+1659611131571	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilefymozB\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50293/devtools/browser/65e4b9b3-e6b1-40f0-aeac-47b3646c8b9f
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3440 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4034 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1888 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 7653 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1659611455797	geckodriver	INFO	Listening on 127.0.0.1:57543
+1659611458978	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "57544" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileQAcTV4"
+1659611461173	Marionette	INFO	Marionette enabled
+1659611461179	Marionette	INFO	Listening on port 57555
+WebDriver BiDi listening on ws://localhost:57544
+Read port: 57555
+1659611461711	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileQAcTV4\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57544/devtools/browser/9304114c-bec5-40cb-888e-2f89fc8b1a4c
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3238 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6367 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659611602160	Marionette	INFO	Stopped listening on port 57555
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1659611642350	geckodriver	INFO	Listening on 127.0.0.1:57899
+1659611645377	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "57900" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileI5yJZ1"
+1659611645872	Marionette	INFO	Marionette enabled
+1659611645879	Marionette	INFO	Listening on port 57910
+WebDriver BiDi listening on ws://localhost:57900
+Read port: 57910
+1659611646416	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileI5yJZ1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57900/devtools/browser/b51c7630-4171-4b8d-850c-a402ee19ca21
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 7351 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3970 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659611756700	geckodriver	INFO	Listening on 127.0.0.1:62710
+1659611759718	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "62711" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileXNUCkf"
+1659611760837	Marionette	INFO	Marionette enabled
+1659611760842	Marionette	INFO	Listening on port 62722
+WebDriver BiDi listening on ws://localhost:62711
+Read port: 62722
+1659611761343	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileXNUCkf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62711/devtools/browser/3c3d747d-60f4-4178-ae8b-c6156091e9e4
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+1659611778778	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2226 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 680 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659611829896	Marionette	INFO	Stopped listening on port 62722
+!!! error running onStopped callback: TypeError: callback is not a function
+1659612295850	geckodriver	INFO	Listening on 127.0.0.1:63262
+1659612299154	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "63263" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileZe6eoo"
+1659612299841	Marionette	INFO	Marionette enabled
+1659612299848	Marionette	INFO	Listening on port 63274
+WebDriver BiDi listening on ws://localhost:63263
+Read port: 63274
+1659612300545	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileZe6eoo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63263/devtools/browser/8416b61e-7d17-436d-bb07-639fb98e7de0
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1893 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1659612337657	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2815 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659612380231	Marionette	INFO	Stopped listening on port 63274
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659612384883	geckodriver	INFO	Listening on 127.0.0.1:63651
+1659612387904	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "63652" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileeG4xwD"
+1659612391800	Marionette	INFO	Marionette enabled
+1659612391806	Marionette	INFO	Listening on port 63664
+WebDriver BiDi listening on ws://localhost:63652
+Read port: 63664
+1659612392480	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileeG4xwD\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63652/devtools/browser/72f00ba3-aeae-41d5-8eeb-a86df45120c6
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5742 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5291 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: resource://devtools/client/framework/toolbox.js, line 2028: TypeError: currentPanel is undefined
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 594"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:594:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 594, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 594: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 186: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 186: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 186: TypeError: rule is undefined
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1659612564751	Marionette	INFO	Stopped listening on port 63664
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+[Parent 14344, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1659612573868	geckodriver	INFO	Listening on 127.0.0.1:58015
+1659612577133	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "58016" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilePYUjj4"
+1659612578840	Marionette	INFO	Marionette enabled
+1659612578845	Marionette	INFO	Listening on port 58027
+WebDriver BiDi listening on ws://localhost:58016
+Read port: 58027
+1659612579374	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilePYUjj4\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58016/devtools/browser/c6dcd295-55aa-4419-8a54-a1dccfcf1d94
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4288 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3275 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+1659612648502	Marionette	INFO	Stopped listening on port 58027
+1659612672982	geckodriver	INFO	Listening on 127.0.0.1:60153
+1659612676023	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "60154" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileiMkype"
+1659612676540	Marionette	INFO	Marionette enabled
+1659612676548	Marionette	INFO	Listening on port 60164
+WebDriver BiDi listening on ws://localhost:60154
+Read port: 60164
+1659612677154	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileiMkype\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60154/devtools/browser/7ffee2fd-7b8e-4830-992e-0866bc0125cd
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2836 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 7605 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659613287530	Marionette	INFO	Stopped listening on port 60164
+[Parent 14004, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1659613372537	geckodriver	INFO	Listening on 127.0.0.1:60939
+1659613375559	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "60940" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileerSmva"
+1659613378334	Marionette	INFO	Marionette enabled
+1659613378340	Marionette	INFO	Listening on port 60952
+WebDriver BiDi listening on ws://localhost:60940
+Read port: 60952
+1659613378979	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileerSmva\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60940/devtools/browser/e7768f16-da2c-45b5-a303-64af590aeb7d
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4648 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6991 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1625 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6118 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://z.moatads.com/8560oskadcm206942881657/moatad.js#moatClientLevel1=27439698&moatClientLevel2=2319497&moatClientLevel3=338109394&moatClientLevel4=172521791&zMoatG=ct=LK&st=&city=0&dma=0&zp=&bw=4&zMoatADV=5876501, line 236: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 301 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5466 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2808 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659613554976	geckodriver	INFO	Listening on 127.0.0.1:53350
+1659613558009	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "53351" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileoJIwu9"
+1659613558984	Marionette	INFO	Marionette enabled
+1659613558991	Marionette	INFO	Listening on port 53362
+WebDriver BiDi listening on ws://localhost:53351
+Read port: 53362
+1659613559590	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileoJIwu9\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53351/devtools/browser/f7e00b08-61a0-4f1d-97d6-0a6c8b27d9c8
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4596 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5303 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659613622862	Marionette	INFO	Stopped listening on port 53362
+!!! error running onStopped callback: TypeError: callback is not a function
+JavaScript error: resource://gre/actors/ContentMetaChild.jsm, line 185: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+1659613694129	geckodriver	INFO	Listening on 127.0.0.1:53645
+1659613697155	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "53646" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileuHx67e"
+1659613697644	Marionette	INFO	Marionette enabled
+1659613697650	Marionette	INFO	Listening on port 53656
+WebDriver BiDi listening on ws://localhost:53646
+Read port: 53656
+1659613698320	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileuHx67e\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53646/devtools/browser/fd49e603-7d25-4c42-a0d7-6a0afe8cd279
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2392 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 294 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659613776178	Marionette	INFO	Stopped listening on port 53656
+1659615234412	geckodriver	INFO	Listening on 127.0.0.1:54713
+1659615238557	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "54714" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileKyTu6L"
+1659615240420	Marionette	INFO	Marionette enabled
+1659615240451	Marionette	INFO	Listening on port 54726
+WebDriver BiDi listening on ws://localhost:54714
+Read port: 54726
+1659615241065	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileKyTu6L\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54714/devtools/browser/31bc40b3-bcf2-4da7-90a9-2b2467c146b5
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 346 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2143 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659615321067	Marionette	INFO	Stopped listening on port 54726
+[Parent 10984, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1659615636151	geckodriver	INFO	Listening on 127.0.0.1:56921
+1659615639173	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "56922" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile8y0rCh"
+1659615641029	Marionette	INFO	Marionette enabled
+1659615641036	Marionette	INFO	Listening on port 56933
+WebDriver BiDi listening on ws://localhost:56922
+Read port: 56933
+1659615641826	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofile8y0rCh\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56922/devtools/browser/8a218d0d-3fba-4620-9523-eb66fe336535
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5386 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4610 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659615726660	Marionette	INFO	Stopped listening on port 56933
+1659673038741	geckodriver	INFO	Listening on 127.0.0.1:50260
+1659673042384	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "50261" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileTmgePJ"
+1659673046838	Marionette	INFO	Marionette enabled
+1659673046850	Marionette	INFO	Listening on port 50270
+WebDriver BiDi listening on ws://localhost:50261
+Read port: 50270
+1659673048037	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileTmgePJ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50261/devtools/browser/a28b08c0-a506-43c3-b4ab-d1a3162b0120
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://a41a61db648fe6269c882aba051db119.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 7566 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4055 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659673150216	Marionette	INFO	Stopped listening on port 50270
+1659673294044	geckodriver	INFO	Listening on 127.0.0.1:62132
+1659673297055	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "62133" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileD3hQRC"
+1659673299086	Marionette	INFO	Marionette enabled
+1659673299093	Marionette	INFO	Listening on port 62144
+Read port: 62144
+WebDriver BiDi listening on ws://localhost:62133
+1659673299639	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileD3hQRC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62133/devtools/browser/56369607-4722-467d-9d44-b98c76c1c63c
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6551 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5787 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659673468890	Marionette	INFO	Stopped listening on port 62144
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1659673573937	geckodriver	INFO	Listening on 127.0.0.1:50413
+1659673576956	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "50414" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileeK4eik"
+1659673577918	Marionette	INFO	Marionette enabled
+1659673577926	Marionette	INFO	Listening on port 50425
+WebDriver BiDi listening on ws://localhost:50414
+Read port: 50425
+1659673578606	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileeK4eik\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50414/devtools/browser/91cc3dab-f155-40db-9ff8-4b0fb5c2b52f
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://a7bb84f7bae27e0b4146e5b0081c09b1.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 61 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 846 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659673663306	Marionette	INFO	Stopped listening on port 50425
+!!! error running onStopped callback: TypeError: callback is not a function
+1659673832979	geckodriver	INFO	Listening on 127.0.0.1:65507
+1659673836007	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "65508" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileZQa32S"
+1659673836667	Marionette	INFO	Marionette enabled
+1659673836672	Marionette	INFO	Listening on port 65519
+WebDriver BiDi listening on ws://localhost:65508
+Read port: 65519
+1659673837309	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileZQa32S\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:65508/devtools/browser/8044e2a2-e0d2-4931-b458-9a2ea0f6f8df
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6180 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4697 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659673926915	Marionette	INFO	Stopped listening on port 65519
+1659674010940	geckodriver	INFO	Listening on 127.0.0.1:55393
+1659674013964	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "55394" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilexG7Voj"
+1659674015107	Marionette	INFO	Marionette enabled
+1659674015111	Marionette	INFO	Listening on port 55405
+WebDriver BiDi listening on ws://localhost:55394
+Read port: 55405
+1659674015743	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilexG7Voj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55394/devtools/browser/0cbd8b84-41e5-48d8-bbde-fd53f33ef7b6
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://6a648192c304f498cd6c0fa3a894d5c4.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1843 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3525 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659674101504	Marionette	INFO	Stopped listening on port 55405
+!!! error running onStopped callback: TypeError: callback is not a function
+1659674334617	geckodriver	INFO	Listening on 127.0.0.1:55504
+1659674338147	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "55505" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilezJ7gj5"
+1659674338963	Marionette	INFO	Marionette enabled
+1659674338968	Marionette	INFO	Listening on port 55515
+WebDriver BiDi listening on ws://localhost:55505
+Read port: 55515
+1659674339561	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilezJ7gj5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55505/devtools/browser/e8e05b2c-9ee6-4b18-9580-28c3de786706
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://214a923cc30b6340b045d9bf869e40d7.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1521 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5747 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659674423627	Marionette	INFO	Stopped listening on port 55515
+1659674473832	geckodriver	INFO	Listening on 127.0.0.1:51939
+1659674476996	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "51940" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilelQ40hL"
+1659674477457	Marionette	INFO	Marionette enabled
+1659674477464	Marionette	INFO	Listening on port 51952
+WebDriver BiDi listening on ws://localhost:51940
+Read port: 51952
+1659674478095	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilelQ40hL\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51940/devtools/browser/1cfd0364-a2c2-4ae6-b0be-ec1398e2e685
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4644 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://6bf347bd129401a4fd1c8afecb70e884.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4768 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659674566242	Marionette	INFO	Stopped listening on port 51952
+[Parent 8176, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1659674899640	geckodriver	INFO	Listening on 127.0.0.1:64320
+1659674903185	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "64321" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilex15BfU"
+1659674903824	Marionette	INFO	Marionette enabled
+1659674903831	Marionette	INFO	Listening on port 64332
+WebDriver BiDi listening on ws://localhost:64321
+Read port: 64332
+1659674904451	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilex15BfU\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64321/devtools/browser/efa3ec74-2a7a-4191-a912-c97ed50476de
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4668 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1659674924429	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1304 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659674992916	Marionette	INFO	Stopped listening on port 64332
+!!! error running onStopped callback: TypeError: callback is not a function
+[Parent 8304, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:723
+JavaScript error: resource://gre/actors/ContentMetaChild.jsm, line 185: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+1659675063357	geckodriver	INFO	Listening on 127.0.0.1:50750
+1659675066379	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "50751" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilewEN9Kc"
+1659675069151	Marionette	INFO	Marionette enabled
+1659675069162	Marionette	INFO	Listening on port 50763
+WebDriver BiDi listening on ws://localhost:50751
+Read port: 50763
+1659675069735	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilewEN9Kc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50751/devtools/browser/87394b41-2ef3-45de-9832-339e3228ce6e
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://c5448f495ee834098100d0ac8f27ddce.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2527 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6200 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659675147437	Marionette	INFO	Stopped listening on port 50763
+!!! error running onStopped callback: TypeError: callback is not a function
+1659675419609	geckodriver	INFO	Listening on 127.0.0.1:57741
+1659675422621	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "57742" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilecWwjs0"
+1659675423270	Marionette	INFO	Marionette enabled
+1659675423277	Marionette	INFO	Listening on port 57753
+WebDriver BiDi listening on ws://localhost:57742
+Read port: 57753
+1659675424093	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilecWwjs0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57742/devtools/browser/41e3edf1-017b-47e7-a466-e3542a9c2ff0
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: https://ce95f469aea2c5f56c74508cf2c75f93.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2102 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2288 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://1773b2f417372c37524da0fc0f7e66ff.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 1: ReferenceError: googqscp is not defined
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 4997 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659675512451	Marionette	INFO	Stopped listening on port 57753
+1659675794892	geckodriver	INFO	Listening on 127.0.0.1:50009
+1659675797900	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "50010" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofiled5Wzak"
+1659675798934	Marionette	INFO	Marionette enabled
+1659675798941	Marionette	INFO	Listening on port 50021
+WebDriver BiDi listening on ws://localhost:50010
+Read port: 50021
+1659675799578	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofiled5Wzak\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50010/devtools/browser/c7dfc536-066a-4979-840a-25c462a5aec5
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://323d8dd7aae0f7b194d31b7aff72345b.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5945 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 6299 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659675881835	Marionette	INFO	Stopped listening on port 50021
+1659676499279	geckodriver	INFO	Listening on 127.0.0.1:49411
+1659676502291	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "49412" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileW0ggKz"
+1659676502849	Marionette	INFO	Marionette enabled
+1659676502854	Marionette	INFO	Listening on port 49423
+WebDriver BiDi listening on ws://localhost:49412
+Read port: 49423
+1659676503393	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileW0ggKz\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49412/devtools/browser/fe139182-5f95-45fc-829f-92bf5e5aa229
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript error: https://a2fa276eaa2c634ea8bc1c773bbe1f04.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5061 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 1664 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 594"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:594:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 594, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 594: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 192: TypeError: rule is undefined
+console.error: (new TypeError("parent is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 67))
+TypeError: parent is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:67:24
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:312:10
+
+console.error: "Error while calling actor 'pagestyle's method 'getLayout'" "node is null"
+console.error: (new TypeError("node is null", "resource://devtools/server/actors/page-style.js", 1004))
+console.error: (new TypeError("nodeFront.walkerFront is null", "resource://devtools/client/inspector/markup/markup.js", 956))
+TypeError: nodeFront.walkerFront is null: _onNewSelection@resource://devtools/client/inspector/markup/markup.js:956:7
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+setNodeFront@resource://devtools/client/framework/selection.js:206:10
+onDetached@resource://devtools/client/inspector/inspector.js:1678:20
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+_onMutations@resource://devtools/client/framework/selection.js:104:12
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:312:10
+
+console.error: (new Error("Can not send request 'getUniqueSelector' because front 'domnode' is already destroyed.", "resource://devtools/shared/protocol/Front/FrontClassWithSpec.js", 30))
+console.error: (new Error("Protocol error (TypeError): node is null from: server0.conn0.windowGlobal4294967414/pagestyle27 (resource://devtools/server/actors/page-style.js:1004:5)", "resource://devtools/shared/protocol/Front.js", 376))
+console.error: (new TypeError("parent is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 67))
+TypeError: parent is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:67:24
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:312:10
+
+console.error: (new TypeError("parent is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 67))
+TypeError: parent is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:67:24
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:312:10
+
+.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659677093726	Marionette	INFO	Stopped listening on port 55189
+1659677508362	geckodriver	INFO	Listening on 127.0.0.1:53417
+1659677511438	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "53418" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileo6rNgN"
+1659677512275	Marionette	INFO	Marionette enabled
+1659677512281	Marionette	INFO	Listening on port 53427
+WebDriver BiDi listening on ws://localhost:53418
+Read port: 53427
+1659677512909	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileo6rNgN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53418/devtools/browser/9d7ed1ec-4a32-46a9-902a-509643f56257
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 720 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2559 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659677590035	Marionette	INFO	Stopped listening on port 53427
+!!! error running onStopped callback: TypeError: callback is not a function
+1659677734402	geckodriver	INFO	Listening on 127.0.0.1:57039
+1659677737848	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "57040" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileKx3ir3"
+1659677739963	Marionette	INFO	Marionette enabled
+1659677739970	Marionette	INFO	Listening on port 57049
+WebDriver BiDi listening on ws://localhost:57040
+Read port: 57049
+1659677740627	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileKx3ir3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57040/devtools/browser/f1c275c9-58fe-428a-87fc-596c740d85f9
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript error: https://047bbbfc5dfc3ceca5d3b314d9ff0c61.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5101 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 5091 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+1659677818277	Marionette	INFO	Stopped listening on port 57049
+[Parent 1700, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1659678048330	geckodriver	INFO	Listening on 127.0.0.1:58851
+1659678051350	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "58852" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilevclUkN"
+1659678053781	Marionette	INFO	Marionette enabled
+1659678053790	Marionette	INFO	Listening on port 58861
+WebDriver BiDi listening on ws://localhost:58852
+Read port: 58861
+1659678054309	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilevclUkN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58852/devtools/browser/574ca434-c5d3-43dd-aafd-f8283296157e
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://e4ec3b28ac9babc88e1ede3b0c718f90.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 492 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 2209 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659678169654	Marionette	INFO	Stopped listening on port 58861
+[Parent 6156, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1659678218461	geckodriver	INFO	Listening on 127.0.0.1:57437
+1659678221493	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "57438" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilewbQcdP"
+1659678223886	Marionette	INFO	Marionette enabled
+1659678223892	Marionette	INFO	Listening on port 57447
+WebDriver BiDi listening on ws://localhost:57438
+Read port: 57447
+1659678224559	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofilewbQcdP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57438/devtools/browser/9960f0e8-f5c6-4c25-8ef6-a2685326d85a
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://77549592c7b9c614a6f1fa669a9360d0.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 7464 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 3463 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659678393161	Marionette	INFO	Stopped listening on port 57447
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 57: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1659678394852	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: chrome://remote/content/marionette/cert.js :: allowAllCerts.disable :: line 57"  data: no] Stack trace: allowAllCerts.disable()@cert.js:57
+destroy()@Session.jsm:207
+deleteSession()@WebDriverBiDi.jsm:148
+stop()@WebDriverBiDi.jsm:227
+!!! error running onStopped callback: TypeError: callback is not a function
+[Parent 4708, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659678416576	geckodriver	INFO	Listening on 127.0.0.1:58546
+1659678419573	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "58547" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileztPXi3"
+1659678427992	Marionette	INFO	Marionette enabled
+1659678427997	Marionette	INFO	Listening on port 58558
+WebDriver BiDi listening on ws://localhost:58547
+Read port: 58558
+1659678428575	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileztPXi3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58547/devtools/browser/48957030-4636-42c1-9856-52cc3cee1acb
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: https://880f400008a648fb391cb85707856927.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 30: SyntaxError: "" string literal contains an unescaped line break
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 7084 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/DGCvT-nfUO_IqA_cAEgHI9RDpG7IWcgQjTpWlJPkZjY.js line 2 > eval line 572 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659678496543	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1659678496928	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659678523995	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659678568847	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659678614362	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1659678806384	Marionette	INFO	Stopped listening on port 58558
+1659699412654	geckodriver	INFO	Listening on 127.0.0.1:61968
+1659699416062	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-blink-features=AutomationControlled" "--ignore-certificate-errors" "ignore-ssl-errors" "--remote-debugging-port" "61969" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileAS0g1l"
+1659699425197	Marionette	INFO	Marionette enabled
+1659699425204	Marionette	INFO	Listening on port 61984
+WebDriver BiDi listening on ws://localhost:61969
+Read port: 61984
+1659699426625	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 769))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 421))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\sinxdell\\AppData\\Local\\Temp\\rust_mozprofileAS0g1l\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61969/devtools/browser/d6baa209-9e3f-4707-a8f9-3cea0a33457b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 278: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+1659699462977	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:237:24
+TimedPromise@chrome://remote/content/marionette/sync.js:222:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UkaWbFdOBngpypKF1XmH91LOVqbH0hMQiz9LuN6ufos.js line 2 > eval line 1748 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript error: https://1ec08a612cd0179922775cb6bfe7bbc0.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 13: ReferenceError: googqscp is not defined
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UkaWbFdOBngpypKF1XmH91LOVqbH0hMQiz9LuN6ufos.js line 2 > eval line 1546 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UkaWbFdOBngpypKF1XmH91LOVqbH0hMQiz9LuN6ufos.js line 2 > eval line 7162 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UkaWbFdOBngpypKF1XmH91LOVqbH0hMQiz9LuN6ufos.js line 2 > eval line 3373 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.jscache.com"
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 594"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:594:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 594, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 594: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1659702195581	Marionette	INFO	Stopped listening on port 61984
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+WARNING: At least one completion condition is taking too long to complete. Conditions: [{"name":"Places Connection shutdown","state":{"PlacesShutdownProgress":5},"filename":"/builds/worker/checkouts/gecko/toolkit/components/places/Database.cpp","lineNumber":470,"stack":["resource://gre/modules/nsAsyncShutdown.jsm:addBlocker:164","resource://gre/modules/XPCOMUtils.jsm:XPCU_serviceLambda:162","resource://gre/modules/XPCOMUtils.jsm:get:63","resource:///modules/BrowserGlue.jsm:BG__onFirstWindowLoaded:1692","resource:///modules/BrowserGlue.jsm:BG_observe:933","chrome://browser/content/browser.js:_delayedStartup:2144"]}] Barrier: profile-before-change
+ch JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 577: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1659702096931	Marionette	INFO	Stopped listening on port 53213
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+[Parent 2572, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167

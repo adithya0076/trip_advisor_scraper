@@ -1,31 +1,20 @@
 import json
-
-import selenium
-import io
-import requests
 import bs4
-import urllib.request
-import urllib.parse
 import pandas as pd
 import re
-
 import time
-from selenium import webdriver
-
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.firefox.options import Options
 from mysql.connector import Error
-from BaseDb import BaseDB
+from ..dbModel.BaseDb import BaseDB
 
 # PATHS
 SCRAPING_URL = "https://www.tripadvisor.com"
-GECKO_DRIVER_PATH = "geckodriver.exe"
+GECKO_DRIVER_PATH = "../driver/geckodriver.exe"
 
 # Database Connection
 db = BaseDB()
@@ -70,19 +59,6 @@ def get_driver():
     # driver = webdriver.Chrome(desired_capabilities=caps,options=options, executable_path="chromedriver.exe")
     # driver.maximize_window()
     return driver
-
-
-def process_browser_log_entry(entry):
-    response = json.loads(entry['message'])['message']
-    return response
-
-
-def processLog(log, driver):
-    log = json.loads(log["message"])["message"]
-    if ("Network.responseReceived" in log["method"] and "params" in log.keys()):
-        body = driver.execute_cdp_cmd('Network.getResponseBody', {'requestId': log["params"]["requestId"]})
-        return log["params"]
-
 
 def get_driver_object(driver=get_driver(), url=SCRAPING_URL):
     """
@@ -137,7 +113,7 @@ def save_hotel_images():
     :return:
     """
     sql = "SELECT `id` FROM `hotel` WHERE `hotel_name` = %s "
-    data = pd.read_csv("hotels_images.csv")
+    data = pd.read_csv("../datasets/hotels_images.csv")
     for index, row in data.iterrows():
         adr = (row['hotel'],)
         print(adr)
@@ -166,7 +142,7 @@ def save_hotel_features():
     :return:
     """
     sql = "SELECT `id` FROM `hotel` WHERE `hotel_name` = %s "
-    data = pd.read_csv("hotels_features.csv")
+    data = pd.read_csv("../datasets/hotels_features.csv")
     for index, row in data.iterrows():
         adr = (row['hotel'],)
         print(adr)
@@ -299,7 +275,7 @@ def scrape_hotel_information(driver, data):
 
         dd = pd.DataFrame(dict3)
         print(dd)
-        dd.to_csv("hotels_features.csv", mode='a', header=True)
+        dd.to_csv("../datasets/hotels_features.csv", mode='a', header=True)
 
         if read7:
             geo = read7[0]['src'].lstrip()
@@ -418,7 +394,7 @@ def scrape_hotel_information(driver, data):
         if du.empty == True:
             print('No Images')
         else:
-            du.to_csv("hotels_images.csv", mode='a', header=True)
+            du.to_csv("../datasets/hotels_images.csv", mode='a', header=True)
         WebDriverWait(driver2, 10)
         # if index == 2:
         #     break
@@ -508,7 +484,7 @@ def scraping_hotels_data(driver, city):
     dict2 = {'city': city, 'hotel': name, 'url': urls, }
     fd = pd.DataFrame(dict2)
 
-    fd.to_csv("hotels_url.csv", mode='w', header=True)
+    fd.to_csv("../datasets/hotels_url.csv", mode='w', header=True)
 
     # data = {
     #     'df': df,
@@ -592,7 +568,7 @@ def main():
     # Read Data from the csv
     driver = get_driver_object()
 
-    df = pd.read_csv("cities.csv")
+    df = pd.read_csv("../datasets/cities.csv")
     for index, row in df.iterrows():
         # print(row['name_en'])
 
@@ -613,7 +589,7 @@ def main():
         else:
             # Writes the dataframe into a csv
             time.sleep(10)
-            urls = pd.read_csv("hotels_url.csv")
+            urls = pd.read_csv("../datasets/hotels_url.csv")
             data2 = scrape_hotel_information(driver, urls)
             time.sleep(5)
             write_to_csv(data, data2)
