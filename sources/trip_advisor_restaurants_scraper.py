@@ -1,9 +1,7 @@
-import json
 import bs4
 import pandas as pd
 import re
 import time
-import traceback
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -11,11 +9,12 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-from mysql.connector import Error
 
+from dbModel.BaseDb import BaseDB
 
-# from ..dbModel.BaseDb import BaseDB
+# Database Connection
+db = BaseDB()
+con = db.con()
 
 
 class TripAdvisorRestaurantScraper:
@@ -132,7 +131,8 @@ class TripAdvisorRestaurantScraper:
                 # time.sleep(6)
                 try:
 
-                    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[@class='BrOJk u j z _F wSSLS HuPlH Vonfv']"))).click()
+                    WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
+                        (By.XPATH, "//button[@class='BrOJk u j z _F wSSLS HuPlH Vonfv']"))).click()
                 except:
                     pass
                 # time.sleep(5)
@@ -163,6 +163,8 @@ class TripAdvisorRestaurantScraper:
                         link = 'https://www.tripadvisor.com/' + a['href'] + ''
                         urls.append(link)
 
+                break
+
 
             except Exception as e:
                 print(e)
@@ -183,21 +185,21 @@ class TripAdvisorRestaurantScraper:
         :return:
         """
         driver2 = driver
-        name = []
-        review_count = []
-        address = []
-        contact = []
-        description = []
-        website = []
-        hotel = []
-        geocodes = []
-        price_range = []
-        cuisines = []
-        meals = []
-        features = []
-        email = []
 
         for index, row in data.iterrows():
+            name = []
+            review_count = []
+            address = []
+            contact = []
+            description = []
+            website = []
+            hotel = []
+            geocodes = []
+            price_range = []
+            cuisines = []
+            meals = []
+            features = []
+            email = []
             images = []
 
             driver2.get(row['url'])
@@ -213,10 +215,13 @@ class TripAdvisorRestaurantScraper:
             # Elements which are selected
             name_sc = data2.select(".HjBfq")
             reviews_sc = data2.select(".AfQtZ")
-            address_sc = driver2.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[1]/span/a").text
-            contact_sc = driver2.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a").text
+            address_sc = driver2.find_element(by=By.XPATH,
+                                              value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[1]/span/a").text
+            contact_sc = driver2.find_element(by=By.XPATH,
+                                              value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a").text
             email_sc = data2.select(".IdiaP.Me.sNsFa")
-            websiteurl_sc = driver2.find_element(by=By.XPATH, value='/html/body/div[2]/div[2]/div[2]/div[2]/div/div[1]/div/div[3]/div/div/div[2]/div[1]/span/a').get_attribute('href')
+            websiteurl_sc = driver2.find_element(by=By.XPATH,
+                                                 value="//a[@class='YnKZo Ci Wc _S C AYHFM']").get_attribute('href')
             geo_sc = data2.select(".w.MD._S")
 
             # NAME
@@ -250,14 +255,13 @@ class TripAdvisorRestaurantScraper:
             print(contact)
 
             # EMAIL
-            if email_sc:
-                a = email_sc.find('a')
-                if a.is_empty_element:
-                    print('None')
-                else:
+            for em in email_sc:
+                a = em.find('a')
+                if a:
                     email.append(a['href'])
-            else:
-                email.append('-')
+                else:
+                    email.append('-')
+
             print(email)
 
             # WEBSITE
@@ -276,12 +280,14 @@ class TripAdvisorRestaurantScraper:
             else:
                 geocodes.append('-')
             print(geocodes)
+            geo_c = geocodes[0].split(',')
 
             WebDriverWait(driver2, 10)
 
             try:
 
-                WebDriverWait(driver2, 10).until(EC.element_to_be_clickable((By.XPATH, "//a[@class='OTyAN _S b']"))).click()
+                WebDriverWait(driver2, 10).until(
+                    EC.element_to_be_clickable((By.XPATH, "//a[@class='OTyAN _S b']"))).click()
             except:
                 pass
 
@@ -291,9 +297,13 @@ class TripAdvisorRestaurantScraper:
             # Use bs4 to parse data from the URL
             data2 = bs4.BeautifulSoup(url, 'lxml')
             WebDriverWait(driver2, 10)
-
-            about_sc = data2.select(".jmnaM")
-            features_sc = data2.findAll("div", {"class": "SrqKb"})
+            try:
+                about_sc = data2.select(".jmnaM")
+                features_sc = data2.findAll("div", {"class": "SrqKb"})
+                price_sc = driver2.find_element(by=By.XPATH,
+                                                value='//*[@id="BODY_BLOCK_JQUERY_REFLOW"]/div[14]/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[2]').text
+            except:
+                pass
 
             if about_sc:
                 description.append(about_sc[0].text.lstrip())
@@ -301,35 +311,101 @@ class TripAdvisorRestaurantScraper:
                 description.append('-')
             print(description)
 
+            if price_sc:
+                currency = price_sc[:3]
+                if currency == "LKR":
+
+                    price_range.append(price_sc.lstrip())
+                else:
+                    price_range.append('-')
+            else:
+                price_range.append('-')
+            print(price_range)
+            time.sleep(5)
+            driver2.find_element(By.XPATH, "//div[@class='zPIck _Q Z1 t _U c _S zXWgK']").click()
+            time.sleep(5)
+            try:
+
+                driver2.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/span/span[2]").click()
+            except:
+                pass
+            time.sleep(5)
+            # Load the url
+            url = driver2.page_source
 
 
+            # Use bs4 to parse data from the URL
+            data2 = bs4.BeautifulSoup(url, 'lxml')
+            WebDriverWait(driver2, 10)
 
+            dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridBox']")
 
+            # Scroll down
+            # driver2.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", dialog)
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
+            time.sleep(5)
+            WebDriverWait(driver2, 5)
 
+            image_sc = data2.select('fillSquare')
+            print(image_sc)
+            if image_sc:
+                for i in images:
+                    x = i['src'].lstrip()
+                    images.append(x)
+            else:
+                pass
 
+            print(images)
+            time.sleep(5)
 
+            city_id = db.select_city(city_name=row['city'])
+            print(city_id)
+            city = city_id
+            time.sleep(5)
 
+            dict = {'city_id': city[0], 'restaurant_name': name, 'restaurant_review_count': review_count,
+                    'restaurant_address': address,
+                    'restaurant_contact': contact, 'restaurant_email': email[1], 'restaurant_description': description,
+                    'restaurant_website': website,
+                    'restaurant_price_range': price_range, 'restaurant_geocode_lan': geo_c[0],
+                    'restaurant_geocode_lon': geo_c[1]}
+
+            df = pd.DataFrame(dict)
+
+            db.insert_data(df)
 
 
 obj = TripAdvisorRestaurantScraper()
 driver = obj.getdriver()
 df = pd.read_csv("../datasets/cities.csv")
 
-for index, row in df.iterrows():
+# for index, row in df.iterrows():
+#     time.sleep(5)
+#     obj.search_for_restaurants(driver=driver, city=row['name_en'])
+#     time.sleep(10)
+#     data = obj.scrape_restaurant_data(driver=driver, city=row['name_en'])
+#     time.sleep(10)
+#     if data.empty is True:
+#         print("No Data")
+#     else:
+#         time.sleep(5)
+#         obj.scraping_restaurant_information(driver, data)
+#     driver.get("https://www.tripadvisor.com")
+#     if index == 6:
+#         break
+#
+time.sleep(5)
+obj.search_for_restaurants(driver=driver, city="Kandy")
+time.sleep(10)
+data = obj.scrape_restaurant_data(driver=driver, city="Kandy")
+time.sleep(10)
+if data.empty is True:
+    print("No Data")
+else:
     time.sleep(5)
-    obj.search_for_restaurants(driver=driver, city=row['name_en'])
-    time.sleep(10)
-    data = obj.scrape_restaurant_data(driver=driver, city=row['name_en'])
-    time.sleep(10)
-    if data.empty is True:
-        print("No Data")
-    else:
-        time.sleep(5)
-        obj.scraping_restaurant_information(driver, data)
-    driver.get("https://www.tripadvisor.com")
-    if index == 6:
-        break
+    obj.scraping_restaurant_information(driver, data)
+driver.get("https://www.tripadvisor.com")
 
 # time.sleep(5)
 # obj.search_for_restaurants(driver=driver, city="Kandy")

@@ -1,4 +1,3 @@
-import json
 import bs4
 import pandas as pd
 import re
@@ -10,7 +9,7 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.firefox.options import Options
 from mysql.connector import Error
-from ..dbModel.BaseDb import BaseDB
+from scraping.sources.dbModel.BaseDb import BaseDB
 
 # PATHS
 SCRAPING_URL = "https://www.tripadvisor.com"
