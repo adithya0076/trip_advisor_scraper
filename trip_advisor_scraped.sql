@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 08, 2022 at 04:25 AM
+-- Generation Time: Aug 09, 2022 at 01:54 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -2366,6 +2366,7 @@ INSERT INTO `hotel_image` (`id`, `hotel_id`, `image`) VALUES
 DROP TABLE IF EXISTS `restaurant`;
 CREATE TABLE IF NOT EXISTS `restaurant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city_id` int(11) NOT NULL,
   `restaurant_name` varchar(1000) NOT NULL,
   `restaurant_review_count` varchar(1000) NOT NULL,
   `restaurant_address` varchar(1000) NOT NULL,
@@ -2376,8 +2377,17 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `restaurant_price_range` varchar(1000) NOT NULL,
   `restaurant_geocode_lan` varchar(1000) NOT NULL,
   `restaurant_geocode_lon` varchar(1000) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `FK_CITY_ID_RESTAURANT` (`city_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `restaurant`
+--
+
+INSERT INTO `restaurant` (`id`, `city_id`, `restaurant_name`, `restaurant_review_count`, `restaurant_address`, `restaurant_contact`, `restaurant_email`, `restaurant_description`, `restaurant_website`, `restaurant_price_range`, `restaurant_geocode_lan`, `restaurant_geocode_lon`) VALUES
+(1, 1, 'Kings', '0', '292, Pottuvil Road,, Akkaraipattu 32400 Sri Lanka', '+94 67 2 052787', 'mailto:info@kingsasiachef.com?subject=?', 'We have just change the name to create brand awareness from KINGS Asia Chef to KINGS, but the company name is Asia Chef (Pvt) Ltd. We are more than 8 years old, serving multi cuisines; specializing in Asian varieties with some western dishes. The environment is very clean with nature and trees are part of it. Its place to relax & have food and have food & relax; really, \"WHERE COOL PEOPLE MEET\". Courteous and service-minded staff always waiting to serve better. Our motto is \'TO SERVE YOU BETTER\'. We got the capacity to serve more than 300 peoples at a time with short notice. Open everyday 24X7 from 09:00 to 23:00 but serve LUNCH & DINNER, also, serve breakfast with prior request one day in advance. Located in A4 highway; on the route to Arugambay you can just drop in at least to use our facility such as restrooms. we have just launched a campaign called \'TO SERVE YOU BETTER\' to improve our service for customers.', 'http://business.facebook.com/kingsakkaraipattu', '-', '7.214608', '81.855247'),
+(2, 804, 'Vito Wood Fired Pizza', '403', 'No 56, Saranankara Road, Kandy 20000 Sri Lanka', '+94 77 454 9000', 'mailto:vitowoodfiredpizza@gmail.com?subject=?', 'Pizza is a savory dish of Italian origin, consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and various other ingredients (anchovies, olives, meat, etc.) baked at a high temperature, traditionally in a wood-fired oven. In our \" Vito Wood fired Pizza\" any one can taste these authentic Italian Pizza, baked in wood fired oven. Our specialty is we are the pioneers in kandy - Sri Lanka, among who doing this. we invite you to taste the real Italian pizza.', 'http://vitowoodfiredpizza.business.site/', 'LKR 720 - LKR 3,960', '7.287843', '80.642342');
 
 -- --------------------------------------------------------
 
@@ -2415,6 +2425,12 @@ ALTER TABLE `hotel_feature`
 --
 ALTER TABLE `hotel_image`
   ADD CONSTRAINT `FK_hotel_id` FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`id`);
+
+--
+-- Constraints for table `restaurant`
+--
+ALTER TABLE `restaurant`
+  ADD CONSTRAINT `FK_CITY_ID_RESTAURANT` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
 --
 -- Constraints for table `scraped_hotel_log`
