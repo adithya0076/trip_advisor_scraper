@@ -2,7 +2,7 @@ import bs4
 import pandas as pd
 import re
 import time
-from selenium.webdriver import Firefox
+from selenium.webdriver import Firefox, FirefoxProfile
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.service import Service
@@ -20,19 +20,20 @@ con = db.con()
 class TripAdvisorRestaurantScraper:
 
     def __init__(self):
-        self.GECKO_DRIVER_PATH = "../driver/geckodriver.exe"
+        self.GECKO_DRIVER_PATH = "../driver/geckodriver"
         self.SCRAPING_URL = "https://www.tripadvisor.com"
 
         # Creating the service object to pass the executable geckodriver path to webdriver
         self.service_obj = Service(executable_path=self.GECKO_DRIVER_PATH)
-        self.profile_path = r'C:\Users\sinxdell\AppData\Roaming\Mozilla\Firefox\Profiles\2lfh6wg7.default-release'
+        # self.profile_path = r'C:\Users\sinxdell\AppData\Roaming\Mozilla\Firefox\Profiles\2lfh6wg7.default-release'
 
         # Creating the Firefox options to add the additional options to the webdriver
         self.options = Options()
         self.options.add_argument('--disable-blink-features=AutomationControlled')
         self.options.add_argument('--ignore-certificate-errors')
         self.options.add_argument('ignore-ssl-errors')
-        self.options.set_preference('profile', self.profile_path)
+        # self.options.set_preference('profile', self.profile_path)
+        self.profile = FirefoxProfile()
 
     def getdriver(self):
         """
@@ -46,7 +47,7 @@ class TripAdvisorRestaurantScraper:
         :return driver_object:
         """
 
-        driver = Firefox(options=self.options, service=self.service_obj)
+        driver = Firefox(options=self.options, firefox_profile=self.profile, service=self.service_obj)
         driver.maximize_window()
         print('-------------------------------Webdriver is created-------------------------------')
         driver.get(self.SCRAPING_URL)
@@ -162,10 +163,6 @@ class TripAdvisorRestaurantScraper:
                     else:
                         link = 'https://www.tripadvisor.com/' + a['href'] + ''
                         urls.append(link)
-
-                break
-
-
             except Exception as e:
                 print(e)
                 break
@@ -219,10 +216,17 @@ class TripAdvisorRestaurantScraper:
                                               value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[1]/span/a").text
             contact_sc = driver2.find_element(by=By.XPATH,
                                               value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a").text
-            email_sc = data2.select(".IdiaP.Me.sNsFa")
-            websiteurl_sc = driver2.find_element(by=By.XPATH,
-                                                 value="//a[@class='YnKZo Ci Wc _S C AYHFM']").get_attribute('href')
-            geo_sc = data2.select(".w.MD._S")
+            email_sc = None
+            websiteurl_sc = None
+            geo_sc = None
+            try:
+                email_sc = data2.select(".IdiaP.Me.sNsFa")
+
+                websiteurl_sc = driver2.find_element(by=By.XPATH,
+                                                     value="//a[@class='YnKZo Ci Wc _S C AYHFM']").get_attribute('href')
+                geo_sc = data2.select(".w.MD._S")
+            except:
+                pass
 
             # NAME
             if name_sc:
@@ -305,6 +309,15 @@ class TripAdvisorRestaurantScraper:
             except:
                 pass
 
+            for i in features_sc:
+                x = i.text
+                currency = x[:3]
+                if currency == "LKR":
+                    pass
+                else:
+                    features.append(x)
+            print(features)
+
             if about_sc:
                 description.append(about_sc[0].text.lstrip())
             else:
@@ -326,41 +339,50 @@ class TripAdvisorRestaurantScraper:
             time.sleep(5)
             try:
 
-                driver2.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/span/span[2]").click()
+                driver2.find_element(By.XPATH,
+                                     "/html/body/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/span/span[2]").click()
             except:
                 pass
             time.sleep(5)
             # Load the url
             url = driver2.page_source
 
-
             # Use bs4 to parse data from the URL
             data2 = bs4.BeautifulSoup(url, 'lxml')
             WebDriverWait(driver2, 10)
-
-            dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridBox']")
-
-            # Scroll down
-            # driver2.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", dialog)
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
             time.sleep(5)
+            dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridWrapper']")
+            time.sleep(5)
+            sc = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
+            while True:
+                driver2.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", dialog)
+
+                time.sleep(2)
+                dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridWrapper']")
+                sc_2 = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
+
+                if sc_2 == sc:
+                    break
+                sc = sc_2
+
             WebDriverWait(driver2, 5)
-
-            image_sc = data2.select('fillSquare')
-            print(image_sc)
-            if image_sc:
-                for i in images:
-                    x = i['src'].lstrip()
-                    images.append(x)
-            else:
-                pass
-
+            time.sleep(5)
+            image_sc = data2.select('.fillSquare')
+            for i in image_sc:
+                img = i.find('img')
+                # if img:
+                #     images.append(img[0]['src'])
+                # else:
+                #     pass
+                if img.has_attr('src'):
+                    images.append(img['src'])
+                else:
+                    pass
             print(images)
             time.sleep(5)
 
+            # get the city id
             city_id = db.select_city(city_name=row['city'])
-            print(city_id)
             city = city_id
             time.sleep(5)
 
@@ -375,37 +397,66 @@ class TripAdvisorRestaurantScraper:
 
             db.insert_data(df)
 
+            time.sleep(5)
+
+            # get the restaurant id
+            restaurant_id = db.select_restaurant(restaurant_name=name[0])
+
+            ids = []
+
+            for i in range(len(images)):
+                ids.append(restaurant_id[0])
+
+            dict2 = {'restaurant_id': ids, 'image': images}
+
+            df_image = pd.DataFrame(dict2)
+
+            db.insert_images(df_image)
+
+            # get the features
+            ids2 = []
+
+            for i in range(len(features)):
+                ids2.append(restaurant_id[0])
+
+            dict3 = {'restaurant_id': ids2, 'feature': features}
+
+            df_feature = pd.DataFrame(dict3)
+
+            db.insert_feature(df_feature)
+
+
 
 obj = TripAdvisorRestaurantScraper()
 driver = obj.getdriver()
 df = pd.read_csv("../datasets/cities.csv")
 
-# for index, row in df.iterrows():
-#     time.sleep(5)
-#     obj.search_for_restaurants(driver=driver, city=row['name_en'])
-#     time.sleep(10)
-#     data = obj.scrape_restaurant_data(driver=driver, city=row['name_en'])
-#     time.sleep(10)
-#     if data.empty is True:
-#         print("No Data")
-#     else:
-#         time.sleep(5)
-#         obj.scraping_restaurant_information(driver, data)
-#     driver.get("https://www.tripadvisor.com")
-#     if index == 6:
-#         break
-#
-time.sleep(5)
-obj.search_for_restaurants(driver=driver, city="Kandy")
-time.sleep(10)
-data = obj.scrape_restaurant_data(driver=driver, city="Kandy")
-time.sleep(10)
-if data.empty is True:
-    print("No Data")
-else:
+for index, row in df.iterrows():
     time.sleep(5)
-    obj.scraping_restaurant_information(driver, data)
-driver.get("https://www.tripadvisor.com")
+    obj.search_for_restaurants(driver=driver, city=row['name_en'])
+    time.sleep(10)
+    data = obj.scrape_restaurant_data(driver=driver, city=row['name_en'])
+    time.sleep(10)
+    if data.empty is True:
+        print("No Data")
+    else:
+        time.sleep(5)
+        obj.scraping_restaurant_information(driver, data)
+    driver.get("https://www.tripadvisor.com")
+    if index == 6:
+        break
+#
+# time.sleep(5)
+# obj.search_for_restaurants(driver=driver, city="Kandy")
+# time.sleep(10)
+# data = obj.scrape_restaurant_data(driver=driver, city="Kandy")
+# time.sleep(10)
+# if data.empty is True:
+#     print("No Data")
+# else:
+#     time.sleep(5)
+#     obj.scraping_restaurant_information(driver, data)
+# driver.get("https://www.tripadvisor.com")
 
 # time.sleep(5)
 # obj.search_for_restaurants(driver=driver, city="Kandy")

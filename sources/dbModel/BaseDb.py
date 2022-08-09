@@ -4,6 +4,9 @@ import pandas
 
 
 class BaseDB:
+    def __init__(self):
+        self.connection = None
+
     def con(self):
 
         try:
@@ -51,8 +54,6 @@ class BaseDB:
                     row['restaurant_geocode_lan'], row['restaurant_geocode_lon']))
                 # execute update query
                 self.connection.commit()
-
-
             except Exception as error:
                 print(error)
 
@@ -72,7 +73,75 @@ class BaseDB:
             result = cursor.fetchall()
             print(result)
 
+            return result
+        except Exception as error:
+            print(error)
+
+    def select_restaurant(self, restaurant_name):
+        """
+
+        Args:
+            restaurant_name:
+
+        Returns:
+
+        """
+        query = '''SELECT `id` FROM `restaurant` WHERE `restaurant_name` = (%s)'''
+
+        try:
+            cursor = self.connection.cursor()
+            # call mysql connection and select db
+            cursor.execute(query, (restaurant_name,))
+
+            result = cursor.fetchall()
+            print(result)
 
             return result
         except Exception as error:
             print(error)
+
+    def insert_images(self, data):
+        """
+
+        Args:
+            data:
+
+        Returns:
+
+        """
+        df = data
+        query = "INSERT INTO `restaurant_image` ( `restaurant_id`, `image`) VALUES (%s, %s)"
+
+        for index, row in df.iterrows():
+            try:
+                cursor = self.connection.cursor()
+                # call mysql connection and select db
+                cursor.execute(query, (
+                    row['restaurant_id'][0], row['image']))
+                # execute update query
+                self.connection.commit()
+            except Exception as error:
+                print(error)
+
+    def insert_feature(self, data):
+        """
+
+        Args:
+            data:
+
+        Returns:
+
+        """
+        df = data
+        query = "INSERT INTO `restaurant_feature` ( `restaurant_id`, `feature_type`) VALUES (%s, %s)"
+
+        for index, row in df.iterrows():
+            try:
+                cursor = self.connection.cursor()
+                # call mysql connection and select db
+                cursor.execute(query, (
+                    row['restaurant_id'][0], row['feature']))
+                # execute update query
+                self.connection.commit()
+            except Exception as error:
+                print(error)
