@@ -8,7 +8,6 @@ class BaseDB:
         self.connection = None
 
     def con(self):
-
         try:
             connection_config_dict = {
                 'host': "localhost",

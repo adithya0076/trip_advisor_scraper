@@ -2,6 +2,7 @@ import bs4
 import pandas as pd
 import re
 import time
+import random
 from selenium.webdriver import Firefox, FirefoxProfile
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -9,6 +10,7 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as EC
+from helpers.selenium_helper import SeleniumHelper
 
 from dbModel.BaseDb import BaseDB
 
@@ -34,6 +36,7 @@ class TripAdvisorRestaurantScraper:
         self.options.add_argument('ignore-ssl-errors')
         # self.options.set_preference('profile', self.profile_path)
         self.profile = FirefoxProfile()
+        self.selenium_helper = SeleniumHelper()
 
     def getdriver(self):
         """
@@ -72,11 +75,11 @@ class TripAdvisorRestaurantScraper:
         WebDriverWait(driver, 10)
         time.sleep(10)
         # Finds the input
-        search = driver.find_element(by=By.XPATH, value="/html/body/div[3]/div/form/input[1]")
+        search = driver.find_element(by=By.XPATH, value="//div[@class='kaEuY']//input[@placeholder='Where to?']")
 
         search.send_keys(city)
         WebDriverWait(driver, 10)
-        time.sleep(5)
+        time.sleep(random.randint(5, 10))
         search.send_keys(Keys.ENTER)
         print(f"The city: '{city}' is searched")
 
@@ -133,7 +136,7 @@ class TripAdvisorRestaurantScraper:
                 try:
 
                     WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
-                        (By.XPATH, "//button[@class='BrOJk u j z _F wSSLS HuPlH Vonfv']"))).click()
+                        (By.XPATH, "//button[@aria-label='Close' and @type='button']"))).click()
                 except:
                     pass
                 # time.sleep(5)
@@ -184,6 +187,7 @@ class TripAdvisorRestaurantScraper:
         driver2 = driver
 
         for index, row in data.iterrows():
+            _dict_info = {}
             name = []
             review_count = []
             address = []
@@ -217,6 +221,8 @@ class TripAdvisorRestaurantScraper:
             contact_sc = driver2.find_element(by=By.XPATH,
                                               value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a").text
 
+            # status, contact_sc = self.selenium_helper.find_xpath_element(driver=driver2, xpath="", is_get_text=True)
+
             try:
                 features_sc = data2.findAll("div", {"class": "SrqKb"})
             except:
@@ -236,32 +242,40 @@ class TripAdvisorRestaurantScraper:
 
             # NAME
             if name_sc:
+                _dict_info['name'] = name_sc[0].text.lstrip()
                 name.append(name_sc[0].text.lstrip())
             else:
+                _dict_info['name'] = ''
                 name.append('-')
             print(name)
 
             # REVIEW COUNT
             if reviews_sc:
-                x = reviews_sc[0].text
-                x = x.split()
+                x = reviews_sc[0].text.split()
+                _dict_info['restaurant_review_count'] = reviews_sc[0].text.split()[0]
+                # x = x.split()
                 review_count.append(x[0])
             else:
                 review_count.append('-')
+                _dict_info['restaurant_review_count'] = '-'
             print(review_count)
 
             # ADDRESS
             if address_sc:
                 address.append(address_sc.lstrip())
+                _dict_info['restaurant_address'] = address_sc.lstrip()
             else:
                 address.append('-')
+                _dict_info['restaurant_address'] = '-'
             print(address)
 
             # CONTACT
             if contact_sc:
                 contact.append(contact_sc.lstrip())
+                _dict_info['restaurant_contact'] = contact_sc.lstrip()
             else:
                 contact.append('-')
+                _dict_info['restaurant_contact'] = '-'
             print(contact)
 
             # EMAIL
@@ -269,8 +283,10 @@ class TripAdvisorRestaurantScraper:
                 a = em.find('a')
                 if a:
                     email.append(a['href'])
+                    _dict_info['restaurant_email'] = email[1]
                 else:
                     email.append('-')
+                    _dict_info['restaurant_email'] = '_'
             print(email)
 
             # WEBSITE
@@ -403,6 +419,8 @@ class TripAdvisorRestaurantScraper:
                     'restaurant_geocode_lon': geo_c[1]}
 
             df = pd.DataFrame(dict)
+
+            # insert_df = pd.DataFrame([_dict_info])
 
             db.insert_data(df)
 
