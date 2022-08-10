@@ -216,6 +216,12 @@ class TripAdvisorRestaurantScraper:
                                               value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[1]/span/a").text
             contact_sc = driver2.find_element(by=By.XPATH,
                                               value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a").text
+
+            try:
+                features_sc = data2.findAll("div", {"class": "SrqKb"})
+            except:
+                pass
+
             email_sc = None
             websiteurl_sc = None
             geo_sc = None
@@ -286,6 +292,15 @@ class TripAdvisorRestaurantScraper:
             print(geocodes)
             geo_c = geocodes[0].split(',')
 
+            for i in features_sc:
+                x = i.text
+                currency = x[:3]
+                if currency == "LKR":
+                    pass
+                else:
+                    features.append(x)
+            print(features)
+
             WebDriverWait(driver2, 10)
 
             try:
@@ -303,20 +318,13 @@ class TripAdvisorRestaurantScraper:
             WebDriverWait(driver2, 10)
             try:
                 about_sc = data2.select(".jmnaM")
-                features_sc = data2.findAll("div", {"class": "SrqKb"})
+
                 price_sc = driver2.find_element(by=By.XPATH,
                                                 value='//*[@id="BODY_BLOCK_JQUERY_REFLOW"]/div[14]/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[2]').text
             except:
                 pass
 
-            for i in features_sc:
-                x = i.text
-                currency = x[:3]
-                if currency == "LKR":
-                    pass
-                else:
-                    features.append(x)
-            print(features)
+
 
             if about_sc:
                 description.append(about_sc[0].text.lstrip())
