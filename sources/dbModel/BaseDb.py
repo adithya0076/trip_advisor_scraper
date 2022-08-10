@@ -145,3 +145,18 @@ class BaseDB:
                 self.connection.commit()
             except Exception as error:
                 print(error)
+
+    def save_log(self):
+        query = "SELECT `city_id`, COUNT(*) as total FROM `restaurant` GROUP BY `city_id`"
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(query)
+            data = cursor.fetchall()
+            for i in data:
+                city_id = i[0]
+                count = i[1]
+                sql2 = "INSERT INTO `scraped_restaurants_log`( `city_id`, `no_of_restaurants_scraped`) VALUES ( %s, %s )"
+                cursor.execute(sql2, (city_id, count))
+                self.connection.commit()
+        except Exception as e:
+            print(e)

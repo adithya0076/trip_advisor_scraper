@@ -271,7 +271,6 @@ class TripAdvisorRestaurantScraper:
                     email.append(a['href'])
                 else:
                     email.append('-')
-
             print(email)
 
             # WEBSITE
@@ -288,7 +287,7 @@ class TripAdvisorRestaurantScraper:
                 print(codes)
                 geocodes.append(codes)
             else:
-                geocodes.append('-')
+                geocodes.append('-,-')
             print(geocodes)
             geo_c = geocodes[0].split(',')
 
@@ -324,8 +323,6 @@ class TripAdvisorRestaurantScraper:
             except:
                 pass
 
-
-
             if about_sc:
                 description.append(about_sc[0].text.lstrip())
             else:
@@ -357,35 +354,39 @@ class TripAdvisorRestaurantScraper:
 
             # Use bs4 to parse data from the URL
             data2 = bs4.BeautifulSoup(url, 'lxml')
-            WebDriverWait(driver2, 10)
-            time.sleep(5)
-            dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridWrapper']")
-            time.sleep(5)
-            sc = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
-            while True:
-                driver2.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", dialog)
-
-                time.sleep(2)
+            try:
+                WebDriverWait(driver2, 10)
+                time.sleep(5)
                 dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridWrapper']")
-                sc_2 = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
+                time.sleep(5)
+                sc = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
+                while True:
+                    driver2.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", dialog)
 
-                if sc_2 == sc:
-                    break
-                sc = sc_2
+                    time.sleep(2)
+                    dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridWrapper']")
+                    sc_2 = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
 
-            WebDriverWait(driver2, 5)
-            time.sleep(5)
-            image_sc = data2.select('.fillSquare')
-            for i in image_sc:
-                img = i.find('img')
-                # if img:
-                #     images.append(img[0]['src'])
-                # else:
-                #     pass
-                if img.has_attr('src'):
-                    images.append(img['src'])
-                else:
-                    pass
+                    if sc_2 == sc:
+                        break
+                    sc = sc_2
+
+                WebDriverWait(driver2, 5)
+                time.sleep(5)
+                image_sc = data2.select('.fillSquare')
+                for i in image_sc:
+                    img = i.find('img')
+                    # if img:
+                    #     images.append(img[0]['src'])
+                    # else:
+                    #     pass
+                    if img.has_attr('src'):
+                        images.append(img['src'])
+                    else:
+                        pass
+            except:
+                pass
+
             print(images)
             time.sleep(5)
 
@@ -412,14 +413,17 @@ class TripAdvisorRestaurantScraper:
 
             ids = []
 
-            for i in range(len(images)):
-                ids.append(restaurant_id[0])
+            if images:
+                for i in range(len(images)):
+                    ids.append(restaurant_id[0])
 
-            dict2 = {'restaurant_id': ids, 'image': images}
+                dict2 = {'restaurant_id': ids, 'image': images}
 
-            df_image = pd.DataFrame(dict2)
+                df_image = pd.DataFrame(dict2)
 
-            db.insert_images(df_image)
+                db.insert_images(df_image)
+            else:
+                pass
 
             # get the features
             ids2 = []
@@ -432,7 +436,6 @@ class TripAdvisorRestaurantScraper:
             df_feature = pd.DataFrame(dict3)
 
             db.insert_feature(df_feature)
-
 
 
 obj = TripAdvisorRestaurantScraper()
@@ -453,6 +456,8 @@ for index, row in df.iterrows():
     driver.get("https://www.tripadvisor.com")
     if index == 6:
         break
+
+db.save_log()
 #
 # time.sleep(5)
 # obj.search_for_restaurants(driver=driver, city="Kandy")
