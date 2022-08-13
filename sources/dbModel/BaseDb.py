@@ -1,6 +1,9 @@
 import mysql.connector
 from mysql.connector import Error
-import pandas
+import os
+from dotenv import load_dotenv
+
+load_dotenv('.env')
 
 
 class BaseDB:
@@ -10,10 +13,10 @@ class BaseDB:
     def con(self):
         try:
             connection_config_dict = {
-                'host': "localhost",
-                'user': "root",
-                'password': "",
-                'database': "trip_advisor_scraped",
+                'host': os.environ.get("DB_HOST"),
+                'user': os.environ.get("DB_USERNAME"),
+                'password': os.environ.get("DB_PASSWORD"),
+                'database': os.environ.get("DB_NAME"),
             }
             self.connection = mysql.connector.connect(**connection_config_dict)
 
