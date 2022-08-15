@@ -114,7 +114,8 @@ class BaseDBModel:
 
     def insert_restaurant_data(self, table_name, data, content):
         record_row = None
-        read = data[content]
+        data = data.to_dict()
+        read = data[content][0]
         for i in read:
             insert_data = {}
             insert_data['restaurant_id'] = int(data['restaurant_id'][0])
