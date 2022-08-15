@@ -10,8 +10,8 @@ import time
 
 class SeleniumHelper:
     def __init__(self):
-        # self.GECKO_DRIVER_PATH = "../driver/geckodriver"
-        self.GECKO_DRIVER_PATH = "E:\codes\Django\scraping\helpers\geckodriver.exe"
+        self.GECKO_DRIVER_PATH = "./driver/geckodriver"
+        # self.GECKO_DRIVER_PATH = "E:\codes\Django\scraping\helpers\geckodriver.exe"
 
         self.SCRAPING_URL = "https://www.tripadvisor.com"
 

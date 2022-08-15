@@ -1,13 +1,14 @@
 from sources.trip_advisor_restaurants_scraper import TripAdvisorRestaurantScraper
 from helpers.selenium_helper import SeleniumHelper
-from sources.dbModel.BaseDb import BaseDB
+from sources.dbModel.BaseDBModel import BaseDBModel
 import pandas as pd
 import time
 
 obj1 = SeleniumHelper()
 driver = obj1.getdriver()
-db = BaseDB()
-obj = TripAdvisorRestaurantScraper(obj1,db)
+db = BaseDBModel()
+
+obj = TripAdvisorRestaurantScraper(obj1, db)
 
 df = pd.read_csv("datasets/cities.csv")
 
@@ -25,7 +26,6 @@ for index, row in df.iterrows():
     driver.get("https://www.tripadvisor.com")
     if index == 6:
         break
-    db.save_log()
-
+    # db.save_log()
 
 driver.quit()

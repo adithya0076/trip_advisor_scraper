@@ -7,9 +7,6 @@ load_dotenv('.env')
 
 
 class BaseDB:
-    def __init__(self):
-        self.connection = None
-
     def con(self):
         try:
             connection_config_dict = {
@@ -33,7 +30,7 @@ class BaseDB:
 
         return self.connection
 
-    def insert_data(self, data):
+    def insert_data_table(self, data):
         """
 
         :param table_name:
@@ -42,20 +39,34 @@ class BaseDB:
         """
         df = data
 
-        query = '''INSERT INTO `restaurant`( `city_id`, `restaurant_name`, `restaurant_review_count`, `restaurant_address`, `restaurant_contact`, `restaurant_email`, `restaurant_description`,
-                `restaurant_website`, `restaurant_price_range`, `restaurant_geocode_lan`, `restaurant_geocode_lon`) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s )'''
+        query = '''INSERT INTO `restaurant`( `city_id`, `restaurant_name`, `restaurant_review_count`, 
+        `restaurant_address`, `restaurant_contact`, `restaurant_email`, `restaurant_description`, 
+        `restaurant_website`, `restaurant_price_range`, `restaurant_geocode_lan`, `restaurant_geocode_lon`) VALUES (
+        %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s ) '''
         for index, row in df.iterrows():
             try:
                 cursor = self.connection.cursor()
-                # call mysql connection and select db
-                cursor.execute(query, (
-                    row['city_id'], row['restaurant_name'], row['restaurant_review_count'], row['restaurant_address'],
-                    row['restaurant_contact'],
-                    row['restaurant_email'], row['restaurant_description'], row['restaurant_website'],
-                    row['restaurant_price_range'],
-                    row['restaurant_geocode_lan'], row['restaurant_geocode_lon']))
-                # execute update query
-                self.connection.commit()
+                sql = '''SELECT EXISTS(SELECT * FROM restaurant where restaurant_name=%s and 
+                restaurant_geocode_lan=%s and restaurant_geocode_lon=%s) '''
+                cursor.execute(sql,
+                               (row['restaurant_name'], row['restaurant_geocode_lan'], row['restaurant_geocode_lon']))
+                result = cursor.fetchall()
+                print(result)
+                if result[0] == 1:
+                    print('Available')
+                else:
+                    # call mysql connection and select db
+                    cursor.execute(query, (
+                        row['city_id'], row['restaurant_name'], row['restaurant_review_count'],
+                        row['restaurant_address'],
+                        row['restaurant_contact'],
+                        row['restaurant_email'], row['restaurant_description'], row['restaurant_website'],
+                        row['restaurant_price_range'],
+                        row['restaurant_geocode_lan'], row['restaurant_geocode_lon']))
+                    # execute update query
+                    self.connection.commit()
+                    print("Data Inserted")
+
             except Exception as error:
                 print(error)
 

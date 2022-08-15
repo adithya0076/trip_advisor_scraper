@@ -58,11 +58,11 @@ class TripAdvisorRestaurantScraper:
         """
 
         # Gets the current URL
-        url = driver.page_source
+        source = driver.page_source
         print(f"URL is loaded")
 
         # Use bs4 to parse data from the URL
-        data = bs4.BeautifulSoup(url, 'lxml')
+        data = bs4.BeautifulSoup(source, 'lxml')
 
         # Selects the elements
         restaurants = data.select(".RfBGI")
@@ -98,20 +98,16 @@ class TripAdvisorRestaurantScraper:
                         (By.XPATH, "//button[@aria-label='Close' and @type='button']"))).click()
                 except:
                     pass
-                # self.selenium_helper.sleep(5)
-                # element = WebDriverWait(driver, 10).until(
-                #     EC.element_to_be_clickable((By.XPATH, "//a[@class='ui_button next primary']")))
-
                 driver.find_element(by=By.XPATH, value="//a[@class='nav next rndBtn ui_button primary taLnk']").click()
                 # element.click()
                 self.selenium_helper.sleep(10)
 
                 # Gets the current URL
-                url = driver.page_source
+                source = driver.page_source
                 print(f"URL is loaded")
 
                 # Use bs4 to parse data from the URL
-                data = bs4.BeautifulSoup(url, 'lxml')
+                data = bs4.BeautifulSoup(source, 'lxml')
 
                 # Selects the elements
                 restaurants = data.select(".RfBGI")
@@ -155,21 +151,22 @@ class TripAdvisorRestaurantScraper:
             self.selenium_helper.sleep(10)
 
             # Load the url
-            url = driver2.page_source
+            source = driver2.page_source
 
             # Use bs4 to parse data from the URL
-            data2 = bs4.BeautifulSoup(url, 'lxml')
+            data2 = bs4.BeautifulSoup(source, 'lxml')
             WebDriverWait(driver2, 10)
 
             # Elements which are selected
             name_sc = data2.select(".HjBfq")
             reviews_sc = data2.select(".AfQtZ")
-            address_sc = driver2.find_element(by=By.XPATH,
-                                              value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[1]/span/a").text
-            # contact_sc = driver2.find_element(by=By.XPATH,
-            #                                   value="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a").text
+            status, address_sc = self.selenium_helper.find_xpath_element(driver=driver2,
+                                                                         xpath="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[1]/span/a",
+                                                                         is_get_text=True)
 
-            status, contact_sc = self.selenium_helper.find_xpath_element(driver=driver2, xpath="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a", is_get_text=True)
+            status, contact_sc = self.selenium_helper.find_xpath_element(driver=driver2,
+                                                                         xpath="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a",
+                                                                         is_get_text=True)
 
             try:
                 features_sc = data2.findAll("div", {"class": "SrqKb"})
@@ -189,8 +186,9 @@ class TripAdvisorRestaurantScraper:
                 pass
 
             # get the city id
-            city_id = self.db.select_city(city_name=row['city'])
-            _dict_info['city_id'] = city_id[0]
+            condition = "city_name = '%s'" % row['city']
+            city_id = self.db.select_record(table_name='city', condition=condition)
+            _dict_info['city_id'] = city_id['id']
             self.selenium_helper.sleep(5)
 
             # NAME
@@ -221,7 +219,7 @@ class TripAdvisorRestaurantScraper:
                 _dict_info['restaurant_contact'] = contact_sc.lstrip()
             else:
                 _dict_info['restaurant_contact'] = '-'
-
+            print(contact_sc.lstrip())
             # EMAIL
             for em in email_sc:
                 a = em.find('a')
@@ -267,16 +265,19 @@ class TripAdvisorRestaurantScraper:
                 pass
 
             # Load the url
-            url = driver2.page_source
+            source = driver2.page_source
 
             # Use bs4 to parse data from the URL
-            data2 = bs4.BeautifulSoup(url, 'lxml')
+            data2 = bs4.BeautifulSoup(source, 'lxml')
             WebDriverWait(driver2, 10)
             try:
                 about_sc = data2.select(".jmnaM")
 
-                price_sc = driver2.find_element(by=By.XPATH,
-                                                value='//*[@id="BODY_BLOCK_JQUERY_REFLOW"]/div[14]/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[2]').text
+                status, price_sc = self.selenium_helper.find_xpath_element(
+                    driver=driver2,
+                    xpath='//*[@id="BODY_BLOCK_JQUERY_REFLOW"]/div[14]/div/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[2]',
+                    is_get_text=True
+                )
             except:
                 pass
 
@@ -294,6 +295,7 @@ class TripAdvisorRestaurantScraper:
             else:
                 _dict_info['restaurant_price_range'] = '-'
 
+            # getting the images
             self.selenium_helper.sleep(5)
             driver2.find_element(By.XPATH, "//div[@class='zPIck _Q Z1 t _U c _S zXWgK']").click()
             self.selenium_helper.sleep(5)
@@ -305,10 +307,10 @@ class TripAdvisorRestaurantScraper:
                 pass
             self.selenium_helper.sleep(5)
             # Load the url
-            url = driver2.page_source
+            source = driver2.page_source
 
             # Use bs4 to parse data from the URL
-            data2 = bs4.BeautifulSoup(url, 'lxml')
+            data2 = bs4.BeautifulSoup(source, 'lxml')
             try:
                 WebDriverWait(driver2, 10)
                 self.selenium_helper.sleep(5)
@@ -331,10 +333,6 @@ class TripAdvisorRestaurantScraper:
                 image_sc = data2.select('.fillSquare')
                 for i in image_sc:
                     img = i.find('img')
-                    # if img:
-                    #     images.append(img[0]['src'])
-                    # else:
-                    #     pass
                     if img.has_attr('src'):
                         images.append(img['src'])
                     else:
@@ -343,43 +341,25 @@ class TripAdvisorRestaurantScraper:
                 pass
 
             print(images)
+
+            _dict_info['url'] = row['url']
+
+            if images:
+                _dict_info['image'] = images
+            else:
+                pass
+
+            if features:
+                _dict_info['feature_type'] = features
+            else:
+                pass
+
             self.selenium_helper.sleep(5)
 
             print(_dict_info)
 
-            df = pd.DataFrame(_dict_info)
-
-            # insert_df = pd.DataFrame([_dict_info])
-
-            self.db.insert_data(df)
+            df = pd.DataFrame([_dict_info])
+            # save to db
+            self.db.base_job_handler(df)
 
             self.selenium_helper.sleep(5)
-
-            # get the restaurant id
-            restaurant_id = self.db.select_restaurant(restaurant_name=_dict_info['name'])
-
-            ids = []
-
-            if images:
-                for i in range(len(images)):
-                    ids.append(restaurant_id[0])
-
-                dict2 = {'restaurant_id': ids, 'image': images}
-
-                df_image = pd.DataFrame(dict2)
-
-                self.db.insert_images(df_image)
-            else:
-                pass
-
-            # get the features
-            ids2 = []
-
-            for i in range(len(features)):
-                ids2.append(restaurant_id[0])
-
-            dict3 = {'restaurant_id': ids2, 'feature': features}
-
-            df_feature = pd.DataFrame(dict3)
-
-            self.db.insert_feature(df_feature)
