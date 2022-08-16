@@ -1,7 +1,6 @@
 import bs4
 import pandas as pd
 import re
-import time
 import random
 
 from selenium.webdriver.common.by import By
@@ -13,7 +12,6 @@ from selenium.webdriver.support import expected_conditions as EC
 class TripAdvisorRestaurantScraper:
 
     def __init__(self, obj, db):
-        self.SCRAPING_URL = "https://www.tripadvisor.com"
         self.selenium_helper = obj
         self.db = db
 

@@ -1,3 +1,5 @@
+import traceback
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
@@ -55,6 +57,12 @@ class SeleniumHelper:
                 return True, driver.find_element(by=By.XPATH, value=xpath)
         except:
             return False, None
+
+    def driver_execute(self, driver, program):
+        try:
+            driver.execute(program)
+        except:
+            traceback.print_exc()
 
     def sleep(self, val):
         time.sleep(val)
