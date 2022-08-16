@@ -39,14 +39,20 @@ class BaseDBModel:
         today = strftime("%Y-%m-%d", gmtime())
         # CHECK JOB_TITLE IS AVAILABLE IN THE DATABASE OR NOT
         try:
-            condition = "restaurant_name LIKE '%%%s%%' and restaurant_geocode_lan='%s' and restaurant_geocode_lon='%s' " % (
-                data['name'], data['restaurant_geocode_lan'], data['restaurant_geocode_lon'])
+            condition = 'restaurant_name="%s" and restaurant_geocode_lan = "%s" and restaurant_geocode_lon = "%s" ' % (
+                data['name'][0], data['restaurant_geocode_lan'][0], data['restaurant_geocode_lon'][0] )
             response = self.select_record("restaurant", condition)
             if response is None:
                 response = self.insert_restaurant_title_data("restaurant", data)
                 data["restaurant_id"] = response["id"]
-                images = self.insert_restaurant_data("restaurant_image", data, 'image')
-                feature = self.insert_restaurant_data("restaurant_feature", data, 'feature_type')
+                try:
+                    images = self.insert_restaurant_data("restaurant_image", data, 'image')
+                except:
+                    traceback.print_exc()
+                try:
+                    feature = self.insert_restaurant_data("restaurant_feature", data, 'feature_type')
+                except:
+                    traceback.print_exc()
             else:
                 # data["job_title_id"] = response["id"] if isinstance(response["id"], int) else 0
                 print("Data exist in table")

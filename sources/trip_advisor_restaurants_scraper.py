@@ -30,12 +30,16 @@ class TripAdvisorRestaurantScraper:
         """
 
         # Finds the Restaurant's page button
-        driver.find_element(by=By.XPATH, value="//a[@href='/Restaurants']").click()
+        status, restaurant = self.selenium_helper.find_xpath_element(driver=driver, xpath="//a[@href='/Restaurants']", is_get_text=False)
+        restaurant.click()
         WebDriverWait(driver, 10)
         self.selenium_helper.sleep(10)
         # Finds the input
-        search = driver.find_element(by=By.XPATH, value="//div[@class='kaEuY']//input[@placeholder='Where to?']")
-
+        status, search = self.selenium_helper.find_xpath_element(
+            driver=driver,
+            xpath="//div[@class='kaEuY']//input[@placeholder='Where to?']",
+            is_get_text=False
+        )
         search.send_keys(city)
         WebDriverWait(driver, 10)
         self.selenium_helper.sleep(random.randint(5, 10))
@@ -80,7 +84,7 @@ class TripAdvisorRestaurantScraper:
 
         # Checking whether next button is available
         wait = WebDriverWait(driver, 10)
-        self.selenium_helper.sleep(15)
+        self.selenium_helper.sleep(random.randint(5, 10))
 
         a = 1
         while a:
@@ -89,7 +93,7 @@ class TripAdvisorRestaurantScraper:
                 # element = wait.until(EC.element_to_be_clickable(
                 #     (By.XPATH, "//a[@class='ui_button next primary']")))
                 # print("clickable")
-                self.selenium_helper.sleep(10)
+                self.selenium_helper.sleep(random.randint(5, 10))
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 # self.selenium_helper.sleep(6)
                 try:
@@ -98,9 +102,12 @@ class TripAdvisorRestaurantScraper:
                         (By.XPATH, "//button[@aria-label='Close' and @type='button']"))).click()
                 except:
                     pass
-                driver.find_element(by=By.XPATH, value="//a[@class='nav next rndBtn ui_button primary taLnk']").click()
+                status, btnNext = self.selenium_helper.find_xpath_element(
+                    driver=driver, xpath="//a[@class='nav next rndBtn ui_button primary taLnk']", is_get_text=False
+                )
+                btnNext.click()
                 # element.click()
-                self.selenium_helper.sleep(10)
+                self.selenium_helper.sleep(random.randint(5, 10))
 
                 # Gets the current URL
                 source = driver.page_source
@@ -112,7 +119,7 @@ class TripAdvisorRestaurantScraper:
                 # Selects the elements
                 restaurants = data.select(".RfBGI")
 
-                self.selenium_helper.sleep(5)
+                self.selenium_helper.sleep(random.randint(5, 10))
 
                 for i in restaurants:
                     a = i.find('a')
@@ -178,9 +185,10 @@ class TripAdvisorRestaurantScraper:
             geo_sc = None
             try:
                 email_sc = data2.select(".IdiaP.Me.sNsFa")
-
-                websiteurl_sc = driver2.find_element(by=By.XPATH,
-                                                     value="//a[@class='YnKZo Ci Wc _S C AYHFM']").get_attribute('href')
+                status, web = self.selenium_helper.find_xpath_element(
+                    driver=driver2, xpath="//a[@class='YnKZo Ci Wc _S C AYHFM']", is_get_text=False
+                )
+                websiteurl_sc = web.get_attribute('href')
                 geo_sc = data2.select(".w.MD._S")
             except:
                 pass
@@ -189,7 +197,7 @@ class TripAdvisorRestaurantScraper:
             condition = "city_name = '%s'" % row['city']
             city_id = self.db.select_record(table_name='city', condition=condition)
             _dict_info['city_id'] = city_id['id']
-            self.selenium_helper.sleep(5)
+            self.selenium_helper.sleep(random.randint(5, 10))
 
             # NAME
             if name_sc:
@@ -258,7 +266,6 @@ class TripAdvisorRestaurantScraper:
             WebDriverWait(driver2, 10)
 
             try:
-
                 WebDriverWait(driver2, 10).until(
                     EC.element_to_be_clickable((By.XPATH, "//a[@class='OTyAN _S b']"))).click()
             except:
@@ -296,13 +303,19 @@ class TripAdvisorRestaurantScraper:
                 _dict_info['restaurant_price_range'] = '-'
 
             # getting the images
-            self.selenium_helper.sleep(5)
-            driver2.find_element(By.XPATH, "//div[@class='zPIck _Q Z1 t _U c _S zXWgK']").click()
+            self.selenium_helper.sleep(random.randint(5, 10))
+            status, img = self.selenium_helper.find_xpath_element(
+                driver=driver2, xpath="//div[@class='zPIck _Q Z1 t _U c _S zXWgK']", is_get_text=False
+            )
+            img.click()
             self.selenium_helper.sleep(5)
             try:
-
-                driver2.find_element(By.XPATH,
-                                     "/html/body/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/span/span[2]").click()
+                status, btnImg = self.selenium_helper.find_xpath_element(
+                    driver=driver2,
+                    xpath="/html/body/div[2]/div[2]/div[1]/div/div/div[1]/div[1]/div[2]/div[2]/div[2]/span/span[2]",
+                    is_get_text=False
+                )
+                btnImg.click()
             except:
                 pass
             self.selenium_helper.sleep(5)
@@ -314,14 +327,18 @@ class TripAdvisorRestaurantScraper:
             try:
                 WebDriverWait(driver2, 10)
                 self.selenium_helper.sleep(5)
-                dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridWrapper']")
+                status, dialog = self.selenium_helper.find_xpath_element(
+                    driver=driver2, xpath="//div[@class='photoGridWrapper']", is_get_text=False
+                )
                 self.selenium_helper.sleep(5)
                 sc = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
                 while True:
                     driver2.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", dialog)
 
                     self.selenium_helper.sleep(2)
-                    dialog = driver2.find_element(by=By.XPATH, value="//div[@class='photoGridWrapper']")
+                    status, dialog = self.selenium_helper.find_xpath_element(
+                        driver=driver2, xpath="//div[@class='photoGridWrapper']", is_get_text=False
+                    )
                     sc_2 = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
 
                     if sc_2 == sc:
@@ -354,7 +371,7 @@ class TripAdvisorRestaurantScraper:
             else:
                 pass
 
-            self.selenium_helper.sleep(5)
+            self.selenium_helper.sleep(random.randint(5, 10))
 
             print(_dict_info)
 
@@ -362,4 +379,4 @@ class TripAdvisorRestaurantScraper:
             # save to db
             self.db.base_job_handler(df)
 
-            self.selenium_helper.sleep(5)
+            self.selenium_helper.sleep(random.randint(5, 10))
