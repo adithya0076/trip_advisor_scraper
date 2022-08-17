@@ -81,7 +81,8 @@ class TripAdvisorAttractionsScraper:
         )
 
         try:
-            see_all.click()
+            web = see_all.get_attribute('href')
+            driver.get(web)
         except:
             print("No see all")
 
@@ -89,7 +90,6 @@ class TripAdvisorAttractionsScraper:
 
         # Gets the current source page
         source = driver.page_source
-        print(f"SOURCE is loaded")
 
         # Use bs4 to parse data from the source
         data = bs4.BeautifulSoup(source, 'lxml')
@@ -114,14 +114,16 @@ class TripAdvisorAttractionsScraper:
         wait = WebDriverWait(driver, 10)
         self.selenium_helper.sleep(random.randint(5, 10))
 
+        # This code while loop below loops through any pagination available
         a = 1
         while a:
             try:
-                self.selenium_helper.sleep(random.randint(5, 10))
                 # scroll
                 self.selenium_helper.driver_execute(
                     driver=driver, program="window.scrollTo(0, document.body.scrollHeight);"
                 )
+
+                self.selenium_helper.sleep(random.randint(5, 10))
 
                 status, btnNext = self.selenium_helper.find_xpath_element(
                     driver=driver,
@@ -135,15 +137,14 @@ class TripAdvisorAttractionsScraper:
 
                 # Gets the current SOURCE
                 source = driver.page_source
-                print(f"URL is loaded")
 
                 # Use bs4 to parse data from the URL
                 data = bs4.BeautifulSoup(source, 'lxml')
 
+                self.selenium_helper.sleep(random.randint(5, 10))
+
                 # Selects the elements
                 attractions = data.select(".VLKGO")
-
-                self.selenium_helper.sleep(random.randint(5, 10))
 
                 for i in attractions:
                     a = i.find('a')
@@ -152,7 +153,195 @@ class TripAdvisorAttractionsScraper:
                     else:
                         link = 'https://www.tripadvisor.com/' + a['href'] + ''
                         urls.append(link)
-            except Exception as e:
-                print(e)
+            except:
+                traceback.print_exc()
                 break
-        print(urls)
+
+        dict2 = {'city': city, 'url': urls, }
+        fd = pd.DataFrame(dict2)
+        print('Dataset for URLs', fd)
+
+        return fd
+
+    def scraping_attraction_information(self, driver, data):
+        """
+        Scrape the Details about each attraction from iterating through the links
+
+        :param driver:
+        :param data:
+        :return:
+        """
+
+        for index, row in data.iterrows():
+            _dict_info = {}
+            geocodes = []
+            images = []
+
+            driver.get(row['url'])
+            self.selenium_helper.sleep(random.randint(5, 10))
+
+            # Load the url
+            source = driver.page_source
+
+            # Use bs4 to parse data from the URL
+            data2 = bs4.BeautifulSoup(source, 'lxml')
+            WebDriverWait(driver, 10)
+
+            # Elements which are selected
+            name_sc = data2.select('.biGQs._P.fiohW.eIegw')
+            status, review_sc = self.selenium_helper.find_xpath_element(
+                driver=driver, xpath="//span[@class='biGQs _P pZUbB SZRPS KxBGd']//span[@class='yyzcQ']",
+                is_get_text=True
+            )
+            status, address_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//button[@class='UikNM _G B- _S _T c G_ P0 wSSLS wnNQG raEkE']//span",
+                is_get_text=True
+            )
+            status, email_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//div[@class='WoBiw']//a[starts-with(@href,'mailto')]",
+                is_get_text=False
+            )
+            status, contact_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//div[@class='WoBiw']//a[starts-with(@href,'tel')]",
+                is_get_text=False
+            )
+            status, website_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//div[@class='WoBiw']//a[starts-with(@href,'http')]",
+                is_get_text=False
+            )
+            status, description_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//div[@class='IxAZL']//div[@class='biGQs _P pZUbB KxBGd']",
+                is_get_text=True
+            )
+            status, geocodes_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//img[@class='oPZZx']",
+                is_get_text=False
+            )
+            status, feature_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//div[@class='biGQs _P pZUbB KxBGd']//div[@class='fIrGe _T bgMZj']",
+                is_get_text=True
+            )
+
+            # get the city id
+            condition = "city_name = '%s'" % row['city']
+            city_id = self.db.select_record(table_name='city', condition=condition)
+            _dict_info['city_id'] = city_id['id']
+            self.selenium_helper.sleep(random.randint(5, 10))
+
+            # NAME
+            if name_sc:
+                try:
+                    name = re.search(r'(\d+[.] )', name_sc[0].text.lstrip()).group(1)
+                    _dict_info['name'] = name_sc[0].text.lstrip().replace(name, '').lstrip()
+                except:
+                    _dict_info['name'] = name_sc[0].text.lstrip()
+            else:
+                _dict_info['name'] = '-'
+
+            # REVIEW COUNT
+            if review_sc:
+                _dict_info['attraction_review_count'] = review_sc.lstrip()
+            else:
+                _dict_info['attraction_review_count'] = '-'
+
+            # ADDRESS
+            if address_sc:
+                _dict_info['attraction_address'] = address_sc.lstrip()
+            else:
+                _dict_info['attraction_address'] = '-'
+
+            # CONTACT
+            if contact_sc:
+                href = contact_sc.get_attribute('href').lstrip().split('%')
+                href.pop(0)
+                contact = '+'
+                for i in href:
+                    contact = str(contact) + str(i[2:])
+                    print(i)
+                _dict_info['attraction_contact'] = contact
+            else:
+                _dict_info['attraction_contact'] = '-'
+            print(contact_sc.lstrip())
+
+            # EMAIL
+            if email_sc:
+                _dict_info['attraction_email'] = email_sc.get_attribute('href').lstrip()
+            else:
+                _dict_info['attraction_email'] = '_'
+
+            # WEBSITE
+            if website_sc:
+                _dict_info['attraction_website'] = website_sc.get_attribute('href').lstrip()
+            else:
+                _dict_info['attraction_website'] = '-'
+
+            # GEOCODES
+            if geocodes_sc:
+                geo = geocodes_sc.get_attribute('src').lstrip()
+                codes = re.search(r'center=(.*?)&', geo).group(1)
+                geocodes.append(codes)
+            else:
+                geocodes.append('-,-')
+            geo_c = geocodes[0].split(',')
+            _dict_info['attraction_geocode_lan'] = geo_c[0]
+            _dict_info['attraction_geocode_lon'] = geo_c[1]
+
+            # DESCRIPTION
+            if description_sc:
+                _dict_info['attraction_description'] = description_sc.lstrip()
+            else:
+                _dict_info['attraction_description'] = '-'
+
+            if feature_sc:
+                _dict_info['attraction_type'] = feature_sc.lstrip()
+            else:
+                pass
+
+            self.selenium_helper.sleep(random.randint(5, 10))
+
+            # images
+            status, img = self.selenium_helper.find_xpath_element(
+                driver=driver, xpath="//button[@class='BrOJk u j z _F wSSLS HuPlH IyzRb']", is_get_text=False
+            )
+            try:
+                img.click()
+            except:
+                pass
+            self.selenium_helper.sleep(random.randint(5, 10))
+            # Load the url
+            source = driver.page_source
+
+            # Use bs4 to parse data from the URL
+            data2 = bs4.BeautifulSoup(source, 'lxml')
+
+            WebDriverWait(driver, 10)
+            for items in data2.select(".cfCAA.w._Z.GA"):
+                image = items['style'].split("url(")[1].split(")")[0]
+                images.append(image)
+
+            print('images', images)
+
+            _dict_info['url'] = row['url']
+
+            if images:
+                _dict_info['image'] = images
+            else:
+                pass
+
+            self.selenium_helper.sleep(random.randint(5, 10))
+
+            print(_dict_info)
+
+            df = pd.DataFrame([_dict_info])
+            # save to db
+            self.db.base_job_handler(df)
+
+            self.selenium_helper.sleep(random.randint(5, 10))
+

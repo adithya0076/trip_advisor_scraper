@@ -60,7 +60,7 @@ class SeleniumHelper:
 
     def driver_execute(self, driver, program):
         try:
-            driver.execute(program)
+            driver.execute_script(program)
         except:
             traceback.print_exc()
 

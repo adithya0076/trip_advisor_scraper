@@ -30,11 +30,15 @@ df = pd.read_csv("datasets/cities.csv")
 #     # db.save_log()
 
 attraction = TripAdvisorAttractionsScraper(obj1, db)
-for index, row in df.iterrows():
-    time.sleep(5)
-    attraction.search_for_attractions(driver=driver, city=row['name_en'])
-    time.sleep(10)
-    data = attraction.scrape_attraction_data(driver=driver, city=row['name_en'])
-    driver.get("https://www.tripadvisor.com")
-
+# for index, row in df.iterrows():
+#     time.sleep(5)
+#     attraction.search_for_attractions(driver=driver, city=row['name_en'])
+#     time.sleep(10)
+#     data = attraction.scrape_attraction_data(driver=driver, city=row['name_en'])
+#     driver.get("https://www.tripadvisor.com")
+time.sleep(5)
+attraction.search_for_attractions(driver=driver, city="Colombo")
+time.sleep(10)
+data = attraction.scrape_attraction_data(driver=driver, city="Colombo")
+driver.get("https://www.tripadvisor.com")
 driver.quit()
