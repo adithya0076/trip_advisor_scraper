@@ -176,6 +176,7 @@ class TripAdvisorAttractionsScraper:
             _dict_info = {}
             geocodes = []
             images = []
+            feature_type = []
 
             driver.get(row['url'])
             self.selenium_helper.sleep(random.randint(5, 10))
@@ -190,7 +191,7 @@ class TripAdvisorAttractionsScraper:
             # Elements which are selected
             name_sc = data2.select('.biGQs._P.fiohW.eIegw')
             status, review_sc = self.selenium_helper.find_xpath_element(
-                driver=driver, xpath="//span[@class='biGQs _P pZUbB SZRPS KxBGd']//span[@class='yyzcQ']",
+                driver=driver, xpath="//span[@class='biGQs _P pZUbB biKBZ KxBGd']//span",
                 is_get_text=True
             )
             status, address_sc = self.selenium_helper.find_xpath_element(
@@ -264,17 +265,15 @@ class TripAdvisorAttractionsScraper:
                 contact = '+'
                 for i in href:
                     contact = str(contact) + str(i[2:])
-                    print(i)
                 _dict_info['attraction_contact'] = contact
             else:
                 _dict_info['attraction_contact'] = '-'
-            print(contact_sc.lstrip())
 
             # EMAIL
             if email_sc:
                 _dict_info['attraction_email'] = email_sc.get_attribute('href').lstrip()
             else:
-                _dict_info['attraction_email'] = '_'
+                _dict_info['attraction_email'] = '-'
 
             # WEBSITE
             if website_sc:
@@ -293,6 +292,7 @@ class TripAdvisorAttractionsScraper:
             _dict_info['attraction_geocode_lan'] = geo_c[0]
             _dict_info['attraction_geocode_lon'] = geo_c[1]
 
+
             # DESCRIPTION
             if description_sc:
                 _dict_info['attraction_description'] = description_sc.lstrip()
@@ -300,7 +300,10 @@ class TripAdvisorAttractionsScraper:
                 _dict_info['attraction_description'] = '-'
 
             if feature_sc:
-                _dict_info['attraction_type'] = feature_sc.lstrip()
+                feature = feature_sc.split(' • ')
+                for i in feature:
+                    feature_type.append(i)
+                _dict_info['attraction_type'] = feature_type
             else:
                 pass
 

@@ -37,25 +37,73 @@ class BaseDBModel:
         print('----------------', data.to_dict())
         current_time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
         today = strftime("%Y-%m-%d", gmtime())
-        # CHECK JOB_TITLE IS AVAILABLE IN THE DATABASE OR NOT
+        # CHECK RESTAURANT IS AVAILABLE IN THE DATABASE OR NOT
         try:
-            condition = 'restaurant_name="%s" and restaurant_geocode_lan = "%s" and restaurant_geocode_lon = "%s" ' % (
-                data['name'][0], data['restaurant_geocode_lan'][0], data['restaurant_geocode_lon'][0] )
+            condition = 'restaurant_name LIKE "%s" and restaurant_geocode_lan LIKE "%s" and restaurant_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + '{:.4f}'.format(data['restaurant_geocode_lan'][0]) + "%",
+                    "%" + '{:.4f}'.format(data['restaurant_geocode_lon'][0]) + "%")
             response = self.select_record("restaurant", condition)
             if response is None:
                 response = self.insert_restaurant_title_data("restaurant", data)
                 data["restaurant_id"] = response["id"]
                 try:
-                    images = self.insert_restaurant_data("restaurant_image", data, 'image')
+                    images = self.insert_image_data("restaurant_image", data, 'image')
                 except:
                     traceback.print_exc()
                 try:
-                    feature = self.insert_restaurant_data("restaurant_feature", data, 'feature_type')
+                    feature = self.insert_image_data("restaurant_feature", data, 'feature_type')
                 except:
                     traceback.print_exc()
             else:
                 # data["job_title_id"] = response["id"] if isinstance(response["id"], int) else 0
                 print("Data exist in table")
+        except Exception as error:
+            traceback.print_exc()
+
+        # CHECK ATTRACTION IS AVAILABLE IN THE DATABASE OR NOT
+        try:
+
+            try:
+                lan = '{:.4f}'.format(float(data['attraction_geocode_lan'][0]))
+                lon = '{:.4f}'.format(float(data['attraction_geocode_lon'][0]))
+                condition = 'attraction_name LIKE "%s" and attraction_geocode_lan LIKE "%s" and attraction_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + str(lan) + "%",
+                    "%" + str(lon) + "%")
+            except:
+                condition = 'attraction_name LIKE "%s" and attraction_geocode_lan LIKE "%s" and attraction_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + data['attraction_geocode_lan'][0] + "%",
+                    "%" + data['attraction_geocode_lon'][0] + "%")
+
+            response = self.select_record("attraction", condition)
+            if response is None:
+                response = self.insert_attraction_title_data("attraction", data)
+                data["attraction_id"] = response["id"]
+                try:
+                    images = self.insert_image_data("attraction_image", data, 'image')
+                except:
+                    traceback.print_exc()
+
+                read = data['attraction_type'][0]
+                for i in read:
+                    condition = 'attraction_type="%s" ' % i
+                    response = self.select_record("attraction_feature_type", condition)
+                    dict = {}
+                    if response is None:
+                        attraction_id = self.insert_feature_type("attraction_feature_type", i)
+                        data['attraction_type_id'] = attraction_id["id"]
+                        dict["attraction_id"] = data["attraction_id"][0]
+                        dict['attraction_type_id'] = data['attraction_type_id'][0]
+                        attraction_feature = self.insert_feature("attraction_feature", dict)
+                    else:
+                        data['attraction_type_id'] = response["id"]
+                        dict["attraction_id"] = data["attraction_id"][0]
+                        dict['attraction_type_id'] = data['attraction_type_id'][0]
+                        attraction_feature = self.insert_feature("attraction_feature", dict)
+
+            else:
+                # data["job_title_id"] = response["id"] if isinstance(response["id"], int) else 0
+                print("Data exist in table")
+
         except Exception as error:
             traceback.print_exc()
 
@@ -118,19 +166,35 @@ class BaseDBModel:
         return record_row
         # Here returns search id for given condition
 
-    def insert_restaurant_data(self, table_name, data, content):
+    def insert_image_data(self, table_name, data, content):
         record_row = None
         data = data.to_dict()
         read = data[content][0]
-        for i in read:
-            insert_data = {}
-            insert_data['restaurant_id'] = int(data['restaurant_id'][0])
-            insert_data[content] = i
+        try:
+            for i in read:
+                insert_data = {}
+                insert_data['restaurant_id'] = int(data['restaurant_id'][0])
+                insert_data[content] = i
 
-            # filtered_insert_data = self.pop_null_values(insert_data)
+                # filtered_insert_data = self.pop_null_values(insert_data)
 
-            last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
-            record_row = {"id": last_id}
+                last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+                record_row = {"id": last_id}
+        except:
+            pass
+
+        try:
+            for i in read:
+                insert_data = {}
+                insert_data['attraction_id'] = int(data['attraction_id'][0])
+                insert_data[content] = i
+
+                # filtered_insert_data = self.pop_null_values(insert_data)
+
+                last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+                record_row = {"id": last_id}
+        except:
+            pass
         return record_row
 
     def insert_restaurant_title_data(self, table_name, data):
@@ -150,6 +214,48 @@ class BaseDBModel:
             insert_data['restaurant_geocode_lon'] = self.check_nun('restaurant_geocode_lon', row)
             insert_data['source'] = self.check_nun('url', row)
 
+            filtered_insert_data = self.pop_null_values(insert_data)
+
+            last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **filtered_insert_data)
+            record_row = {"id": last_id}
+        return record_row
+
+    def insert_feature_type(self, table_name, data):
+        record_row = None
+        insert_data = {}
+        insert_data['attraction_type'] = data
+        filtered_insert_data = self.pop_null_values(insert_data)
+
+        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **filtered_insert_data)
+        record_row = {"id": last_id}
+        return record_row
+
+    def insert_feature(self, table_name, data):
+        record_row = None
+        insert_data = {}
+        insert_data['attraction_id'] = int(data['attraction_id'])
+        insert_data['attraction_type_id'] = int(data['attraction_type_id'])
+
+        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+        record_row = {"id": last_id}
+        return record_row
+
+
+    def insert_attraction_title_data(self, table_name, data):
+        record_row = None
+        for index, row in data.iterrows():
+            insert_data = {}
+            insert_data['city_id'] = self.check_nun('city_id', row)
+            insert_data['attraction_name'] = self.check_nun('name', row)
+            insert_data['attraction_review_count'] = self.check_nun('attraction_review_count', row)
+            insert_data['attraction_address'] = self.check_nun('attraction_address', row)
+            insert_data['attraction_contact'] = self.check_nun('attraction_contact', row)
+            insert_data['attraction_email'] = self.check_nun('attraction_email', row)
+            insert_data['attraction_description'] = self.check_nun('attraction_description', row)
+            insert_data['attraction_website'] = self.check_nun('attraction_website', row)
+            insert_data['attraction_geocode_lan'] = self.check_nun('attraction_geocode_lan', row)
+            insert_data['attraction_geocode_lon'] = self.check_nun('attraction_geocode_lon', row)
+            insert_data['source'] = self.check_nun('url', row)
             filtered_insert_data = self.pop_null_values(insert_data)
 
             last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **filtered_insert_data)
