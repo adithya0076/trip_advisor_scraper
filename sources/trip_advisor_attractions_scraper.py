@@ -5,7 +5,6 @@ import pandas as pd
 import re
 import random
 
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -28,7 +27,7 @@ class TripAdvisorAttractionsScraper:
         :param city:
         :return:
         """
-
+        self.selenium_helper.check_connection()
         # Finds the Restaurant's page button
         status, things = self.selenium_helper.find_xpath_element(
             driver=driver, xpath="//a[@href='/Attractions']",
@@ -36,7 +35,7 @@ class TripAdvisorAttractionsScraper:
         )
         things.click()
         WebDriverWait(driver, 5)
-        self.selenium_helper.sleep(random.randint(5, 8))
+        self.selenium_helper.sleep_time(random.randint(5, 8))
         # Finds the input
         status, search = self.selenium_helper.find_xpath_element(
             driver=driver,
@@ -45,10 +44,10 @@ class TripAdvisorAttractionsScraper:
         )
         search.send_keys(city)
         WebDriverWait(driver, 10)
-        self.selenium_helper.sleep(random.randint(5, 10))
+        self.selenium_helper.sleep_time(random.randint(5, 10))
         search.send_keys(Keys.ENTER)
         print(f"The city: '{city}' is searched")
-        #
+
 
     def scrape_attraction_data(self, driver, city):
         """
@@ -64,6 +63,7 @@ class TripAdvisorAttractionsScraper:
         :param city:
         :return df:
         """
+        self.selenium_helper.check_connection()
         status, ad = self.selenium_helper.find_xpath_element(
             driver=driver, xpath="//div[@class='UsGfI I']//button", is_get_text=False
         )
@@ -71,9 +71,9 @@ class TripAdvisorAttractionsScraper:
         try:
             ad.click()
         except:
-            print("No ad")
+            pass
 
-        self.selenium_helper.sleep(5)
+        self.selenium_helper.sleep_time(5)
 
         status, see_all = self.selenium_helper.find_xpath_element(
             driver=driver, xpath="//div[@class='BYvbL A YeunF']//div[@class='Fofmq']/a",
@@ -84,9 +84,9 @@ class TripAdvisorAttractionsScraper:
             web = see_all.get_attribute('href')
             driver.get(web)
         except:
-            print("No see all")
+            pass
 
-        self.selenium_helper.sleep(random.randint(5, 10))
+        self.selenium_helper.sleep_time(random.randint(5, 10))
 
         # Gets the current source page
         source = driver.page_source
@@ -94,7 +94,7 @@ class TripAdvisorAttractionsScraper:
         # Use bs4 to parse data from the source
         data = bs4.BeautifulSoup(source, 'lxml')
 
-        self.selenium_helper.sleep(random.randint(5, 10))
+        self.selenium_helper.sleep_time(random.randint(5, 10))
 
         # Selects the elements
         attractions = data.select(".VLKGO")
@@ -112,7 +112,7 @@ class TripAdvisorAttractionsScraper:
 
         # Checking whether next button is available
         wait = WebDriverWait(driver, 10)
-        self.selenium_helper.sleep(random.randint(5, 10))
+        self.selenium_helper.sleep_time(random.randint(5, 10))
 
         # This code while loop below loops through any pagination available
         a = 1
@@ -123,7 +123,7 @@ class TripAdvisorAttractionsScraper:
                     driver=driver, program="window.scrollTo(0, document.body.scrollHeight);"
                 )
 
-                self.selenium_helper.sleep(random.randint(5, 10))
+                self.selenium_helper.sleep_time(random.randint(5, 10))
 
                 status, btnNext = self.selenium_helper.find_xpath_element(
                     driver=driver,
@@ -133,7 +133,7 @@ class TripAdvisorAttractionsScraper:
 
                 btnNext.click()
                 # element.click()
-                self.selenium_helper.sleep(random.randint(5, 10))
+                self.selenium_helper.sleep_time(random.randint(5, 10))
 
                 # Gets the current SOURCE
                 source = driver.page_source
@@ -141,7 +141,7 @@ class TripAdvisorAttractionsScraper:
                 # Use bs4 to parse data from the URL
                 data = bs4.BeautifulSoup(source, 'lxml')
 
-                self.selenium_helper.sleep(random.randint(5, 10))
+                self.selenium_helper.sleep_time(random.randint(5, 10))
 
                 # Selects the elements
                 attractions = data.select(".VLKGO")
@@ -159,8 +159,6 @@ class TripAdvisorAttractionsScraper:
 
         dict2 = {'city': city, 'url': urls, }
         fd = pd.DataFrame(dict2)
-        print('Dataset for URLs', fd)
-
         return fd
 
     def scraping_attraction_information(self, driver, data):
@@ -171,7 +169,7 @@ class TripAdvisorAttractionsScraper:
         :param data:
         :return:
         """
-
+        self.selenium_helper.check_connection()
         for index, row in data.iterrows():
             _dict_info = {}
             geocodes = []
@@ -179,7 +177,7 @@ class TripAdvisorAttractionsScraper:
             feature_type = []
 
             driver.get(row['url'])
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 
             # Load the url
             source = driver.page_source
@@ -234,7 +232,7 @@ class TripAdvisorAttractionsScraper:
             condition = "city_name = '%s'" % row['city']
             city_id = self.db.select_record(table_name='city', condition=condition)
             _dict_info['city_id'] = city_id['id']
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 
             # NAME
             if name_sc:
@@ -307,7 +305,7 @@ class TripAdvisorAttractionsScraper:
             else:
                 pass
 
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 
             # images
             status, img = self.selenium_helper.find_xpath_element(
@@ -317,7 +315,7 @@ class TripAdvisorAttractionsScraper:
                 img.click()
             except:
                 pass
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
             # Load the url
             source = driver.page_source
 
@@ -329,8 +327,6 @@ class TripAdvisorAttractionsScraper:
                 image = items['style'].split("url(")[1].split(")")[0]
                 images.append(image)
 
-            print('images', images)
-
             _dict_info['url'] = row['url']
 
             if images:
@@ -338,7 +334,7 @@ class TripAdvisorAttractionsScraper:
             else:
                 pass
 
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 
             print(_dict_info)
 
@@ -346,5 +342,5 @@ class TripAdvisorAttractionsScraper:
             # save to db
             self.db.base_job_handler(df)
 
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 

@@ -31,7 +31,7 @@ class TripAdvisorRestaurantScraper:
         status, restaurant = self.selenium_helper.find_xpath_element(driver=driver, xpath="//a[@href='/Restaurants']", is_get_text=False)
         restaurant.click()
         WebDriverWait(driver, 10)
-        self.selenium_helper.sleep(10)
+        self.selenium_helper.sleep_time(10)
         # Finds the input
         status, search = self.selenium_helper.find_xpath_element(
             driver=driver,
@@ -40,7 +40,7 @@ class TripAdvisorRestaurantScraper:
         )
         search.send_keys(city)
         WebDriverWait(driver, 10)
-        self.selenium_helper.sleep(random.randint(5, 10))
+        self.selenium_helper.sleep_time(random.randint(5, 10))
         search.send_keys(Keys.ENTER)
         print(f"The city: '{city}' is searched")
 
@@ -82,7 +82,7 @@ class TripAdvisorRestaurantScraper:
 
         # Checking whether next button is available
         wait = WebDriverWait(driver, 10)
-        self.selenium_helper.sleep(random.randint(5, 10))
+        self.selenium_helper.sleep_time(random.randint(5, 10))
 
         a = 1
         while a:
@@ -91,9 +91,9 @@ class TripAdvisorRestaurantScraper:
                 # element = wait.until(EC.element_to_be_clickable(
                 #     (By.XPATH, "//a[@class='ui_button next primary']")))
                 # print("clickable")
-                self.selenium_helper.sleep(random.randint(5, 10))
+                self.selenium_helper.sleep_time(random.randint(5, 10))
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                # self.selenium_helper.sleep(6)
+                # self.selenium_helper.sleep_time(6)
                 try:
 
                     WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
@@ -105,7 +105,7 @@ class TripAdvisorRestaurantScraper:
                 )
                 btnNext.click()
                 # element.click()
-                self.selenium_helper.sleep(random.randint(5, 10))
+                self.selenium_helper.sleep_time(random.randint(5, 10))
 
                 # Gets the current URL
                 source = driver.page_source
@@ -117,7 +117,7 @@ class TripAdvisorRestaurantScraper:
                 # Selects the elements
                 restaurants = data.select(".RfBGI")
 
-                self.selenium_helper.sleep(random.randint(5, 10))
+                self.selenium_helper.sleep_time(random.randint(5, 10))
 
                 for i in restaurants:
                     a = i.find('a')
@@ -153,7 +153,7 @@ class TripAdvisorRestaurantScraper:
             images = []
 
             driver2.get(row['url'])
-            self.selenium_helper.sleep(10)
+            self.selenium_helper.sleep_time(10)
 
             # Load the url
             source = driver2.page_source
@@ -195,7 +195,7 @@ class TripAdvisorRestaurantScraper:
             condition = "city_name = '%s'" % row['city']
             city_id = self.db.select_record(table_name='city', condition=condition)
             _dict_info['city_id'] = city_id['id']
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 
             # NAME
             if name_sc:
@@ -301,12 +301,12 @@ class TripAdvisorRestaurantScraper:
                 _dict_info['restaurant_price_range'] = '-'
 
             # getting the images
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
             status, img = self.selenium_helper.find_xpath_element(
                 driver=driver2, xpath="//div[@class='zPIck _Q Z1 t _U c _S zXWgK']", is_get_text=False
             )
             img.click()
-            self.selenium_helper.sleep(5)
+            self.selenium_helper.sleep_time(5)
             try:
                 status, btnImg = self.selenium_helper.find_xpath_element(
                     driver=driver2,
@@ -316,7 +316,7 @@ class TripAdvisorRestaurantScraper:
                 btnImg.click()
             except:
                 pass
-            self.selenium_helper.sleep(5)
+            self.selenium_helper.sleep_time(5)
             # Load the url
             source = driver2.page_source
 
@@ -324,16 +324,16 @@ class TripAdvisorRestaurantScraper:
             data2 = bs4.BeautifulSoup(source, 'lxml')
             try:
                 WebDriverWait(driver2, 10)
-                self.selenium_helper.sleep(5)
+                self.selenium_helper.sleep_time(5)
                 status, dialog = self.selenium_helper.find_xpath_element(
                     driver=driver2, xpath="//div[@class='photoGridWrapper']", is_get_text=False
                 )
-                self.selenium_helper.sleep(5)
+                self.selenium_helper.sleep_time(5)
                 sc = driver2.execute_script("return document.querySelector('.photoGridWrapper').scrollHeight")
                 while True:
                     driver2.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", dialog)
 
-                    self.selenium_helper.sleep(2)
+                    self.selenium_helper.sleep_time(2)
                     status, dialog = self.selenium_helper.find_xpath_element(
                         driver=driver2, xpath="//div[@class='photoGridWrapper']", is_get_text=False
                     )
@@ -344,7 +344,7 @@ class TripAdvisorRestaurantScraper:
                     sc = sc_2
 
                 WebDriverWait(driver2, 5)
-                self.selenium_helper.sleep(5)
+                self.selenium_helper.sleep_time(5)
                 image_sc = data2.select('.fillSquare')
                 for i in image_sc:
                     img = i.find('img')
@@ -369,7 +369,7 @@ class TripAdvisorRestaurantScraper:
             else:
                 pass
 
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 
             print(_dict_info)
 
@@ -377,4 +377,4 @@ class TripAdvisorRestaurantScraper:
             # save to db
             self.db.base_job_handler(df)
 
-            self.selenium_helper.sleep(random.randint(5, 10))
+            self.selenium_helper.sleep_time(random.randint(5, 10))

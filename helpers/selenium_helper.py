@@ -1,5 +1,5 @@
 import traceback
-
+import requests
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
@@ -44,10 +44,28 @@ class SeleniumHelper:
         driver = Firefox(options=self.options, firefox_profile=self.profile, service=self.service_obj)
         driver.maximize_window()
         print('-------------------------------Webdriver is created-------------------------------')
-        driver.get(self.SCRAPING_URL)
-        print(f"The URL '{self.SCRAPING_URL}' is opened ")
+        try:
+            driver.get(self.SCRAPING_URL)
+            print(f"The URL '{self.SCRAPING_URL}' is opened ")
+        except:
+            traceback.print_exc()
+            driver.quit()
 
         return driver
+
+    def check_connection(self):
+        connection = False
+        try_count = 1
+        while not connection:
+            try:
+                var = requests.get('https://www.google.com/', timeout=30).status_code
+                connection = True
+                print("Internet connected...")
+            except:
+                connection = False
+                print("No internet connection... Check count: ", try_count)
+                time.sleep(5)
+                try_count += 1
 
     def find_xpath_element(self, driver, xpath, is_get_text=False):
         try:
@@ -64,5 +82,5 @@ class SeleniumHelper:
         except:
             traceback.print_exc()
 
-    def sleep(self, val):
+    def sleep_time(self, val):
         time.sleep(val)

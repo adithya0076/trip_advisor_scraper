@@ -99,9 +99,13 @@ class BaseDBModel:
                         dict["attraction_id"] = data["attraction_id"][0]
                         dict['attraction_type_id'] = data['attraction_type_id'][0]
                         attraction_feature = self.insert_feature("attraction_feature", dict)
-
+                condition = 'source="%s" and status="%s" ' % (data['url'][0], 1)
+                response = self.select_record("attraction_city_log", condition)
+                if response is None:
+                    response = self.insert_log("attraction_city_log", data)
+                else:
+                    pass
             else:
-                # data["job_title_id"] = response["id"] if isinstance(response["id"], int) else 0
                 print("Data exist in table")
 
         except Exception as error:
@@ -174,7 +178,7 @@ class BaseDBModel:
             for i in read:
                 insert_data = {}
                 insert_data['restaurant_id'] = int(data['restaurant_id'][0])
-                insert_data[content] = i
+                insert_data[content] = i.replace('"', '')
 
                 # filtered_insert_data = self.pop_null_values(insert_data)
 
@@ -240,6 +244,22 @@ class BaseDBModel:
         record_row = {"id": last_id}
         return record_row
 
+    def insert_log(self, table_name, data):
+        try:
+            record_row = None
+            for index, row in data.iterrows():
+                insert_data = {}
+                insert_data['city_id'] = self.check_nun('city_id', row)
+                insert_data['source'] = self.check_nun('url', row)
+                insert_data['status'] = 1
+                filtered_insert_data = self.pop_null_values(insert_data)
+
+                last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name,
+                                                                           **filtered_insert_data)
+                record_row = {"id": last_id}
+                return record_row
+        except:
+            pass
 
     def insert_attraction_title_data(self, table_name, data):
         record_row = None

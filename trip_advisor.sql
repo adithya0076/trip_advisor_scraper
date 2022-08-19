@@ -16,6 +16,150 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `attraction`
+--
+
+DROP TABLE IF EXISTS `attraction`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attraction` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `city_id` int NOT NULL,
+  `attraction_name` varchar(1000) NOT NULL,
+  `attraction_review_count` varchar(1000) NOT NULL,
+  `attraction_address` varchar(1000) NOT NULL,
+  `attraction_contact` varchar(1000) NOT NULL,
+  `attraction_email` varchar(1000) NOT NULL,
+  `attraction_description` varchar(10000) NOT NULL,
+  `attraction_website` varchar(1000) NOT NULL,
+  `attraction_geocode_lan` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `attraction_geocode_lon` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `source` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_CITY_ID_ATTRACTION` (`city_id`),
+  CONSTRAINT `FK_CITY_ID_ATTRACTION` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attraction`
+--
+
+LOCK TABLES `attraction` WRITE;
+/*!40000 ALTER TABLE `attraction` DISABLE KEYS */;
+INSERT INTO `attraction` VALUES (1,3,'Kumana National Park','114','-','+94776449535','-','Kumana National Park spreads over an area of 35,664 hectares. In the west, the park is bordered by River Kumubukkan Oya; to the south is south-eastern coast that runs to Panama. A 200 hectares mangrove swamp called “Kumana Villu” within the Park is subject to occasional inundation with sea water. It is at this swamp that many water birds nest, during the months of May and June. Scattered in the Kumana National Park are several water pools that are favorite spots of the wildlife: Kudawila wewa, Thummulla wewa and Kotalinda wewa.','http://ecowavetravels.lk/home.php','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d3477464-Reviews-Kumana_National_Park-Ampara_Eastern_Province.html'),(2,3,'Gal Oya National Park - The Crossing','77','Inginiyagala, Ampara 32000 Sri Lanka','-','-','-','-','7.280700','81.659691','https://www.tripadvisor.com//Attraction_Review-g1815618-d2559367-Reviews-Gal_Oya_National_Park_The_Crossing-Ampara_Eastern_Province.html'),(3,3,'Deegavapi Stupa','25','-','-','-','-','-','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d4043979-Reviews-Deegavapi_Stupa-Ampara_Eastern_Province.html'),(4,3,'Rajagala','10','-','-','-','-','http://www.archaeology.gov.lk/web/index.php?option=com_content&view=article&id=74&Itemid=99&lang=en','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d12037301-Reviews-Rajagala-Ampara_Eastern_Province.html'),(5,3,'Lahugala Magul Maha Viharaya','15','-','-','-','-','-','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d4272021-Reviews-Lahugala_Magul_Maha_Viharaya-Ampara_Eastern_Province.html'),(6,3,'Buddhangala Monastery','29','Buddhangala, Ampara 32000 Sri Lanka','-','-','-','http://www.buddhangala.org/','7.283330','81.666702','https://www.tripadvisor.com//Attraction_Review-g1815618-d4043980-Reviews-Buddhangala_Monastery-Ampara_Eastern_Province.html'),(7,3,'Lahugala Kitulana National Park','9','-','+94633730685','-','-','http://lakpura.com/pages/lahugala-kitulana-national-park','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d6903739-Reviews-Lahugala_Kitulana_National_Park-Ampara_Eastern_Province.html'),(9,3,'Crocodile Rock','5','-','-','-','-','-','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d8595793-Reviews-Crocodile_Rock-Ampara_Eastern_Province.html'),(10,3,'Aranthalawa Massacre Site','1','Nuwaragalatenna Ampara-mahaoya Hwy, Ampara 30358 Sri Lanka','+94718333322','-','-','-','7.297540','81.682022','https://www.tripadvisor.com//Attraction_Review-g1815618-d21506232-Reviews-Aranthalawa_Massacre_Site-Ampara_Eastern_Province.html'),(11,3,'Rambakan Oya Ruins of Ancient Granite Canal ','-','-','-','-','-','-','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d14199043-Reviews-Rambakan_Oya_Ruins_of_Ancient_Granite_Canal-Ampara_Eastern_Province.html'),(12,3,'-','-','-','-','-','-','-','-','-','https://www.tripadvisor.com//Attraction_Review-g1815618-d19961139-Reviews-Lakpura_LLC_Ampara-Ampara_Eastern_Province.html'),(13,28,'Panama City Beach','6,512','-','+1850-233-5070','-','This 27-mile long beach offers a wide variety of activities to enjoy such as swimming, snorkeling, dolphin-spotting parasailing and jet skiing.','http://panamacitybeach.com/','30.178638','-85.810616','https://www.tripadvisor.com//Attraction_Review-g34543-d269300-Reviews-Panama_City_Beach-Panama_City_Beach_Florida.html'),(14,28,'St. Andrews State Park','2,331','4607 State Park Ln, Panama City Beach, FL 32408-7347','+1850-233-5140','-','-','https://www.floridastateparks.org/park/St-Andrews','30.133928','-85.735374','https://www.tripadvisor.com//Attraction_Review-g34543-d106005-Reviews-St_Andrews_State_Park-Panama_City_Beach_Florida.html'),(15,3,'Gal Oya National Park - The Crossing','77','Inginiyagala, Ampara 32000 Sri Lanka','-','-','-','-','7.280700','81.659691','https://www.tripadvisor.com//Attraction_Review-g1815618-d2559367-Reviews-Gal_Oya_National_Park_The_Crossing-Ampara_Eastern_Province.html');
+/*!40000 ALTER TABLE `attraction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `attraction_city_log`
+--
+
+DROP TABLE IF EXISTS `attraction_city_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attraction_city_log` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `city_id` int NOT NULL,
+  `source` varchar(1000) NOT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ATTRACTION_CITY_LOG` (`city_id`),
+  CONSTRAINT `FK_CITY_LOG_ATTRACTION` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attraction_city_log`
+--
+
+LOCK TABLES `attraction_city_log` WRITE;
+/*!40000 ALTER TABLE `attraction_city_log` DISABLE KEYS */;
+INSERT INTO `attraction_city_log` VALUES (1,3,'https://www.tripadvisor.com//Attraction_Review-g1815618-d2559367-Reviews-Gal_Oya_National_Park_The_Crossing-Ampara_Eastern_Province.html','1'),(2,3,'https://www.tripadvisor.com//Attraction_Review-g1815618-d8595793-Reviews-Crocodile_Rock-Ampara_Eastern_Province.html','1'),(3,3,'https://www.tripadvisor.com//Attraction_Review-g1815618-d21506232-Reviews-Aranthalawa_Massacre_Site-Ampara_Eastern_Province.html','1'),(4,3,'https://www.tripadvisor.com//Attraction_Review-g1815618-d14199043-Reviews-Rambakan_Oya_Ruins_of_Ancient_Granite_Canal-Ampara_Eastern_Province.html','1'),(5,28,'https://www.tripadvisor.com//Attraction_Review-g34543-d269300-Reviews-Panama_City_Beach-Panama_City_Beach_Florida.html','1'),(6,28,'https://www.tripadvisor.com//Attraction_Review-g34543-d106005-Reviews-St_Andrews_State_Park-Panama_City_Beach_Florida.html','1');
+/*!40000 ALTER TABLE `attraction_city_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `attraction_feature`
+--
+
+DROP TABLE IF EXISTS `attraction_feature`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attraction_feature` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `attraction_id` int NOT NULL,
+  `attraction_type_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ATTRACTION_ID_FEA` (`attraction_id`),
+  KEY `FK_FEATURE_TYPE_ID` (`attraction_type_id`),
+  CONSTRAINT `FK_ATTRACTION_ID_FEA` FOREIGN KEY (`attraction_id`) REFERENCES `attraction` (`id`),
+  CONSTRAINT `FK_FEATURE_TYPE_ID` FOREIGN KEY (`attraction_type_id`) REFERENCES `attraction_feature_type` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attraction_feature`
+--
+
+LOCK TABLES `attraction_feature` WRITE;
+/*!40000 ALTER TABLE `attraction_feature` DISABLE KEYS */;
+INSERT INTO `attraction_feature` VALUES (1,1,1),(2,2,1),(3,3,2),(4,4,3),(5,5,2),(6,6,2),(7,7,1),(8,7,4),(10,9,5),(11,10,6),(12,10,7),(13,10,8),(14,11,9),(15,11,10),(16,11,6),(17,13,5),(18,13,11),(19,14,12),(20,14,5),(21,15,1);
+/*!40000 ALTER TABLE `attraction_feature` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `attraction_feature_type`
+--
+
+DROP TABLE IF EXISTS `attraction_feature_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attraction_feature_type` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `attraction_type` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attraction_feature_type`
+--
+
+LOCK TABLES `attraction_feature_type` WRITE;
+/*!40000 ALTER TABLE `attraction_feature_type` DISABLE KEYS */;
+INSERT INTO `attraction_feature_type` VALUES (1,'National Parks'),(2,'Points of Interest & Landmarks'),(3,'Mountains'),(4,'Parks'),(5,'Beaches'),(6,'Historic Walking Areas'),(7,'Cemeteries'),(8,'Monuments & Statues'),(9,'Historic Sites'),(10,'Ancient Ruins'),(11,'Beach & Pool Clubs'),(12,'State Parks');
+/*!40000 ALTER TABLE `attraction_feature_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `attraction_image`
+--
+
+DROP TABLE IF EXISTS `attraction_image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attraction_image` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `attraction_id` int NOT NULL,
+  `image` varchar(10000) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `attraction_id` (`attraction_id`),
+  CONSTRAINT `FK_attraction_id` FOREIGN KEY (`attraction_id`) REFERENCES `attraction` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attraction_image`
+--
+
+LOCK TABLES `attraction_image` WRITE;
+/*!40000 ALTER TABLE `attraction_image` DISABLE KEYS */;
+INSERT INTO `attraction_image` VALUES (1,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/51/3a/2e/birds-at-kumana.jpg\"'),(2,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/03/7c/31/f9/kumana-national-park.jpg\"'),(3,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/83/eb/04/kumana-national-park.jpg\"'),(4,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/1a/77/57/4d/safari-kumana-prak.jpg\"'),(5,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/f6/6e/17/kumana-national-park.jpg\"'),(6,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ce/ae/98/the-kumana-national-park.jpg\"'),(7,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/bc/2d/cc/dsc04272-largejpg.jpg\"'),(8,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/af/9c/wild-buffalo-at-kumana.jpg\"'),(9,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/af/9a/leopard-on-the-rock.jpg\"'),(10,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/af/93/samber-deer.jpg\"'),(11,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/0f/17/25/00/caption.jpg\"'),(12,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/cd/76/58/crocadile.jpg\"'),(13,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/cd/76/52/slot-bear.jpg\"'),(14,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/60/d5/bd/kumana-national-park.jpg\"'),(15,1,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/51/3a/70/painted-stork-chasing.jpg\"'),(16,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/04/97/01/56/gal-oya-national-park.jpg\"'),(17,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/f2/0a/33/very-lucky.jpg\"'),(18,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/19/18/94/img-20160917-105619-largejpg.jpg\"'),(19,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/0b/99/2e/64/common-sights-in-the.jpg\"'),(20,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/02/d4/b1/f6/gal-oya-national-park.jpg\"'),(21,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/02/d4/b2/1d/gal-oya-national-park.jpg\"'),(22,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/db/makara-kata.jpg\"'),(23,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/d9/elepahnts.jpg\"'),(24,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/d7/picnic-lunch.jpg\"'),(25,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/ce/river-bath.jpg\"'),(26,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/c8/water-comes-out.jpg\"'),(27,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/c2/picnic-lunch.jpg\"'),(28,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/69/9c/5a/namal-oya-iginiyagala.jpg\"'),(29,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/07/91/1e/gal-oya-national-park.jpg\"'),(30,2,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/07/91/1d/gal-oya-national-park.jpg\"'),(31,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/09/e7/97/c6/deegavapi-stupa.jpg\"'),(32,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b2/60/87/img-20180419-161334-largejpg.jpg\"'),(33,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/07/84/da/9b/deegavapi-stupa.jpg\"'),(34,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/4d/a8/05/20200308-130918-largejpg.jpg\"'),(35,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/4d/a8/04/20200308-130823-largejpg.jpg\"'),(36,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/4d/a8/03/20200308-125653-largejpg.jpg\"'),(37,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/17/32/a8/3f/20190417-170959-largejpg.jpg\"'),(38,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/17/32/a8/3e/20190417-172845-largejpg.jpg\"'),(39,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/17/32/a8/3d/20190417-165502-largejpg.jpg\"'),(40,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/17/32/a8/3c/20190417-165610-largejpg.jpg\"'),(41,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/17/32/a8/3b/20190417-165520-largejpg.jpg\"'),(42,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/41/3d/img20190324081757-largejpg.jpg\"'),(43,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/41/3c/img20190324081750-largejpg.jpg\"'),(44,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/41/3b/img-20190324-154841-largejpg.jpg\"'),(45,3,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/9f/5c/d7/20190224-183420-largejpg.jpg\"'),(46,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/e0/img20190323144351-largejpg.jpg\"'),(47,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/e2/img20190323142847-largejpg.jpg\"'),(48,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/e0/img20190323144351-largejpg.jpg\"'),(49,4,'\"https://media-cdn.tripadvisor.com/media/photo-w/16/ef/45/da/img20190323161359-largejpg.jpg\"'),(50,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/13/4e/ce/da/imag1426-largejpg.jpg\"'),(51,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/0e/6a/90/a6/rajagala.jpg\"'),(52,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/0e/6a/90/a3/rajagala.jpg\"'),(53,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/22/b8/89/77/the-restored-chaithyaya.jpg\"'),(54,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/e1/img20190323143259-largejpg.jpg\"'),(55,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/df/img20190323143659-largejpg.jpg\"'),(56,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/de/img20190323144440-largejpg.jpg\"'),(57,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/dd/img20190323145421-largejpg.jpg\"'),(58,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/dc/img20190323144901-largejpg.jpg\"'),(59,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/db/img20190323155255-largejpg.jpg\"'),(60,4,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/ef/45/d9/img20190323164223-largejpg.jpg\"'),(61,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/3c/45/ba/temple.jpg\"'),(62,5,'\"https://media-cdn.tripadvisor.com/media/photo-o/21/dd/f1/34/caption.jpg\"'),(63,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/4d/photo7jpg.jpg\"'),(64,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/4c/photo6jpg.jpg\"'),(65,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/4b/photo5jpg.jpg\"'),(66,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/4a/photo4jpg.jpg\"'),(67,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/49/photo3jpg.jpg\"'),(68,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/48/photo2jpg.jpg\"'),(69,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/47/photo1jpg.jpg\"'),(70,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/46/photo0jpg.jpg\"'),(71,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/27/b5/e4/a-visiting-tourist.jpg\"'),(72,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/27/b5/c5/guard-stone-at-stupa.jpg\"'),(73,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/27/b5/a1/ruins-of-a-lion-at-entrance.jpg\"'),(74,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/27/b5/76/table-for-offerings-at.jpg\"'),(75,5,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/27/b5/46/entrance-to-stupa.jpg\"'),(76,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/3f/ca/1f/temple.jpg\"'),(77,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/3f/c9/88/ancient-ruins.jpg\"'),(78,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/05/65/a1/45/buddhangala-monastery.jpg\"'),(79,6,'\"https://media-cdn.tripadvisor.com/media/photo-c/320x120/05/c0/c0/b1/buddhangala-monastery.jpg\"'),(80,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/22/44/1c/a6/caption.jpg\"'),(81,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/22/44/1c/a5/caption.jpg\"'),(82,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/22/44/1c/a4/caption.jpg\"'),(83,6,'\"https://media-cdn.tripadvisor.com/media/photo-w/12/b2/60/5c/20180419-134037-largejpg.jpg\"'),(84,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b2/60/5b/20180419-134557-largejpg.jpg\"'),(85,6,'\"https://media-cdn.tripadvisor.com/media/photo-p/12/b2/60/5a/20180419-142301-largejpg.jpg\"'),(86,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b2/60/58/20180419-142222-largejpg.jpg\"'),(87,6,'\"https://media-cdn.tripadvisor.com/media/photo-p/12/b2/60/57/20180419-134610-1-largejpg.jpg\"'),(88,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/0f/8c/8e/84/nice-scenery-of-temple.jpg\"'),(89,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/0f/8c/8e/3e/nice-guard-rock.jpg\"'),(90,6,'\"https://media-cdn.tripadvisor.com/media/photo-s/0f/8c/8d/be/newly-built-statues.jpg\"'),(91,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/9d/f9/mahwewa-bungalow-side.jpg\"'),(92,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/07/0e/a2/ce/lahugala-kitulana-national.jpg\"'),(93,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/07/0e/a2/cc/lahugala-kitulana-national.jpg\"'),(94,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/21/dc/31/55/i-loved-this-pace-it.jpg\"'),(95,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/be/1d/0a/elephant-nature-wild.jpg\"'),(96,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/19/37/09/8a/traveling-arugambay.jpg\"'),(97,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/16/84/e6/06/lahugala-national-park.jpg\"'),(98,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/14/db/59/b9/on-the-way-to-arugambay.jpg\"'),(99,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/a4/f2/view-of-the-bungalow.jpg\"'),(100,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/a4/f0/view-from-the-bungalow.jpg\"'),(101,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/a4/51/room-2-upper-with-attached.jpg\"'),(102,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/a3/c5/room-1-upper.jpg\"'),(103,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/9e/10/lower-level-bathroom.jpg\"'),(104,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/9e/09/upper-floor-open-sleeping.jpg\"'),(105,7,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/b6/9e/07/upper-floor-open-sleeping.jpg\"'),(121,9,'\"https://media-cdn.tripadvisor.com/media/photo-s/08/d7/72/a1/magnifiques-plages-tres.jpg\"'),(122,9,'\"https://media-cdn.tripadvisor.com/media/photo-w/08/d7/72/94/magnifiques-plages-tres.jpg\"'),(123,9,'\"https://media-cdn.tripadvisor.com/media/photo-s/08/d7/72/96/magnifiques-plages-tres.jpg\"'),(124,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/7c/img20201121140306-largejpg.jpg\"'),(125,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/7f/img20201121140137-largejpg.jpg\"'),(126,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/7e/img20201121140256-largejpg.jpg\"'),(127,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/7d/img20201121140340-largejpg.jpg\"'),(128,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/7c/img20201121140306-largejpg.jpg\"'),(129,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/7b/img20201121140523-largejpg.jpg\"'),(130,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/7a/img20201121141028-largejpg.jpg\"'),(131,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/79/img20201121141054-largejpg.jpg\"'),(132,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/78/img20201121141109-largejpg.jpg\"'),(133,10,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/65/ca/77/img20201121140600-largejpg.jpg\"'),(134,11,'\"https://media-cdn.tripadvisor.com/media/photo-s/23/b9/07/9a/rambakan-oya-ancient.jpg\"'),(135,11,'\"https://media-cdn.tripadvisor.com/media/photo-s/23/b9/07/b8/rambakan-oya-ancient.jpg\"'),(136,11,'\"https://media-cdn.tripadvisor.com/media/photo-s/23/b9/07/9a/rambakan-oya-ancient.jpg\"'),(137,11,'\"https://media-cdn.tripadvisor.com/media/photo-s/23/b9/07/88/rambakan-oya-ancient.jpg\"'),(138,11,'\"https://media-cdn.tripadvisor.com/media/photo-s/23/b9/07/7f/rambakan-oya-ancient.jpg\"'),(139,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/0f/49/ec/63/photo7jpg.jpg\"'),(140,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/62/45/panama-city-beach.jpg\"'),(141,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/62/41/panama-city-beach.jpg\"'),(142,13,'\"https://media-cdn.tripadvisor.com/media/photo-p/25/36/60/02/panama-city-beach.jpg\"'),(143,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/5f/bb/panama-city-beach.jpg\"'),(144,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/21/6f/a5/caption.jpg\"'),(145,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/21/6f/a4/caption.jpg\"'),(146,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/21/6f/a3/caption.jpg\"'),(147,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/21/6f/a2/caption.jpg\"'),(148,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/21/6f/a1/caption.jpg\"'),(149,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/21/6f/a0/caption.jpg\"'),(150,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/21/6f/9f/caption.jpg\"'),(151,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/64/ce/caption.jpg\"'),(152,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/64/cd/caption.jpg\"'),(153,13,'\"https://media-cdn.tripadvisor.com/media/photo-s/24/dc/09/1f/spectacular-sunsets.jpg\"'),(154,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/04/22/42/f3/st-andrews-state-park.jpg\"'),(155,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/83/6b/caption.jpg\"'),(156,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/83/6a/caption.jpg\"'),(157,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/83/69/caption.jpg\"'),(158,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/83/68/caption.jpg\"'),(159,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/36/83/67/caption.jpg\"'),(160,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/21/fb/caption.jpg\"'),(161,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/21/fa/caption.jpg\"'),(162,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/21/f9/caption.jpg\"'),(163,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/21/f8/caption.jpg\"'),(164,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/21/f7/caption.jpg\"'),(165,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/25/17/21/f6/caption.jpg\"'),(166,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/24/f7/e1/f5/st-andrews-state-park.jpg\"'),(167,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/d4/3a/3b/photo6jpg.jpg\"'),(168,14,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/d4/3a/35/photo0jpg.jpg\"'),(169,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/04/97/01/56/gal-oya-national-park.jpg\"'),(170,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/12/f2/0a/33/very-lucky.jpg\"'),(171,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/0d/19/18/94/img-20160917-105619-largejpg.jpg\"'),(172,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/0b/99/2e/64/common-sights-in-the.jpg\"'),(173,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/02/d4/b1/f6/gal-oya-national-park.jpg\"'),(174,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/02/d4/b2/1d/gal-oya-national-park.jpg\"'),(175,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/db/makara-kata.jpg\"'),(176,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/d9/elepahnts.jpg\"'),(177,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/d7/picnic-lunch.jpg\"'),(178,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/ce/river-bath.jpg\"'),(179,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/c8/water-comes-out.jpg\"'),(180,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/ee/19/c2/picnic-lunch.jpg\"'),(181,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1c/69/9c/5a/namal-oya-iginiyagala.jpg\"'),(182,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/07/91/1e/gal-oya-national-park.jpg\"'),(183,15,'\"https://media-cdn.tripadvisor.com/media/photo-s/1b/07/91/1d/gal-oya-national-park.jpg\"');
+/*!40000 ALTER TABLE `attraction_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `city`
 --
 
@@ -149,10 +293,11 @@ CREATE TABLE `restaurant` (
   `restaurant_price_range` varchar(1000) NOT NULL,
   `restaurant_geocode_lan` varchar(1000) NOT NULL,
   `restaurant_geocode_lon` varchar(1000) NOT NULL,
+  `source` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_CITY_ID_RESTAURANT` (`city_id`),
   CONSTRAINT `FK_CITY_ID_RESTAURANT` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +306,7 @@ CREATE TABLE `restaurant` (
 
 LOCK TABLES `restaurant` WRITE;
 /*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
-INSERT INTO `restaurant` VALUES (1,1,'Kings','0','292, Pottuvil Road,, Akkaraipattu 32400 Sri Lanka','+94 67 2 052787','mailto:info@kingsasiachef.com?subject=?','We have just change the name to create brand awareness from KINGS Asia Chef to KINGS, but the company name is Asia Chef (Pvt) Ltd. We are more than 8 years old, serving multi cuisines; specializing in Asian varieties with some western dishes. The environment is very clean with nature and trees are part of it. Its place to relax & have food and have food & relax; really, \"WHERE COOL PEOPLE MEET\". Courteous and service-minded staff always waiting to serve better. Our motto is \'TO SERVE YOU BETTER\'. We got the capacity to serve more than 300 peoples at a time with short notice. Open everyday 24X7 from 09:00 to 23:00 but serve LUNCH & DINNER, also, serve breakfast with prior request one day in advance. Located in A4 highway; on the route to Arugambay you can just drop in at least to use our facility such as restrooms. we have just launched a campaign called \'TO SERVE YOU BETTER\' to improve our service for customers.','http://business.facebook.com/kingsakkaraipattu','-','7.214608','81.855247'),(2,3,'Terrel\'s Chinese Restaurant','5','153 Stores Road, Ampara 32000 Sri Lanka','+94 63 2 222215','-','-','-','-','-','-'),(3,3,'Sneppercorner','0','154, tri star Road, Arugambay, Ampara 32500 Sri Lanka','+94 76 548 0875','mailto:snappercornerabay@gmail.com?subject=?','-','-','LKR 300 - LKR 1,800','-','-');
+INSERT INTO `restaurant` VALUES (1,1,'Kings','0','292, Pottuvil Road,, Akkaraipattu 32400 Sri Lanka','+94 67 2 052787','mailto:info@kingsasiachef.com?subject=?','We have just change the name to create brand awareness from KINGS Asia Chef to KINGS, but the company name is Asia Chef (Pvt) Ltd. We are more than 8 years old, serving multi cuisines; specializing in Asian varieties with some western dishes. The environment is very clean with nature and trees are part of it. Its place to relax & have food and have food & relax; really, \"WHERE COOL PEOPLE MEET\". Courteous and service-minded staff always waiting to serve better. Our motto is \'TO SERVE YOU BETTER\'. We got the capacity to serve more than 300 peoples at a time with short notice. Open everyday 24X7 from 09:00 to 23:00 but serve LUNCH & DINNER, also, serve breakfast with prior request one day in advance. Located in A4 highway; on the route to Arugambay you can just drop in at least to use our facility such as restrooms. we have just launched a campaign called \'TO SERVE YOU BETTER\' to improve our service for customers.','http://business.facebook.com/kingsakkaraipattu','-','7.214608','81.855247','https://www.tripadvisor.com//Restaurant_Review-g15244215-d10733493-Reviews-Kings-Akkaraipattu_Eastern_Province.html'),(2,3,'Sneppercorner','0','154, tri star Road, Arugambay, Ampara 32500 Sri Lanka','+94 76 548 0875','mailto:snappercornerabay@gmail.com?subject=?','-','-','LKR 300 - LKR 1,800','-','-','https://www.tripadvisor.com//Restaurant_Review-g1815618-d17336235-Reviews-Sneppercorner-Ampara_Eastern_Province.html'),(5,3,'Terrel\'s Chinese Restaurant','5','153 Stores Road, Ampara 32000 Sri Lanka','+94 63 2 222215','_','-','-','-','-','-','https://www.tripadvisor.com//Restaurant_Review-g1815618-d8089542-Reviews-Terrel_s_Chinese_Restaurant-Ampara_Eastern_Province.html');
 /*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,7 +324,7 @@ CREATE TABLE `restaurant_feature` (
   PRIMARY KEY (`id`),
   KEY `FK_RESTAURANT_ID_FEATURE` (`restaurant_id`),
   CONSTRAINT `FK_RESTAURANT_ID_FEATURE` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurant` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +333,7 @@ CREATE TABLE `restaurant_feature` (
 
 LOCK TABLES `restaurant_feature` WRITE;
 /*!40000 ALTER TABLE `restaurant_feature` DISABLE KEYS */;
-INSERT INTO `restaurant_feature` VALUES (1,1,'Chinese, Indian, Asian, Malaysian, Arabic'),(2,1,'Lunch, Dinner'),(3,1,'Delivery, Takeout, Reservations, Outdoor Seating, Private Dining, Seating, Parking Available, Street Parking, Free off-street parking, Wheelchair Accessible, Accepts Credit Cards'),(4,2,'Italian, Chinese, British'),(5,2,'Lunch, Dinner'),(6,3,'Chinese, American, Seafood, Barbecue, Grill');
+INSERT INTO `restaurant_feature` VALUES (1,1,'Chinese, Indian, Asian, Malaysian, Arabic'),(2,1,'Lunch, Dinner'),(3,1,'Delivery, Takeout, Reservations, Outdoor Seating, Private Dining, Seating, Parking Available, Street Parking, Free off-street parking, Wheelchair Accessible, Accepts Credit Cards'),(10,5,'Italian, Chinese, British'),(11,5,'Lunch, Dinner');
 /*!40000 ALTER TABLE `restaurant_feature` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +351,7 @@ CREATE TABLE `restaurant_image` (
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   CONSTRAINT `FK_restaurant_id` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurant` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,6 +362,32 @@ LOCK TABLES `restaurant_image` WRITE;
 /*!40000 ALTER TABLE `restaurant_image` DISABLE KEYS */;
 INSERT INTO `restaurant_image` VALUES (1,1,'https://media-cdn.tripadvisor.com/media/photo-s/1b/85/1a/12/logo.jpg'),(2,1,'https://media-cdn.tripadvisor.com/media/photo-s/15/89/61/af/manchow-soup-is-an-indo.jpg'),(3,1,'https://media-cdn.tripadvisor.com/media/photo-s/15/89/61/9e/chicken-bbq-seved-with.jpg'),(4,1,'https://media-cdn.tripadvisor.com/media/photo-s/15/89/61/d9/grilled-chicken-with.jpg'),(5,1,'https://media-cdn.tripadvisor.com/media/photo-s/15/89/61/95/chicken-lolipop-from.jpg'),(6,1,'https://media-cdn.tripadvisor.com/media/photo-s/18/e7/69/87/grilled-fish-combo.jpg'),(7,1,'https://media-cdn.tripadvisor.com/media/photo-s/18/e7/65/85/maly-tikka-noth-indian.jpg'),(8,1,'https://media-cdn.tripadvisor.com/media/photo-s/1c/64/6d/5d/together-we-can-live.jpg'),(9,1,'https://media-cdn.tripadvisor.com/media/photo-s/18/e7/65/28/malaysia.jpg'),(10,1,'https://media-cdn.tripadvisor.com/media/photo-s/1b/3e/37/7d/now-due-to-corona-virus.jpg'),(11,1,'https://media-cdn.tripadvisor.com/media/photo-s/18/7c/c6/fd/updated-indian-new-menu.jpg'),(12,1,'https://media-cdn.tripadvisor.com/media/photo-s/15/89/62/27/nasi-goreng-meaning-fried.jpg'),(13,1,'https://media-cdn.tripadvisor.com/media/photo-s/18/7c/c6/0a/our-uodated-new-chinese.jpg'),(14,1,'https://media-cdn.tripadvisor.com/media/photo-s/1b/3e/38/ea/logo-of-the-restaurant.jpg'),(15,1,'https://media-cdn.tripadvisor.com/media/photo-s/1b/3e/38/d7/delivery.jpg');
 /*!40000 ALTER TABLE `restaurant_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `scraped_attraction_log`
+--
+
+DROP TABLE IF EXISTS `scraped_attraction_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `scraped_attraction_log` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `city_id` int NOT NULL,
+  `no_of_attractions_scraped` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ATTRACTION_ID_LOG` (`city_id`),
+  CONSTRAINT `FK_CITY_ID_LOG_ATTRACTION` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scraped_attraction_log`
+--
+
+LOCK TABLES `scraped_attraction_log` WRITE;
+/*!40000 ALTER TABLE `scraped_attraction_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `scraped_attraction_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -259,7 +430,7 @@ CREATE TABLE `scraped_restaurants_log` (
   PRIMARY KEY (`id`),
   KEY `FK_CITY_ID_LOG_RESTAURANT` (`city_id`),
   CONSTRAINT `FK_CITY_ID_LOG_RESTAURANT` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,6 +439,7 @@ CREATE TABLE `scraped_restaurants_log` (
 
 LOCK TABLES `scraped_restaurants_log` WRITE;
 /*!40000 ALTER TABLE `scraped_restaurants_log` DISABLE KEYS */;
+INSERT INTO `scraped_restaurants_log` VALUES (1,1,'1'),(2,3,'2'),(3,1,'1'),(4,3,'2'),(5,1,'1'),(6,3,'2'),(7,1,'1'),(8,3,'2');
 /*!40000 ALTER TABLE `scraped_restaurants_log` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -280,4 +452,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-10 15:42:26
+-- Dump completed on 2022-08-19 16:52:04
