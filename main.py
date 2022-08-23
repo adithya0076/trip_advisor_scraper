@@ -30,20 +30,24 @@ df = pd.read_csv("datasets/cities.csv")
 #     if index == 6:
 #         break
 #     # db.save_log()
+
+
+
 obj1 = SeleniumHelper()
 obj1.check_connection()
 driver = obj1.getdriver()
 attraction = TripAdvisorAttractionsScraper(obj1, db)
-for index, row in df.iterrows():
-    attraction.search_for_attractions(driver=driver, city=row['name_en'])
-    time.sleep(10)
-    data = attraction.scrape_attraction_data(driver=driver, city=row['name_en'])
-    if data.empty is True:
-        print("No Data")
-    else:
-        time.sleep(5)
-        attraction.scraping_attraction_information(driver, data)
-    obj1.check_connection()
-    driver.get("https://www.tripadvisor.com")
+# attraction.search_for_attractions(driver=driver, city="Sri Lanka")
+time.sleep(10)
+# attraction.scrape_attraction_data(driver=driver, city="Sri Lanka")
+data = db.select_rows("attraction_url_log")
+print(data)
+if data.empty is True:
+    print("No Data")
+else:
+    time.sleep(5)
+    attraction.scraping_attraction_information(driver, data)
+obj1.check_connection()
+driver.get("https://www.tripadvisor.com")
 driver.quit()
 

@@ -25,7 +25,6 @@ class BaseDBModel:
             )
             if self.mydb.is_connected():
                 db_Info = self.mydb.get_server_info()
-                print("Connected to MySQL Server version ", db_Info)
                 cursor = self.mydb.cursor()
                 cursor.execute("select database();")
                 record = cursor.fetchone()
@@ -40,8 +39,8 @@ class BaseDBModel:
         # CHECK RESTAURANT IS AVAILABLE IN THE DATABASE OR NOT
         try:
             condition = 'restaurant_name LIKE "%s" and restaurant_geocode_lan LIKE "%s" and restaurant_geocode_lon LIKE "%s" ' % (
-                    data['name'][0], "%" + '{:.4f}'.format(data['restaurant_geocode_lan'][0]) + "%",
-                    "%" + '{:.4f}'.format(data['restaurant_geocode_lon'][0]) + "%")
+                data['name'][0], "%" + '{:.4f}'.format(data['restaurant_geocode_lan'][0]) + "%",
+                "%" + '{:.4f}'.format(data['restaurant_geocode_lon'][0]) + "%")
             response = self.select_record("restaurant", condition)
             if response is None:
                 response = self.insert_restaurant_title_data("restaurant", data)
@@ -99,16 +98,26 @@ class BaseDBModel:
                         dict["attraction_id"] = data["attraction_id"][0]
                         dict['attraction_type_id'] = data['attraction_type_id'][0]
                         attraction_feature = self.insert_feature("attraction_feature", dict)
-                condition = 'source="%s" and status="%s" ' % (data['url'][0], 1)
-                response = self.select_record("attraction_city_log", condition)
-                if response is None:
-                    response = self.insert_log("attraction_city_log", data)
-                else:
-                    pass
             else:
                 print("Data exist in table")
 
         except Exception as error:
+            traceback.print_exc()
+
+        # check attraction url is saved
+        try:
+            for index, row in data.iterrows():
+                print("Done to process")
+                condition = 'url="%s"' % (row['url'])
+                response = self.select_record("attraction_url_log", condition)
+                dict = {}
+                if response is None:
+                    dict['city'] = row['city']
+                    dict['url'] = row['url']
+                    response = self.insert_log("attraction_url_log", dict)
+                else:
+                    pass
+        except:
             traceback.print_exc()
 
     def get_row_count(self, table_name, condition=None):
@@ -169,6 +178,20 @@ class BaseDBModel:
             }
         return record_row
         # Here returns search id for given condition
+
+    def select_rows(self, table_name):
+        try:
+            query = "SELECT * FROM " + table_name
+            self.get_cursor()
+            cursor = self.mydb.cursor(buffered=True)
+            cursor.execute(query)
+            df = pd.DataFrame(cursor.fetchall(), columns = ['id', 'city', 'url'])
+            cursor.close()
+            self.mydb.close()
+            return df
+        except:
+            traceback.print_exc()
+
 
     def insert_image_data(self, table_name, data, content):
         record_row = None
@@ -245,21 +268,15 @@ class BaseDBModel:
         return record_row
 
     def insert_log(self, table_name, data):
-        try:
-            record_row = None
-            for index, row in data.iterrows():
-                insert_data = {}
-                insert_data['city_id'] = self.check_nun('city_id', row)
-                insert_data['source'] = self.check_nun('url', row)
-                insert_data['status'] = 1
-                filtered_insert_data = self.pop_null_values(insert_data)
-
-                last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name,
-                                                                           **filtered_insert_data)
-                record_row = {"id": last_id}
-                return record_row
-        except:
-            pass
+        record_row = None
+        insert_data = {}
+        insert_data['city'] = data['city']
+        insert_data['url'] = data['url']
+        # filtered_insert_data = self.pop_null_values(insert_data)
+        print(insert_data)
+        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+        record_row = {"id": last_id}
+        return record_row
 
     def insert_attraction_title_data(self, table_name, data):
         record_row = None

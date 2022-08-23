@@ -153,13 +153,18 @@ class TripAdvisorAttractionsScraper:
                     else:
                         link = 'https://www.tripadvisor.com/' + a['href'] + ''
                         urls.append(link)
+
+                dict2 = {'city': city, 'url': urls, }
+                fd = pd.DataFrame(dict2)
+                self.db.base_job_handler(fd)
             except:
                 traceback.print_exc()
                 break
 
-        dict2 = {'city': city, 'url': urls, }
-        fd = pd.DataFrame(dict2)
-        return fd
+        # dict2 = {'city': city, 'url': urls, }
+        # fd = pd.DataFrame(dict2)
+        # self.db.base_job_handler(fd)
+
 
     def scraping_attraction_information(self, driver, data):
         """
@@ -227,9 +232,15 @@ class TripAdvisorAttractionsScraper:
                 xpath="//div[@class='biGQs _P pZUbB KxBGd']//div[@class='fIrGe _T bgMZj']",
                 is_get_text=True
             )
+            status, city_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//div[@class='kUaIL']//a[@class='BMQDV _F G- wSSLS SwZTJ FGwzt ukgoS']//div[@class='biGQs _P pZUbB KxBGd']",
+                is_get_text=True
+            )
 
             # get the city id
-            condition = "city_name = '%s'" % row['city']
+
+            condition = "city_name = '%s'" % city_sc.split()[-1]
             city_id = self.db.select_record(table_name='city', condition=condition)
             _dict_info['city_id'] = city_id['id']
             self.selenium_helper.sleep_time(random.randint(5, 10))
