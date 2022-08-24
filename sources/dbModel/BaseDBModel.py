@@ -65,8 +65,8 @@ class BaseDBModel:
             try:
                 la = data['attraction_geocode_lan'][0]
                 ln = data['attraction_geocode_lon'][0]
-                lan = float(la[:la.find('.')+5])
-                lon = float(ln[:ln.find('.')+5])
+                lan = float(la[:la.find('.') + 5])
+                lon = float(ln[:ln.find('.') + 5])
                 condition = 'attraction_name LIKE "%s" and attraction_geocode_lan LIKE "%s" and attraction_geocode_lon LIKE "%s" ' % (
                     data['name'][0], "%" + str(lan) + "%", "%" + str(lon) + "%")
             except:
@@ -109,13 +109,13 @@ class BaseDBModel:
         try:
             for index, row in data.iterrows():
                 print("Done to process")
-                condition = 'url="%s"' % (row['url'])
-                response = self.select_record("attraction_url_log", condition)
+                condition = 'url="%s" and type_id="%s" ' % (row['url'], row['type_id'])
+                response = self.select_record("url_log", condition)
                 dict = {}
                 if response is None:
-                    dict['city'] = row['city']
+                    dict['type_id'] = row['type_id']
                     dict['url'] = row['url']
-                    response = self.insert_log("attraction_url_log", dict)
+                    response = self.insert_log("url_log", dict)
                 else:
                     pass
         except:
@@ -180,19 +180,20 @@ class BaseDBModel:
         return record_row
         # Here returns search id for given condition
 
-    def select_rows(self, table_name):
+    def select_rows(self, table_name, condition):
         try:
             query = "SELECT * FROM " + table_name
+            if condition:
+                query += " WHERE " + condition
             self.get_cursor()
             cursor = self.mydb.cursor(buffered=True)
             cursor.execute(query)
-            df = pd.DataFrame(cursor.fetchall(), columns = ['id', 'city', 'url'])
+            df = pd.DataFrame(cursor.fetchall(), columns=['id', 'type_id', 'url'])
             cursor.close()
             self.mydb.close()
             return df
         except:
             traceback.print_exc()
-
 
     def insert_image_data(self, table_name, data, content):
         record_row = None
@@ -271,7 +272,7 @@ class BaseDBModel:
     def insert_log(self, table_name, data):
         record_row = None
         insert_data = {}
-        insert_data['city'] = data['city']
+        insert_data['type_id'] = data['type_id']
         insert_data['url'] = data['url']
         # filtered_insert_data = self.pop_null_values(insert_data)
 
@@ -307,7 +308,6 @@ class BaseDBModel:
         last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
         record_row = {"id": last_id}
         return record_row
-
 
     def insert_job_locations_data(self, table_name, data):
         record_row = None

@@ -9,16 +9,15 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
-class TripAdvisorAttractionsScraper:
+class TripAdvisorHotelsScraper:
 
     def __init__(self, obj, db):
         self.selenium_helper = obj
         self.db = db
 
-    def search_for_attractions(self, driver, city):
+    def search_for_hotels(self, driver, city):
         """
-        This function opens the Thing's to do page from the home screen and the search for the city.
+        This function opens the hotel's page from the home screen and the search for the city.
 
         Args:
             driver (Geckodriver): The driver where the url is opened.
@@ -29,11 +28,11 @@ class TripAdvisorAttractionsScraper:
         """
         self.selenium_helper.check_connection()
         # Finds the Restaurant's page button
-        status, things = self.selenium_helper.find_xpath_element(
-            driver=driver, xpath="//a[@href='/Attractions']",
+        status, hotels = self.selenium_helper.find_xpath_element(
+            driver=driver, xpath="//a[@href='/Hotels']",
             is_get_text=False
         )
-        things.click()
+        hotels.click()
         WebDriverWait(driver, 5)
         self.selenium_helper.sleep_time(random.randint(5, 8))
         # Finds the input
@@ -48,9 +47,9 @@ class TripAdvisorAttractionsScraper:
         search.send_keys(Keys.ENTER)
         print(f"The city: '{city}' is searched")
 
-    def scrape_attraction_data(self, driver, city):
+    def scrape_hotel_data(self, driver, city):
         """
-        This function is using bs4 to scrape current page source for attraction's.
+        This function is using bs4 to scrape current page source for hotels.
 
         Args:
             driver (Geckodriver): The driver where the url is opened.
@@ -75,13 +74,12 @@ class TripAdvisorAttractionsScraper:
         self.selenium_helper.sleep_time(5)
 
         status, see_all = self.selenium_helper.find_xpath_element(
-            driver=driver, xpath="//div[@class='BYvbL A YeunF']//div[@class='Fofmq']/a",
+            driver=driver, xpath="//button[@class='rmyCe _G B- z _S c Wc wSSLS pexOo sOtnj']",
 
         )
 
         try:
-            web = see_all.get_attribute('href')
-            driver.get(web)
+            see_all.click()
         except:
             pass
 
@@ -96,7 +94,7 @@ class TripAdvisorAttractionsScraper:
         self.selenium_helper.sleep_time(random.randint(5, 10))
 
         # Selects the elements
-        attractions = data.select(".VLKGO")
+        attractions = data.select(".listing_title")
 
         urls = []
 
@@ -126,7 +124,7 @@ class TripAdvisorAttractionsScraper:
 
                 status, btnNext = self.selenium_helper.find_xpath_element(
                     driver=driver,
-                    xpath="//div[@class='UCacc']//a[@data-smoke-attr='pagination-next-arrow']",
+                    xpath="//span[text()='Next']",
                     is_get_text=False
                 )
 
@@ -143,7 +141,7 @@ class TripAdvisorAttractionsScraper:
                 self.selenium_helper.sleep_time(random.randint(5, 10))
 
                 # Selects the elements
-                attractions = data.select(".VLKGO")
+                attractions = data.select(".listing_title")
 
                 for i in attractions:
                     a = i.find('a')
@@ -153,20 +151,16 @@ class TripAdvisorAttractionsScraper:
                         link = 'https://www.tripadvisor.com/' + a['href'] + ''
                         urls.append(link)
 
-                dict2 = {'type_id': 3, 'url': urls, }
+                dict2 = {'type_id': 2, 'url': urls, }
                 fd = pd.DataFrame(dict2)
                 self.db.base_job_handler(fd)
             except:
                 traceback.print_exc()
                 break
 
-        # dict2 = {'city': city, 'url': urls, }
-        # fd = pd.DataFrame(dict2)
-        # self.db.base_job_handler(fd)
-
     def scraping_attraction_information(self, driver, data):
         """
-        Scrape the Details about each attraction from iterating through the links
+        Scrape the Details about each hotel from iterating through the links
 
         :param driver:
         :param data:
@@ -190,9 +184,14 @@ class TripAdvisorAttractionsScraper:
             WebDriverWait(driver, 10)
 
             # Elements which are selected
-            name_sc = data2.select('.biGQs._P.fiohW.eIegw')
+            name_sc = data2.select('.QdLfr b d Pn')
             status, review_sc = self.selenium_helper.find_xpath_element(
-                driver=driver, xpath="//span[@class='biGQs _P pZUbB biKBZ KxBGd']//span",
+                driver=driver, xpath="//span[@class='qqniT']",
+                is_get_text=True
+            )
+            status, price_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//button[@class='UikNM _G B- _S _T c G_ P0 wSSLS wnNQG raEkE']//span",
                 is_get_text=True
             )
             status, address_sc = self.selenium_helper.find_xpath_element(
@@ -277,7 +276,7 @@ class TripAdvisorAttractionsScraper:
 
             # REVIEW COUNT
             if review_sc:
-                _dict_info['attraction_review_count'] = review_sc.lstrip()
+                _dict_info['attraction_review_count'] = review_sc.split()[0]
             else:
                 _dict_info['attraction_review_count'] = '-'
 
