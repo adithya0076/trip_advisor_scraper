@@ -63,11 +63,12 @@ class BaseDBModel:
         try:
 
             try:
-                lan = '{:.4f}'.format(float(data['attraction_geocode_lan'][0]))
-                lon = '{:.4f}'.format(float(data['attraction_geocode_lon'][0]))
+                la = data['attraction_geocode_lan'][0]
+                ln = data['attraction_geocode_lon'][0]
+                lan = float(la[:la.find('.')+5])
+                lon = float(ln[:ln.find('.')+5])
                 condition = 'attraction_name LIKE "%s" and attraction_geocode_lan LIKE "%s" and attraction_geocode_lon LIKE "%s" ' % (
-                    data['name'][0], "%" + str(lan) + "%",
-                    "%" + str(lon) + "%")
+                    data['name'][0], "%" + str(lan) + "%", "%" + str(lon) + "%")
             except:
                 condition = 'attraction_name LIKE "%s" and attraction_geocode_lan LIKE "%s" and attraction_geocode_lon LIKE "%s" ' % (
                     data['name'][0], "%" + data['attraction_geocode_lan'][0] + "%",
@@ -273,7 +274,7 @@ class BaseDBModel:
         insert_data['city'] = data['city']
         insert_data['url'] = data['url']
         # filtered_insert_data = self.pop_null_values(insert_data)
-        print(insert_data)
+
         last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
         record_row = {"id": last_id}
         return record_row
@@ -298,6 +299,15 @@ class BaseDBModel:
             last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **filtered_insert_data)
             record_row = {"id": last_id}
         return record_row
+
+    def insert_city(self, table_name, city):
+        record_row = None
+        insert_data = {}
+        insert_data['city_name'] = city
+        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+        record_row = {"id": last_id}
+        return record_row
+
 
     def insert_job_locations_data(self, table_name, data):
         record_row = None

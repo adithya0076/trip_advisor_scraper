@@ -237,12 +237,33 @@ class TripAdvisorAttractionsScraper:
                 xpath="//div[@class='kUaIL']//a[@class='BMQDV _F G- wSSLS SwZTJ FGwzt ukgoS']//div[@class='biGQs _P pZUbB KxBGd']",
                 is_get_text=True
             )
+            if city_sc:
+                pass
+                # get the city id
+                condition = "city_name = '%s'" % re.search(r'(?<=in ).*', city_sc.lstrip()).group()
+                city_id = self.db.select_record(table_name='city', condition=condition)
+                if city_id:
+                     _dict_info['city_id'] = city_id['id']
+                else:
+                    city = self.db.insert_city(table_name='city', city=re.search(r'(?<=in ).*', city_sc.lstrip()).group())
+                    _dict_info['city_id'] = city['id']
+            else:
+                status, city_sc = self.selenium_helper.find_xpath_element(
+                    driver=driver,
+                    xpath="//div[@class='VGRgp']/span[2]",
+                    is_get_text=True
+                )
+                city = city_sc.split(',')
+                # get the city id
 
-            # get the city id
+                condition = "city_name = '%s'" % city[0]
+                city_id = self.db.select_record(table_name='city', condition=condition)
+                if city_id:
+                     _dict_info['city_id'] = city_id['id']
+                else:
+                    city_i = self.db.insert_city(table_name='city', city=city[0])
+                    _dict_info['city_id'] = city_i['id']
 
-            condition = "city_name = '%s'" % city_sc.split()[-1]
-            city_id = self.db.select_record(table_name='city', condition=condition)
-            _dict_info['city_id'] = city_id['id']
             self.selenium_helper.sleep_time(random.randint(5, 10))
 
             # NAME
@@ -322,10 +343,20 @@ class TripAdvisorAttractionsScraper:
             status, img = self.selenium_helper.find_xpath_element(
                 driver=driver, xpath="//button[@class='BrOJk u j z _F wSSLS HuPlH IyzRb']", is_get_text=False
             )
+            status, ad = self.selenium_helper.find_xpath_element(
+                driver=driver, xpath="//div[@class='UsGfI I']//button", is_get_text=False
+            )
+
+            try:
+                ad.click()
+            except:
+                print("No ad")
+            self.selenium_helper.sleep_time(random.randint(5, 10))
+
             try:
                 img.click()
             except:
-                pass
+                traceback.print_exc()
             self.selenium_helper.sleep_time(random.randint(5, 10))
             # Load the url
             source = driver.page_source
