@@ -273,19 +273,19 @@ class TripAdvisorAttractionsScraper:
                 except:
                     _dict_info['name'] = name_sc[0].text.lstrip()
             else:
-                _dict_info['name'] = '-'
+                _dict_info['name'] = ''
 
             # REVIEW COUNT
             if review_sc:
                 _dict_info['attraction_review_count'] = review_sc.lstrip()
             else:
-                _dict_info['attraction_review_count'] = '-'
+                _dict_info['attraction_review_count'] = ''
 
             # ADDRESS
             if address_sc:
                 _dict_info['attraction_address'] = address_sc.lstrip()
             else:
-                _dict_info['attraction_address'] = '-'
+                _dict_info['attraction_address'] = ''
 
             # CONTACT
             if contact_sc:
@@ -296,19 +296,19 @@ class TripAdvisorAttractionsScraper:
                     contact = str(contact) + str(i[2:])
                 _dict_info['attraction_contact'] = contact
             else:
-                _dict_info['attraction_contact'] = '-'
+                _dict_info['attraction_contact'] = ''
 
             # EMAIL
             if email_sc:
                 _dict_info['attraction_email'] = email_sc.get_attribute('href').lstrip()
             else:
-                _dict_info['attraction_email'] = '-'
+                _dict_info['attraction_email'] = ''
 
             # WEBSITE
             if website_sc:
                 _dict_info['attraction_website'] = website_sc.get_attribute('href').lstrip()
             else:
-                _dict_info['attraction_website'] = '-'
+                _dict_info['attraction_website'] = ''
 
             # GEOCODES
             if geocodes_sc:
@@ -325,7 +325,7 @@ class TripAdvisorAttractionsScraper:
             if description_sc:
                 _dict_info['attraction_description'] = description_sc.lstrip()
             else:
-                _dict_info['attraction_description'] = '-'
+                _dict_info['attraction_description'] = ''
 
             if feature_sc:
                 feature = feature_sc.split(' • ')

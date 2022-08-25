@@ -85,7 +85,7 @@ class BaseDBModel:
 
                 read = data['attraction_type'][0]
                 for i in read:
-                    condition = 'attraction_type="%s" ' % i
+                    condition = 'feature_type="%s" ' % i
                     response = self.select_record("attraction_feature_type", condition)
                     dict = {}
                     if response is None:
@@ -93,12 +93,57 @@ class BaseDBModel:
                         data['attraction_type_id'] = attraction_id["id"]
                         dict["attraction_id"] = data["attraction_id"][0]
                         dict['attraction_type_id'] = data['attraction_type_id'][0]
-                        attraction_feature = self.insert_feature("attraction_feature", dict)
+                        attraction_feature = self.insert_attraction_feature("attraction_feature", dict)
                     else:
                         data['attraction_type_id'] = response["id"]
                         dict["attraction_id"] = data["attraction_id"][0]
                         dict['attraction_type_id'] = data['attraction_type_id'][0]
-                        attraction_feature = self.insert_feature("attraction_feature", dict)
+                        attraction_feature = self.insert_attraction_feature("attraction_feature", dict)
+            else:
+                print("Data exist in table")
+
+        except Exception as error:
+            traceback.print_exc()
+
+        # CHECK HOTEL IS AVAILABLE IN THE DATABASE OR NOT
+        try:
+            try:
+                la = data['hotel_geocode_lan'][0]
+                ln = data['hotel_geocode_lon'][0]
+                lan = float(la[:la.find('.') + 5])
+                lon = float(ln[:ln.find('.') + 5])
+                condition = 'hotel_name LIKE "%s" and hotel_geocode_lat LIKE "%s" and hotel_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + str(lan) + "%", "%" + str(lon) + "%")
+            except:
+                condition = 'hotel_name LIKE "%s" and hotel_geocode_lat LIKE "%s" and hotel_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + data['hotel_geocode_lan'][0] + "%",
+                    "%" + data['hotel_geocode_lon'][0] + "%")
+
+            response = self.select_record("hotel", condition)
+            if response is None:
+                response = self.insert_hotel_title_data("hotel", data)
+                data["hotel_id"] = response["id"]
+                try:
+                    images = self.insert_image_data("hotel_image", data, 'image')
+                except:
+                    traceback.print_exc()
+
+                read = data['hotel_type'][0]
+                for i in read:
+                    condition = 'feature_type="%s" ' % i
+                    response = self.select_record("hotel_feature_type", condition)
+                    dict = {}
+                    if response is None:
+                        hotel_id = self.insert_feature_type("hotel_feature_type", i)
+                        data['hotel_type_id'] = hotel_id["id"]
+                        dict["hotel_id"] = data["hotel_id"][0]
+                        dict['hotel_type_id'] = data['hotel_type_id'][0]
+                        hotel_feature = self.insert_hotel_feature("hotel_feature", dict)
+                    else:
+                        data['hotel_type_id'] = response["id"]
+                        dict["hotel_id"] = data["hotel_id"][0]
+                        dict['hotel_type_id'] = data['hotel_type_id'][0]
+                        hotel_feature = self.insert_hotel_feature("hotel_feature", dict)
             else:
                 print("Data exist in table")
 
@@ -215,6 +260,19 @@ class BaseDBModel:
         try:
             for i in read:
                 insert_data = {}
+                insert_data['hotel_id'] = int(data['hotel_id'][0])
+                insert_data[content] = i
+
+                # filtered_insert_data = self.pop_null_values(insert_data)
+
+                last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+                record_row = {"id": last_id}
+        except:
+            pass
+
+        try:
+            for i in read:
+                insert_data = {}
                 insert_data['attraction_id'] = int(data['attraction_id'][0])
                 insert_data[content] = i
 
@@ -252,18 +310,28 @@ class BaseDBModel:
     def insert_feature_type(self, table_name, data):
         record_row = None
         insert_data = {}
-        insert_data['attraction_type'] = data
+        insert_data['feature_type'] = data
         filtered_insert_data = self.pop_null_values(insert_data)
 
         last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **filtered_insert_data)
         record_row = {"id": last_id}
         return record_row
 
-    def insert_feature(self, table_name, data):
+    def insert_attraction_feature(self, table_name, data):
         record_row = None
         insert_data = {}
         insert_data['attraction_id'] = int(data['attraction_id'])
         insert_data['attraction_type_id'] = int(data['attraction_type_id'])
+
+        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+        record_row = {"id": last_id}
+        return record_row
+
+    def insert_hotel_feature(self, table_name, data):
+        record_row = None
+        insert_data = {}
+        insert_data['hotel_id'] = int(data['hotel_id'])
+        insert_data['hotel_type_id'] = int(data['hotel_type_id'])
 
         last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
         record_row = {"id": last_id}
@@ -301,6 +369,27 @@ class BaseDBModel:
             record_row = {"id": last_id}
         return record_row
 
+    def insert_hotel_title_data(self, table_name, data):
+        record_row = None
+        for index, row in data.iterrows():
+            insert_data = {}
+            insert_data['city_id'] = self.check_nun('city_id', row)
+            insert_data['hotel_name'] = self.check_nun('name', row)
+            insert_data['hotel_price'] = self.check_nun('hotel_price', row)
+            insert_data['hotel_review_count'] = self.check_nun('hotel_review_count', row)
+            insert_data['hotel_address'] = self.check_nun('hotel_address', row)
+            insert_data['hotel_contact'] = self.check_nun('hotel_contact', row)
+            insert_data['hotel_description'] = self.check_nun('hotel_description', row)
+            insert_data['hotel_website'] = self.check_nun('hotel_website', row)
+            insert_data['hotel_class'] = self.check_nun('hotel_class', row)
+            insert_data['hotel_geocode_lat'] = self.check_nun('hotel_geocode_lan', row)
+            insert_data['hotel_geocode_lon'] = self.check_nun('hotel_geocode_lon', row)
+            insert_data['source'] = self.check_nun('url', row)
+            filtered_insert_data = self.pop_null_values(insert_data)
+
+            last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **filtered_insert_data)
+            record_row = {"id": last_id}
+        return record_row
     def insert_city(self, table_name, city):
         record_row = None
         insert_data = {}

@@ -6,6 +6,8 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver import Firefox, FirefoxProfile
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from wasabi import msg
+from selenium.webdriver.support import expected_conditions as EC
 
 import time
 
@@ -14,7 +16,7 @@ class SeleniumHelper:
     def __init__(self):
         self.GECKO_DRIVER_PATH = "./driver/geckodriver"
         # self.GECKO_DRIVER_PATH = "E:\codes\Django\scraping\helpers\geckodriver.exe"
-
+        self.is_server = 1
         self.SCRAPING_URL = "https://www.tripadvisor.com"
 
         # Creating the service object to pass the executable geckodriver path to webdriver
@@ -26,8 +28,15 @@ class SeleniumHelper:
         self.options.add_argument('--disable-blink-features=AutomationControlled')
         self.options.add_argument('--ignore-certificate-errors')
         self.options.add_argument('ignore-ssl-errors')
+
         # self.options.set_preference('profile', self.profile_path)
         self.profile = FirefoxProfile()
+        if self.is_server == 1:
+            self.profile.set_preference("browser.cache.disk.enable", False)
+            self.profile.set_preference("browser.cache.memory.enable", False)
+            self.profile.set_preference("browser.cache.offline.enable", False)
+            self.profile.set_preference("network.http.use-cache", False)
+            self.options.add_argument('--headless')
 
     def getdriver(self):
         """
@@ -84,3 +93,12 @@ class SeleniumHelper:
 
     def sleep_time(self, val):
         time.sleep(val)
+
+    def click_xpath(self, driver, xpath):
+        try:
+            driver.find_element(by=By.XPATH, value=xpath).click()
+            msg.good('click_xpath pass')
+            return True
+        except:
+            msg.fail('click_xpath fail')
+            return False

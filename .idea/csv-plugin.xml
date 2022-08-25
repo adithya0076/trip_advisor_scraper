@@ -59,6 +59,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/sources/trip_advisor_hotels_scraper.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/sources/trip_advisor_restaurants_scraper.py">
           <value>
             <Attribute>

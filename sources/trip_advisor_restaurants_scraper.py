@@ -205,26 +205,26 @@ class TripAdvisorRestaurantScraper:
                 except:
                     _dict_info['name'] = name_sc[0].text.lstrip()
             else:
-                _dict_info['name'] = '-'
+                _dict_info['name'] = ''
 
             # REVIEW COUNT
             if reviews_sc:
                 x = reviews_sc[0].text.split()
                 _dict_info['restaurant_review_count'] = reviews_sc[0].text.split()[0]
             else:
-                _dict_info['restaurant_review_count'] = '-'
+                _dict_info['restaurant_review_count'] = ''
 
             # ADDRESS
             if address_sc:
                 _dict_info['restaurant_address'] = address_sc.lstrip()
             else:
-                _dict_info['restaurant_address'] = '-'
+                _dict_info['restaurant_address'] = ''
 
             # CONTACT
             if contact_sc:
                 _dict_info['restaurant_contact'] = contact_sc.lstrip()
             else:
-                _dict_info['restaurant_contact'] = '-'
+                _dict_info['restaurant_contact'] = ''
             print(contact_sc.lstrip())
             # EMAIL
             for em in email_sc:
@@ -238,7 +238,7 @@ class TripAdvisorRestaurantScraper:
             if websiteurl_sc:
                 _dict_info['restaurant_website'] = websiteurl_sc.lstrip()
             else:
-                _dict_info['restaurant_website'] = '-'
+                _dict_info['restaurant_website'] = ''
 
             # GEOCODES
             if geo_sc:
@@ -289,16 +289,16 @@ class TripAdvisorRestaurantScraper:
             if about_sc:
                 _dict_info['restaurant_description'] = about_sc[0].text.lstrip()
             else:
-                _dict_info['restaurant_description'] = '-'
+                _dict_info['restaurant_description'] = ''
 
             if price_sc:
                 currency = price_sc[:3]
                 if currency == "LKR":
                     _dict_info['restaurant_price_range'] = price_sc.lstrip()
                 else:
-                    _dict_info['restaurant_price_range'] = '-'
+                    _dict_info['restaurant_price_range'] = ''
             else:
-                _dict_info['restaurant_price_range'] = '-'
+                _dict_info['restaurant_price_range'] = ''
 
             # getting the images
             self.selenium_helper.sleep_time(random.randint(5, 10))
