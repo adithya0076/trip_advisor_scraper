@@ -44,7 +44,70 @@ class TripAdvisorRestaurantScraper:
         search.send_keys(Keys.ENTER)
         print(f"The city: '{city}' is searched")
 
-    def scrape_restaurant_data(self, driver, city):
+    def traverse_through_cities(self, driver, city):
+        """
+        Gets the urls of the first page.
+        Args:
+            driver:
+            city:
+
+        Returns:
+
+        """
+        url_list = []
+        # Gets the current URLf
+        source = driver.page_source
+        print(f"URL is loaded")
+
+        # Use bs4 to parse data from the URL
+        data = bs4.BeautifulSoup(source, 'lxml')
+
+        cities = data.select('geo_image')
+
+        # Saving the urls of Restaurants available
+        for i in cities:
+            a = i.find('a')
+            if a.is_empty_element:
+                print('None')
+            else:
+                link = 'https://www.tripadvisor.com/' + a['href'] + ''
+                url_list.append(link)
+
+        for i in url_list:
+            driver.get(i)
+            self.scrape_restaurant_data(driver)
+
+        url_list_2 = []
+        a = 1
+        while a:
+            try:
+                self.selenium_helper.sleep_time(random.randint(1, 5))
+                driver.execute_script()
+                self.selenium_helper.driver_execute(driver=driver, program="window.scrollTo(0, document.body.scrollHeight);")
+                try:
+                    WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
+                        (By.XPATH, "//button[@aria-label='Close' and @type='button']"))).click()
+                except:
+                    pass
+                btnNext = self.selenium_helper.click_xpath(driver=driver, xpath="//a[@class='nav next rndBtn ui_button primary taLnk']")
+                if btnNext is False:
+                    break
+                self.selenium_helper.sleep_time(random.randint(5, 10))
+
+                # Gets the current URL
+                source = driver.page_source
+                print(f"URL is loaded")
+
+                # Use bs4 to parse data from the URL
+                data = bs4.BeautifulSoup(source, 'lxml')
+
+                status, li_sc = self.selenium_helper.find_xpath_element(driver=driver, xpath="//ul[@class='geoList']//li[*]", is_get_text=False)
+            except Exception as e:
+                print(e)
+                break
+
+
+    def scrape_restaurant_data(self, driver):
         """
         This function is using bs4 to scrape current page source for hotels.
 
@@ -126,15 +189,12 @@ class TripAdvisorRestaurantScraper:
                     else:
                         link = 'https://www.tripadvisor.com/' + a['href'] + ''
                         urls.append(link)
+                dict2 = {'type_id': 1, 'url': urls, }
+                fd = pd.DataFrame(dict2)
+                self.db.base_job_handler(fd)
             except Exception as e:
                 print(e)
                 break
-
-        dict2 = {'city': city, 'url': urls, }
-        fd = pd.DataFrame(dict2)
-        print('Dataset for URLs', fd)
-
-        return fd
 
     def scraping_restaurant_information(self, driver, data):
         """

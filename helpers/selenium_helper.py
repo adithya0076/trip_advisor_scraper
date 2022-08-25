@@ -102,3 +102,16 @@ class SeleniumHelper:
         except:
             msg.fail('click_xpath fail')
             return False
+
+    def find_elements_by_xpath(self, main_element, xpath, webdriver_wait, multy_elements=True, is_wait=True):
+        try:
+            self.wait_for_xpath_load(webdriver_wait, xpath) if is_wait else None
+            if multy_elements:
+                found_element = main_element.find_elements(By.XPATH, xpath)
+            else:
+                found_element = main_element.find_element(By.XPATH, xpath)
+            msg.good('find_elements_by_xpath success')
+            return found_element
+        except:
+            msg.fail('find_elements_by_xpath fail')
+            return False
