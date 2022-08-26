@@ -273,6 +273,171 @@ INSERT INTO `hotel_image` VALUES (1,2,'\"https://media-cdn.tripadvisor.com/media
 UNLOCK TABLES;
 
 --
+-- Table structure for table `rental`
+--
+
+DROP TABLE IF EXISTS `rental`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rental` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `city_id` int NOT NULL,
+  `rental_name` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `rental_review_count` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_description` varchar(10000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_price` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_bedrooms` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_bathrooms` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_guests` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_owner` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_nights_min` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_geocode_lan` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `rental_geocode_lon` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `source` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_CITY_ID_RENTAL` (`city_id`),
+  CONSTRAINT `FK_CITY_ID_RENTAL` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rental`
+--
+
+LOCK TABLES `rental` WRITE;
+/*!40000 ALTER TABLE `rental` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rental` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rental_feature`
+--
+
+DROP TABLE IF EXISTS `rental_feature`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rental_feature` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rental_id` int NOT NULL,
+  `rental_type_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_RENTAL_ID_FEA` (`rental_id`),
+  KEY `FK_FEATURE_TYPE_ID_RENTAL` (`rental_type_id`),
+  CONSTRAINT `FK_FEATURE_TYPE_ID_RENTAL` FOREIGN KEY (`rental_type_id`) REFERENCES `rental_feature_type` (`id`),
+  CONSTRAINT `FK_RENTAL_ID_FEA` FOREIGN KEY (`rental_id`) REFERENCES `rental` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rental_feature`
+--
+
+LOCK TABLES `rental_feature` WRITE;
+/*!40000 ALTER TABLE `rental_feature` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rental_feature` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rental_feature_type`
+--
+
+DROP TABLE IF EXISTS `rental_feature_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rental_feature_type` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `feature_type` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rental_feature_type`
+--
+
+LOCK TABLES `rental_feature_type` WRITE;
+/*!40000 ALTER TABLE `rental_feature_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rental_feature_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rental_image`
+--
+
+DROP TABLE IF EXISTS `rental_image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rental_image` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rental_id` int NOT NULL,
+  `image` varchar(10000) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `rental_id` (`rental_id`),
+  CONSTRAINT `FK_rental_id` FOREIGN KEY (`rental_id`) REFERENCES `rental` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rental_image`
+--
+
+LOCK TABLES `rental_image` WRITE;
+/*!40000 ALTER TABLE `rental_image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rental_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rental_type`
+--
+
+DROP TABLE IF EXISTS `rental_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rental_type` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `feature_type` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rental_type`
+--
+
+LOCK TABLES `rental_type` WRITE;
+/*!40000 ALTER TABLE `rental_type` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rental_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rental_type_classified`
+--
+
+DROP TABLE IF EXISTS `rental_type_classified`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rental_type_classified` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rental_id` int NOT NULL,
+  `rental_type_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_RENTAL_TYPE_ID_FEA` (`rental_id`),
+  KEY `FK_RENTAL_TYPE_ID_RENTAL` (`rental_type_id`),
+  CONSTRAINT `FK_RENTAL_TYPE_ID_FEA` FOREIGN KEY (`rental_id`) REFERENCES `rental` (`id`),
+  CONSTRAINT `FK_RENTAL_TYPE_ID_RENTAL` FOREIGN KEY (`rental_type_id`) REFERENCES `rental_type` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rental_type_classified`
+--
+
+LOCK TABLES `rental_type_classified` WRITE;
+/*!40000 ALTER TABLE `rental_type_classified` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rental_type_classified` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `resource_type`
 --
 
@@ -283,7 +448,7 @@ CREATE TABLE `resource_type` (
   `id` int NOT NULL AUTO_INCREMENT,
   `type` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -292,7 +457,7 @@ CREATE TABLE `resource_type` (
 
 LOCK TABLES `resource_type` WRITE;
 /*!40000 ALTER TABLE `resource_type` DISABLE KEYS */;
-INSERT INTO `resource_type` VALUES (1,'restaurant'),(2,'hotel'),(3,'attraction');
+INSERT INTO `resource_type` VALUES (1,'restaurant'),(2,'hotel'),(3,'attraction'),(4,'rentals');
 /*!40000 ALTER TABLE `resource_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -528,4 +693,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-26 14:26:06
+-- Dump completed on 2022-08-26 17:57:18

@@ -172,6 +172,69 @@ class BaseDBModel:
         except Exception as error:
             traceback.print_exc()
 
+        # CHECK RENTAL IS AVAILABLE IN THE DATABASE OR NOT
+        try:
+            try:
+                la = data['rental_geocode_lan'][0]
+                ln = data['rental_geocode_lon'][0]
+                lan = float(la[:la.find('.') + 5])
+                lon = float(ln[:ln.find('.') + 5])
+                condition = 'rental_name LIKE "%s" and rental_geocode_lan LIKE "%s" and rental_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + str(lan) + "%", "%" + str(lon) + "%")
+            except:
+                condition = 'rental_name LIKE "%s" and rental_geocode_lan LIKE "%s" and rental_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + data['rental_geocode_lan'][0] + "%",
+                    "%" + data['rental_geocode_lon'][0] + "%")
+
+            response = self.select_record("rental", condition)
+            if response is None:
+                response = self.insert_rental_title_data("rental", data)
+                data["rental_id"] = response["id"]
+                try:
+                    images = self.insert_image_data("rental_image", data, 'image')
+                except:
+                    traceback.print_exc()
+
+                read = data['rental_feature'][0]
+                for i in read:
+                    condition = 'feature_type="%s" ' % i
+                    response = self.select_record("rental_feature_type", condition)
+                    dict = {}
+                    if response is None:
+                        rental_id = self.insert_feature_type("rental_feature_type", i)
+                        data['rental_type_id'] = rental_id["id"]
+                        dict["rental_id"] = data["rental_id"][0]
+                        dict['rental_type_id'] = data['rental_type_id'][0]
+                        rental_feature = self.insert_rental_feature("rental_feature", dict)
+                    else:
+                        data['rental_type_id'] = response["id"]
+                        dict["rental_id"] = data["rental_id"][0]
+                        dict['rental_type_id'] = data['rental_type_id'][0]
+                        rental_feature = self.insert_rental_feature("rental_feature", dict)
+
+                read = data['rental_feature'][0]
+                for i in read:
+                    condition = 'feature_type="%s" ' % i
+                    response = self.select_record("rental_feature_type", condition)
+                    dict = {}
+                    if response is None:
+                        rental_id = self.insert_feature_type("rental_feature_type", i)
+                        data['rental_type_id'] = rental_id["id"]
+                        dict["rental_id"] = data["rental_id"][0]
+                        dict['rental_type_id'] = data['rental_type_id'][0]
+                        rental_feature = self.insert_rental_feature("rental_feature", dict)
+                    else:
+                        data['rental_type_id'] = response["id"]
+                        dict["rental_id"] = data["rental_id"][0]
+                        dict['rental_type_id'] = data['rental_type_id'][0]
+                        rental_feature = self.insert_rental_feature("rental_feature", dict)
+
+            else:
+                print("Data exist in table")
+
+        except Exception as error:
+            traceback.print_exc()
+
         # check attraction url is saved
         try:
             for index, row in data.iterrows():
@@ -329,6 +392,30 @@ class BaseDBModel:
             record_row = {"id": last_id}
         return record_row
 
+    def insert_rental_title_data(self, table_name, data):
+        record_row = None
+        for index, row in data.iterrows():
+            insert_data = {}
+            insert_data['city_id'] = self.check_nun('city_id', row)
+            insert_data['rental_name'] = self.check_nun('name', row)
+            insert_data['rental_review_count'] = self.check_nun('rental_review_count', row)
+            insert_data['rental_description'] = self.check_nun('rental_description', row)
+            insert_data['rental_price'] = self.check_nun('rental_price', row)
+            insert_data['rental_bedrooms'] = self.check_nun('rental_bedrooms', row)
+            insert_data['rental_bathrooms'] = self.check_nun('rental_bathrooms', row)
+            insert_data['rental_guests'] = self.check_nun('rental_guests', row)
+            insert_data['rental_owner'] = self.check_nun('rental_owner', row)
+            insert_data['rental_nights_min'] = self.check_nun('rental_nights_min', row)
+            insert_data['rental_geocode_lan'] = self.check_nun('rental_geocode_lan', row)
+            insert_data['rental_geocode_lon'] = self.check_nun('restaurant_geocode_lon', row)
+            insert_data['source'] = self.check_nun('url', row)
+
+            filtered_insert_data = self.pop_null_values(insert_data)
+
+            last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **filtered_insert_data)
+            record_row = {"id": last_id}
+        return record_row
+
     def insert_feature_type(self, table_name, data):
         record_row = None
         insert_data = {}
@@ -344,6 +431,15 @@ class BaseDBModel:
         insert_data = {}
         insert_data['attraction_id'] = int(data['attraction_id'])
         insert_data['attraction_type_id'] = int(data['attraction_type_id'])
+
+        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+        record_row = {"id": last_id}
+        return record_row
+    def insert_rental_feature(self, table_name, data):
+        record_row = None
+        insert_data = {}
+        insert_data['rental_id'] = int(data['rental_id'])
+        insert_data['rental_type_id'] = int(data['rental_type_id'])
 
         last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
         record_row = {"id": last_id}
