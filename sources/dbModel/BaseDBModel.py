@@ -38,9 +38,18 @@ class BaseDBModel:
         today = strftime("%Y-%m-%d", gmtime())
         # CHECK RESTAURANT IS AVAILABLE IN THE DATABASE OR NOT
         try:
-            condition = 'restaurant_name LIKE "%s" and restaurant_geocode_lan LIKE "%s" and restaurant_geocode_lon LIKE "%s" ' % (
-                data['name'][0], "%" + '{:.4f}'.format(data['restaurant_geocode_lan'][0]) + "%",
-                "%" + '{:.4f}'.format(data['restaurant_geocode_lon'][0]) + "%")
+            try:
+                la = data['restaurant_geocode_lan'][0]
+                ln = data['restaurant_geocode_lon'][0]
+                lan = float(la[:la.find('.') + 5])
+                lon = float(ln[:ln.find('.') + 5])
+                condition = 'restaurant_name LIKE "%s" and restaurant_geocode_lan LIKE "%s" and restaurant_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + str(lan) + "%", "%" + str(lon) + "%")
+            except:
+                condition = 'restaurant_name LIKE "%s" and restaurant_geocode_lan LIKE "%s" and restaurant_geocode_lon LIKE "%s" ' % (
+                    data['name'][0], "%" + data['restaurant_geocode_lan'][0] + "%",
+                    "%" + data['restaurant_geocode_lon'][0] + "%")
+
             response = self.select_record("restaurant", condition)
             if response is None:
                 response = self.insert_restaurant_title_data("restaurant", data)
@@ -49,13 +58,26 @@ class BaseDBModel:
                     images = self.insert_image_data("restaurant_image", data, 'image')
                 except:
                     traceback.print_exc()
-                try:
-                    feature = self.insert_image_data("restaurant_feature", data, 'feature_type')
-                except:
-                    traceback.print_exc()
+
+                read = data['feature_type'][0]
+                for i in read:
+                    condition = 'feature_type="%s" ' % i
+                    response = self.select_record("restaurant_feature_type", condition)
+                    dict = {}
+                    if response is None:
+                        restaurant_id = self.insert_feature_type("restaurant_feature_type", i)
+                        data['restaurant_type_id'] = restaurant_id["id"]
+                        dict["restaurant_id"] = data["restaurant_id"][0]
+                        dict['restaurant_type_id'] = data['restaurant_type_id'][0]
+                        restaurant_feature = self.insert_restaurant_feature("restaurant_feature", dict)
+                    else:
+                        data['restaurant_type_id'] = response["id"]
+                        dict["restaurant_id"] = data["restaurant_id"][0]
+                        dict['restaurant_type_id'] = data['restaurant_type_id'][0]
+                        restaurant_feature = self.insert_restaurant_feature("restaurant_feature", dict)
             else:
-                # data["job_title_id"] = response["id"] if isinstance(response["id"], int) else 0
                 print("Data exist in table")
+
         except Exception as error:
             traceback.print_exc()
 
@@ -322,6 +344,16 @@ class BaseDBModel:
         insert_data = {}
         insert_data['attraction_id'] = int(data['attraction_id'])
         insert_data['attraction_type_id'] = int(data['attraction_type_id'])
+
+        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+        record_row = {"id": last_id}
+        return record_row
+
+    def insert_restaurant_feature(self, table_name, data):
+        record_row = None
+        insert_data = {}
+        insert_data['restaurant_id'] = int(data['restaurant_id'])
+        insert_data['restaurant_type_id'] = int(data['restaurant_type_id'])
 
         last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
         record_row = {"id": last_id}

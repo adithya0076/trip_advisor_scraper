@@ -36,7 +36,7 @@ class SeleniumHelper:
             self.profile.set_preference("browser.cache.memory.enable", False)
             self.profile.set_preference("browser.cache.offline.enable", False)
             self.profile.set_preference("network.http.use-cache", False)
-            self.options.add_argument('--headless')
+            # self.options.add_argument('--headless')
 
     def getdriver(self):
         """
@@ -85,6 +85,14 @@ class SeleniumHelper:
         except:
             return False, None
 
+    def find_xpath_elements(self, driver, xpath, is_get_text=False):
+        try:
+            if is_get_text:
+                return True, driver.find_elements(by=By.XPATH, value=xpath).text
+            else:
+                return True, driver.find_elements(by=By.XPATH, value=xpath)
+        except:
+            return False, None
     def driver_execute(self, driver, program):
         try:
             driver.execute_script(program)

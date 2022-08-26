@@ -16,6 +16,7 @@ class TripAdvisorRestaurantScraper:
         self.db = db
 
     def search_for_restaurants(self, driver, city):
+        self.selenium_helper.check_connection()
         """
         This function opens the Restaurant's page from the home screen and the search for the city.
 
@@ -28,7 +29,8 @@ class TripAdvisorRestaurantScraper:
         """
 
         # Finds the Restaurant's page button
-        status, restaurant = self.selenium_helper.find_xpath_element(driver=driver, xpath="//a[@href='/Restaurants']", is_get_text=False)
+        status, restaurant = self.selenium_helper.find_xpath_element(driver=driver, xpath="//a[@href='/Restaurants']",
+                                                                     is_get_text=False)
         restaurant.click()
         WebDriverWait(driver, 10)
         self.selenium_helper.sleep_time(10)
@@ -44,7 +46,7 @@ class TripAdvisorRestaurantScraper:
         search.send_keys(Keys.ENTER)
         print(f"The city: '{city}' is searched")
 
-    def traverse_through_cities(self, driver, city):
+    def traverse_through_cities(self, driver):
         """
         Gets the urls of the first page.
         Args:
@@ -54,6 +56,7 @@ class TripAdvisorRestaurantScraper:
         Returns:
 
         """
+        self.selenium_helper.check_connection()
         url_list = []
         # Gets the current URLf
         source = driver.page_source
@@ -61,8 +64,8 @@ class TripAdvisorRestaurantScraper:
 
         # Use bs4 to parse data from the URL
         data = bs4.BeautifulSoup(source, 'lxml')
-
-        cities = data.select('geo_image')
+        current_url = driver.current_url
+        cities = data.select('.geo_image')
 
         # Saving the urls of Restaurants available
         for i in cities:
@@ -73,25 +76,30 @@ class TripAdvisorRestaurantScraper:
                 link = 'https://www.tripadvisor.com/' + a['href'] + ''
                 url_list.append(link)
 
+        print(url_list)
+
         for i in url_list:
             driver.get(i)
-            self.scrape_restaurant_data(driver)
+            self.scrape_restaurant_data(driver=driver)
 
-        url_list_2 = []
+        return current_url
+
+    def traverse_through_cities_pagination(self, driver, current_url):
+        self.selenium_helper.check_connection()
+        driver.get(current_url)
+        url_list = []
         a = 1
+        self.selenium_helper.sleep_time(random.randint(1, 5))
+        self.selenium_helper.driver_execute(driver=driver, program="window.scrollTo(0, document.body.scrollHeight);")
+        try:
+            WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
+                (By.XPATH, "//button[@aria-label='Close' and @type='button']"))).click()
+        except:
+            pass
+        self.selenium_helper.click_xpath(driver=driver,
+                                         xpath="//a[@class='nav next rndBtn ui_button primary taLnk']")
         while a:
             try:
-                self.selenium_helper.sleep_time(random.randint(1, 5))
-                driver.execute_script()
-                self.selenium_helper.driver_execute(driver=driver, program="window.scrollTo(0, document.body.scrollHeight);")
-                try:
-                    WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
-                        (By.XPATH, "//button[@aria-label='Close' and @type='button']"))).click()
-                except:
-                    pass
-                btnNext = self.selenium_helper.click_xpath(driver=driver, xpath="//a[@class='nav next rndBtn ui_button primary taLnk']")
-                if btnNext is False:
-                    break
                 self.selenium_helper.sleep_time(random.randint(5, 10))
 
                 # Gets the current URL
@@ -101,11 +109,31 @@ class TripAdvisorRestaurantScraper:
                 # Use bs4 to parse data from the URL
                 data = bs4.BeautifulSoup(source, 'lxml')
 
-                status, li_sc = self.selenium_helper.find_xpath_element(driver=driver, xpath="//ul[@class='geoList']//li[*]", is_get_text=False)
+                status, li_sc = self.selenium_helper.find_xpath_elements(driver=driver,
+                                                                         xpath="//ul[@class='geoList']//li[*]//a",
+                                                                         is_get_text=False)
+
+                # Saving the urls of Restaurants available
+                for i in li_sc:
+                    if i:
+                        link = i.get_attribute('href').lstrip() + ''
+                        url_list.append(link)
+                    else:
+                        print('None')
+
+                btnNext = self.selenium_helper.click_xpath(driver=driver,
+                                                           xpath="//a[@class='guiArw sprite-pageNext ']")
+
+                if btnNext is False:
+                    break
+                else:
+                    pass
             except Exception as e:
                 print(e)
-                break
 
+        for i in url_list:
+            driver.get(i)
+            self.scrape_restaurant_data(driver)
 
     def scrape_restaurant_data(self, driver):
         """
@@ -121,7 +149,7 @@ class TripAdvisorRestaurantScraper:
         :param city:
         :return df:
         """
-
+        self.selenium_helper.check_connection()
         # Gets the current URL
         source = driver.page_source
         print(f"URL is loaded")
@@ -232,6 +260,39 @@ class TripAdvisorRestaurantScraper:
             status, contact_sc = self.selenium_helper.find_xpath_element(driver=driver2,
                                                                          xpath="/html/body/div[2]/div[1]/div/div[4]/div/div/div[3]/span[2]/span/span[2]/a",
                                                                          is_get_text=True)
+            status, city_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//span[@class='DsyBj cNFrA']//a//span[contains(text(), 'in')]",
+                is_get_text=True
+            )
+
+            if city_sc:
+                pass
+                # get the city id
+                condition = "city_name = '%s'" % re.search(r'(?<=in ).*', city_sc.lstrip()).group()
+                city_id = self.db.select_record(table_name='city', condition=condition)
+                if city_id:
+                    _dict_info['city_id'] = city_id['id']
+                else:
+                    city = self.db.insert_city(table_name='city',
+                                               city=re.search(r'(?<=in ).*', city_sc.lstrip()).group())
+                    _dict_info['city_id'] = city['id']
+            else:
+                status, city_sc = self.selenium_helper.find_xpath_element(
+                    driver=driver,
+                    xpath="//div[@class='VGRgp']/span[2]",
+                    is_get_text=True
+                )
+                city = city_sc.split(',')
+                # get the city id
+
+                condition = "city_name = '%s'" % city[0]
+                city_id = self.db.select_record(table_name='city', condition=condition)
+                if city_id:
+                    _dict_info['city_id'] = city_id['id']
+                else:
+                    city_i = self.db.insert_city(table_name='city', city=city[0])
+                    _dict_info['city_id'] = city_i['id']
 
             try:
                 features_sc = data2.findAll("div", {"class": "SrqKb"})
@@ -251,10 +312,6 @@ class TripAdvisorRestaurantScraper:
             except:
                 pass
 
-            # get the city id
-            condition = "city_name = '%s'" % row['city']
-            city_id = self.db.select_record(table_name='city', condition=condition)
-            _dict_info['city_id'] = city_id['id']
             self.selenium_helper.sleep_time(random.randint(5, 10))
 
             # NAME
@@ -292,7 +349,7 @@ class TripAdvisorRestaurantScraper:
                 if a:
                     _dict_info['restaurant_email'] = a['href']
                 else:
-                    _dict_info['restaurant_email'] = '_'
+                    _dict_info['restaurant_email'] = ''
 
             # WEBSITE
             if websiteurl_sc:
@@ -319,7 +376,9 @@ class TripAdvisorRestaurantScraper:
                 if currency == "LKR":
                     pass
                 else:
-                    features.append(x)
+                    cat = x.split(',')
+                    for item in cat:
+                        features.append(item.lstrip())
 
             WebDriverWait(driver2, 10)
 
@@ -362,10 +421,8 @@ class TripAdvisorRestaurantScraper:
 
             # getting the images
             self.selenium_helper.sleep_time(random.randint(5, 10))
-            status, img = self.selenium_helper.find_xpath_element(
-                driver=driver2, xpath="//div[@class='zPIck _Q Z1 t _U c _S zXWgK']", is_get_text=False
-            )
-            img.click()
+
+            self.selenium_helper.click_xpath(driver=driver, xpath="//div[@class='see_all_count_wrap']//span//span[@class='details']")
             self.selenium_helper.sleep_time(5)
             try:
                 status, btnImg = self.selenium_helper.find_xpath_element(
@@ -428,6 +485,8 @@ class TripAdvisorRestaurantScraper:
                 _dict_info['feature_type'] = features
             else:
                 pass
+
+            print(features)
 
             self.selenium_helper.sleep_time(random.randint(5, 10))
 
