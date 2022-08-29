@@ -212,22 +212,21 @@ class BaseDBModel:
                         dict['rental_type_id'] = data['rental_type_id'][0]
                         rental_feature = self.insert_rental_feature("rental_feature", dict)
 
-                read = data['rental_feature'][0]
-                for i in read:
-                    condition = 'feature_type="%s" ' % i
-                    response = self.select_record("rental_feature_type", condition)
-                    dict = {}
-                    if response is None:
-                        rental_id = self.insert_feature_type("rental_feature_type", i)
-                        data['rental_type_id'] = rental_id["id"]
-                        dict["rental_id"] = data["rental_id"][0]
-                        dict['rental_type_id'] = data['rental_type_id'][0]
-                        rental_feature = self.insert_rental_feature("rental_feature", dict)
-                    else:
-                        data['rental_type_id'] = response["id"]
-                        dict["rental_id"] = data["rental_id"][0]
-                        dict['rental_type_id'] = data['rental_type_id'][0]
-                        rental_feature = self.insert_rental_feature("rental_feature", dict)
+                read = data['rental_type'][0]
+                condition = 'feature_type="%s" ' % read
+                response = self.select_record("rental_type", condition)
+                dict = {}
+                if response is None:
+                    rental_id = self.insert_feature_type("rental_type", read)
+                    data['rental_type_id_type'] = rental_id["id"]
+                    dict["rental_id_type"] = data["rental_id"][0]
+                    dict['rental_type_id_type'] = data['rental_type_id_type'][0]
+                    rental_feature = self.insert_rental_feature("rental_type_classified", dict)
+                else:
+                    data['rental_type_id_type'] = response["id"]
+                    dict["rental_id_type"] = data["rental_id"][0]
+                    dict['rental_type_id_type'] = data['rental_type_id_type'][0]
+                    rental_feature = self.insert_rental_feature("rental_type_classified", dict)
 
             else:
                 print("Data exist in table")
@@ -235,7 +234,7 @@ class BaseDBModel:
         except Exception as error:
             traceback.print_exc()
 
-        # check attraction url is saved
+        # check url is saved
         try:
             for index, row in data.iterrows():
                 print("Done to process")
@@ -367,6 +366,19 @@ class BaseDBModel:
                 record_row = {"id": last_id}
         except:
             pass
+
+        try:
+            for i in read:
+                insert_data = {}
+                insert_data['rental_id'] = int(data['rental_id'][0])
+                insert_data[content] = i
+
+                # filtered_insert_data = self.pop_null_values(insert_data)
+
+                last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+                record_row = {"id": last_id}
+        except:
+            pass
         return record_row
 
     def insert_restaurant_title_data(self, table_name, data):
@@ -405,9 +417,11 @@ class BaseDBModel:
             insert_data['rental_bathrooms'] = self.check_nun('rental_bathrooms', row)
             insert_data['rental_guests'] = self.check_nun('rental_guests', row)
             insert_data['rental_owner'] = self.check_nun('rental_owner', row)
+            insert_data['rental_address'] = self.check_nun('rental_address', row)
+            insert_data['rental_contact'] = self.check_nun('rental_contact', row)
             insert_data['rental_nights_min'] = self.check_nun('rental_nights_min', row)
             insert_data['rental_geocode_lan'] = self.check_nun('rental_geocode_lan', row)
-            insert_data['rental_geocode_lon'] = self.check_nun('restaurant_geocode_lon', row)
+            insert_data['rental_geocode_lon'] = self.check_nun('rental_geocode_lon', row)
             insert_data['source'] = self.check_nun('url', row)
 
             filtered_insert_data = self.pop_null_values(insert_data)
@@ -436,14 +450,29 @@ class BaseDBModel:
         record_row = {"id": last_id}
         return record_row
     def insert_rental_feature(self, table_name, data):
-        record_row = None
-        insert_data = {}
-        insert_data['rental_id'] = int(data['rental_id'])
-        insert_data['rental_type_id'] = int(data['rental_type_id'])
+        try:
+            record_row = None
+            insert_data = {}
+            insert_data['rental_id'] = int(data['rental_id'])
+            insert_data['rental_type_id'] = int(data['rental_type_id'])
 
-        last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
-        record_row = {"id": last_id}
-        return record_row
+            last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+            record_row = {"id": last_id}
+            return record_row
+        except:
+            traceback.print_exc()
+
+        try:
+            record_row = None
+            insert_data = {}
+            insert_data['rental_id'] = int(data['rental_id_type'])
+            insert_data['rental_type_id'] = int(data['rental_type_id_type'])
+
+            last_id = self.common_routing_insert_dictionary_data_to_db(table_name=table_name, **insert_data)
+            record_row = {"id": last_id}
+            return record_row
+        except:
+            traceback.print_exc()
 
     def insert_restaurant_feature(self, table_name, data):
         record_row = None

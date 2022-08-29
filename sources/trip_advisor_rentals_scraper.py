@@ -64,14 +64,14 @@ class TripAdvisorRentalsScraper:
         current_url = driver.current_url
         cities = data.select('.QJCkX')
 
-        # Saving the urls of Restaurants available
+        # Saving the urls of Rentals available
         for i in cities:
             a = i.find('a')
-            if a.is_empty_element:
-                print('None')
-            else:
+            if a:
                 link = 'https://www.tripadvisor.com/' + a['href'] + ''
                 url_list.append(link)
+            else:
+                print('None')
 
         print(url_list)
 
@@ -180,6 +180,7 @@ class TripAdvisorRentalsScraper:
             # Use bs4 to parse data from the URL
             data2 = bs4.BeautifulSoup(source, 'lxml')
             WebDriverWait(driver, 10)
+            self.selenium_helper.sleep_time(random.randint(5, 10))
 
             # Elements which are selected
             name_sc = data2.select('.IaFsP.propertyHeading')
@@ -197,26 +198,15 @@ class TripAdvisorRentalsScraper:
                 xpath="//span[@class='RFDoO b']",
                 is_get_text=True
             )
-            status, bedrooms_sc = self.selenium_helper.find_xpath_elements(
-                driver=driver,
-                xpath="//div[@class='VPOMc']",
-                is_get_text=True
-            )
-            status, rentaltype_sc = self.selenium_helper.find_xpath_elements(
+            WebDriverWait(driver, 10)
+            self.selenium_helper.sleep_time(random.randint(5, 10))
+            bedrooms_sc = data2.select('.VPOMc')
+            status, rentaltype_sc = self.selenium_helper.find_xpath_element(
                 driver=driver,
                 xpath="//div[@class='gjgYb b']",
                 is_get_text=True
             )
-            status, geocodes_sc = self.selenium_helper.find_xpath_element(
-                driver=driver,
-                xpath="//div[@class='RHUrB']//a[starts-with(@href,'https://maps.google.com')]",
-                is_get_text=False
-            )
-            status, feature_sc = self.selenium_helper.find_xpath_elements(
-                driver=driver,
-                xpath="//div[@class='jlCLL']",
-                is_get_text=True
-            )
+            feature_sc = data2.select('.jlCLL')
             status, owner_sc = self.selenium_helper.find_xpath_element(
                 driver=driver,
                 xpath="//div[@class='fwnAY b']",
@@ -228,7 +218,6 @@ class TripAdvisorRentalsScraper:
                 is_get_text=True
             )
             if city_sc:
-                pass
                 # get the city id
                 condition = "city_name = '%s'" % city_sc.lstrip()
                 city_id = self.db.select_record(table_name='city', condition=condition)
@@ -236,7 +225,7 @@ class TripAdvisorRentalsScraper:
                     _dict_info['city_id'] = city_id['id']
                 else:
                     city = self.db.insert_city(table_name='city',
-                                               city=re.search(r'(?<=in ).*', city_sc.lstrip()).group())
+                                               city=city_sc.lstrip())
                     _dict_info['city_id'] = city['id']
             else:
                 status, city_sc = self.selenium_helper.find_xpath_element(
@@ -273,17 +262,6 @@ class TripAdvisorRentalsScraper:
             else:
                 _dict_info['rental_review_count'] = ''
 
-            # GEOCODES
-            if geocodes_sc:
-                geo = geocodes_sc.get_attribute('href').lstrip()
-                codes = re.search(r'll=(.*?)&', geo).group(1)
-                geocodes.append(codes)
-            else:
-                geocodes.append('-,-')
-            geo_c = geocodes[0].split(',')
-            _dict_info['rental_geocode_lan'] = geo_c[0]
-            _dict_info['rental_geocode_lon'] = geo_c[1]
-
             # DESCRIPTION
             if description_sc:
                 _dict_info['rental_description'] = description_sc.lstrip()
@@ -298,10 +276,10 @@ class TripAdvisorRentalsScraper:
 
             # BEDROOMS
             if bedrooms_sc:
-                _dict_info['rental_bedrooms'] = bedrooms_sc[0].lstrip()
-                _dict_info['rental_bathrooms'] = bedrooms_sc[1].lstrip()
-                _dict_info['rental_guests'] = bedrooms_sc[2].lstrip()
-                _dict_info['rental_night_min'] = bedrooms_sc[3].lstrip()
+                _dict_info['rental_bedrooms'] = bedrooms_sc[0].text.lstrip()
+                _dict_info['rental_bathrooms'] = bedrooms_sc[1].text.lstrip()
+                _dict_info['rental_guests'] = bedrooms_sc[2].text.lstrip()
+                _dict_info['rental_nights_min'] = bedrooms_sc[3].text.lstrip()
             else:
                 _dict_info['rental_bedrooms'] = ''
                 _dict_info['rental_bathrooms'] = ''
@@ -313,20 +291,48 @@ class TripAdvisorRentalsScraper:
                 _dict_info['rental_type'] = rentaltype_sc.lstrip()
             else:
                 _dict_info['rental_type'] = ''
+            print(rentaltype_sc.lstrip())
 
-            # RENTAL TYPE
+
+            # OWNER
             if owner_sc:
                 _dict_info['rental_owner'] = owner_sc.lstrip()
             else:
                 _dict_info['rental_owner'] = ''
 
+            _dict_info['rental_address'] = ''
+
+            _dict_info['rental_contact'] = ''
+
             # FEATURES
             if feature_sc:
                 for i in feature_sc:
-                    feature_type.append(i.lstrip())
+                    feature_type.append(i.getText().lstrip())
                 _dict_info['rental_feature'] = feature_type
             else:
                 pass
+            self.selenium_helper.sleep_time(random.randint(5, 10))
+            self.selenium_helper.driver_scroll_down(web_driver=driver, scroll_count=4, y_down=1000, waiting_time=5)
+            self.selenium_helper.sleep_time(random.randint(5, 10))
+
+            status, geocodes_sc = self.selenium_helper.find_xpath_element(
+                driver=driver,
+                xpath="//div[@class='RHUrB']//a[starts-with(@href,'https://maps.google.com')]",
+                is_get_text=False
+            )
+
+            self.selenium_helper.sleep_time(random.randint(5, 10))
+            print(geocodes_sc.get_attribute('href').lstrip())
+            # GEOCODES
+            if geocodes_sc:
+                geo = geocodes_sc.get_attribute('href').lstrip()
+                codes = re.search(r'll=(.*?)&', geo).group(1)
+                geocodes.append(codes)
+            else:
+                geocodes.append('-,-')
+            geo_c = geocodes[0].split(',')
+            _dict_info['rental_geocode_lan'] = geo_c[0]
+            _dict_info['rental_geocode_lon'] = geo_c[1]
 
             self.selenium_helper.sleep_time(random.randint(5, 10))
 

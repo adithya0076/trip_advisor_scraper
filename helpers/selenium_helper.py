@@ -1,5 +1,6 @@
 import traceback
 import requests
+from tqdm import tqdm
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
@@ -122,4 +123,18 @@ class SeleniumHelper:
             return found_element
         except:
             msg.fail('find_elements_by_xpath fail')
+            return False
+
+    def driver_scroll_down(self, web_driver, scroll_count=int, y_down=int, waiting_time=float):
+        try:
+            msg.info('driver_scroll_down start')
+            for i in tqdm(range(scroll_count)):
+                from_no = 0
+                web_driver.execute_script("window.scrollTo(" + str(from_no) + ", " + str(i * y_down) + ")")
+                time.sleep(float(waiting_time))
+                from_no += y_down
+            msg.info('driver_scroll_down finish')
+            return True
+        except:
+            msg.fail('driver_scroll_down fail')
             return False
